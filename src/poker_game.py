@@ -302,7 +302,29 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             is_valid=jnp.bool_(True)
         )
 
-    def make_new_player_bet_amount()
+    def make_new_player_bet_amount(table_state: TableState, player_action: ActionData) -> jax.Array:
+        hero = table_state.current_player
+        hero_bet = table_state.bets[hero]
+        hero_stack = table_state.stacks[hero]
+        current_bet = get_current_bet(table_state.bets)
+
+        # CALL matches current_bet up to total stack ceiling
+        call_amount = jnp.minimum(hero_bet + hero_stack, current_bet)
+
+        # Branchless selection across the three outcomes:
+        # 1. CHECK_CALL -> call_amount
+        # 2. RAISE -> player_action.value (already clamped to [min_raise, hero_max])
+        # 3. FOLD / NO_OP -> hero_bet (chips committed earlier on this street stay on the table)
+        return jnp.where(
+            player_action.type == Action.CHECK_CALL,
+            call_amount,
+            jnp.where(
+                player_action.type == Action.RAISE,
+                player_action.value,
+                hero_bet
+            )
+        )
+
 
 
     # def get_new_action_record(table_state: TableState, player_action: ActionData):
