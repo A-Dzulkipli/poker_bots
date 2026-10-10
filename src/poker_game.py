@@ -27,7 +27,7 @@ class ActionRecord(NamedTuple):
     player_id: jax. Array
     action_type: jax.Array
     amount: jax.Array
-    was_active: jax.Array
+    is_all_in: jax.Array
     is_valid: jax.Array
 
     @classmethod
@@ -36,7 +36,7 @@ class ActionRecord(NamedTuple):
             player_id=jnp.full((max_actions,), fill_value=-1, dtype=jnp.int32),
             action_type=jnp.full((max_actions,), fill_value=Action.NO_OP, dtype=jnp.int32),
             amount=jnp.zeros((max_actions,), dtype=jnp.int32),
-            was_active=jnp.zeros((max_actions,), dtype=jnp.bool_),
+            is_all_in=jnp.zeros((max_actions,), dtype=jnp.bool_),
             is_valid=jnp.zeros((max_actions,), dtype=jnp.bool_)
         )
 
@@ -88,6 +88,14 @@ class PlayerTableState(NamedTuple):
     current_round: jax.Array
     bets: jax.array
     current_board: jax.Array
+
+class ActionData(NamedTuple):
+    type: jax.Array
+    value: jax.Array
+
+class PlayerActionResponse(NamedTuple):
+    player_state: jax.Array
+    action: ActionData
 
 def extract_player_meta(player):
     return player.metadata()
@@ -223,6 +231,113 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             current_board=get_current_board(table_state.deck.runout, table_state.current_round)
         )
 
+    def get_action(table_state: TableState):
+        return players[table_state.current_player].act(filter_player_state(table_state), table_state.player_states[table_state.current_player])
+
+    # def get_call_or_raise_value(table_state: TableState, action_data: ActionData):
+    #     to_call = get_current_bet(table_state.bets) - table_state.bets[table_state.current_player]
+    #     return jnp.where(action_data.type == Action.CHECK_CALL, to_call, )
+
+    # def clamp_action_to_nearest_legal(table_state: TableState, action_data: ActionData):
+    #     clamped_action = jnp.where(
+    #         action_data.type == Action.RAISE,
+    #         jnp.where(
+    #             action_data.value - get_current_bet(table_state.bets) >= table_state.min_raise,
+    #             action_data,
+    #             ActionData(
+    #                 type=Action.RAISE,
+    #                 value=get_current_bet(table_state.bets) + table_state.min_raise
+    #             )
+    #         ),
+    #         action_data
+    #     )
+    #     return clamped_action
+
+    def clamp_action_to_nearest_legal(table_state: TableState, action_data: ActionData) -> ActionData:
+        current_bet = get_current_bet(table_state.bets)
+        
+        # 1. Minimum legal raise threshold
+        min_legal_raise = current_bet + table_state.min_raise
+        
+        # 2. Maximum possible commitment (all-in)
+        hero_max = table_state.bets[table_state.current_player] + table_state.stacks[table_state.current_player]
+        
+        # Effective lower bound cannot exceed their all-in stack
+        effective_min = jnp.minimum(min_legal_raise, hero_max)
+        
+        # Clamp the proposed raise amount into [effective_min, hero_max]
+        clamped_raise_val = jnp.clip(action_data.value, effective_min, hero_max)
+        
+        # Only modify the payload if the action type was RAISE; otherwise leave value as-is
+        new_value = jnp.where(
+            action_data.type == Action.RAISE,
+            clamped_raise_val,
+            action_data.value
+        )
+        
+        return action_data._replace(value=new_value)
+
+    def make_new_action_record(table_state: TableState, player_action: ActionData):
+        hero = table_state.current_player
+        hero_bet = table_state.bets[hero]
+        hero_stack = table_state.stacks[hero]
+
+        action_type = player_action.type
+        raw_amount = player_action.value
+
+        # Use | instead of python 'or'
+        is_committing = (action_type == Action.RAISE) | (action_type == Action.CHECK_CALL)
+
+        # Clean amount: non-committing actions (FOLD/NO_OP) commit 0 chips
+        amount = jnp.where(is_committing, raw_amount, 0)
+
+        # Boolean logic without nested jnp.where
+        is_all_in = is_committing & (raw_amount - hero_bet >= hero_stack)
+
+        return ActionRecord(
+            player_id=hero,
+            action_type=action_type,
+            amount=amount,
+            is_all_in=is_all_in,
+            is_valid=jnp.bool_(True)
+        )
+
+    def make_new_player_bet_amount()
+
+
+    # def get_new_action_record(table_state: TableState, player_action: ActionData):
+    #     player_id = table_state.current_player
+    #     action_type = player_action.type
+    #     current_gap = get_current_bet(table_state.bets) - table_state.bets[table_state.current_player]
+    #     amount = jnp.where(
+    #         player_action.type == Action.CHECK_CALL,
+    #         get_current_bet(table_state.bets),
+    #         jnp.where(
+    #             player_action.type == Action.RAISE,
+    #             player_action.value,
+    #             jnp.array(0, dtype=jnp.int32)
+    #         )
+    #     )
+    #     is_all_in = jnp.where(
+    #         player_action
+    #     )
+    
+    def update_table_state_in_response_to_action(table_state: TableState, player_response: PlayerActionResponse):
+
+        # new_history = table_state.history.at[table_state.action_count].set(
+        #     ActionRecord(
+        #         player_id=table_state.current_player,
+        #         action_type=player_response.action.type,
+        #         amount=jnp.where(player_response.action.type == Action.CHECK_CALL, get_current_bet(table_state.bets), jnp.where(player_response.action.type == Action.RAISE, player_response.action.value, 0)),
+        #         is_all_in=jnp.where(
+        #              table_state.bets[table_state.current_player])
+        #     )
+        # )
+    # player_id: jax. Array
+    # action_type: jax.Array
+    # amount: jax.Array
+    # is_all_in: jax.Array
+    # is_valid: jax.Array
     return PokerEnv(init=init, player_metadata=player_metadata)
 
 
