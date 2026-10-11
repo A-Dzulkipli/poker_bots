@@ -1,0 +1,780 @@
+from collections import namedtuple
+import jax
+import jax.numpy as jnp
+from typing import NamedTuple, Callable
+
+Card = namedtuple('Card', ['Rank', 'Suit'])
+
+RANKS = "2 3 4 5 6 7 8 9 10 J Q K A".split()
+SUITS = "Diamonds Clubs Hearts Spades".split()
+ID_TO_CARD = [(rank, suit) for suit in SUITS for rank in RANKS]
+CARD_TO_ID = {
+    card: i for i, card in enumerate(ID_TO_CARD)
+}
+
+# convenience structs
+
+class Action:
+    FOLD = 0
+    CHECK_CALL = 1
+    RAISE = 2
+    NO_OP = 3
+
+class Round:
+    PRE_FLOP = 0
+    FLOP = 1
+    TURN = 2
+    RIVER = 3
+
+# ground truth data
+
+class DeckState(NamedTuple):
+    hole_cards: jax.Array
+    runout: jax.Array
+
+class ActionRecord(NamedTuple):
+    player_id: jax. Array
+    action_type: jax.Array
+    amount: jax.Array
+    is_all_in: jax.Array
+    is_valid: jax.Array
+
+    @classmethod
+    def init(cls, max_actions: int) -> "ActionRecord":
+        return cls(
+            player_id=jnp.full((max_actions,), fill_value=-1, dtype=jnp.int32),
+            action_type=jnp.full((max_actions,), fill_value=Action.NO_OP, dtype=jnp.int32),
+            amount=jnp.zeros((max_actions,), dtype=jnp.int32),
+            is_all_in=jnp.zeros((max_actions,), dtype=jnp.bool_),
+            is_valid=jnp.zeros((max_actions,), dtype=jnp.bool_)
+        )
+
+class PlayerTableState(NamedTuple):
+    hole_cards: jax.Array
+    board: jax.Array
+    history: ActionRecord
+    stacks: jax.Array
+    seated: jax.Array
+    in_hand: jax.Array
+    button: jax.Array
+    contributed: jax.Array
+    current_round: jax.Array
+    min_raise: jax.Array
+    current_bet: jax.Array
+    pot: jax.Array
+    can_raise: jax.Array
+    raise_lower_bound: jax.Array
+    raise_upper_bound: jax.Array
+    big_blind: jax.Array
+
+
+class TableState(NamedTuple):
+    deck: DeckState
+    history: ActionRecord
+    starting_stacks: jax.Array
+    seated: jax.Array
+    stacks: jax.Array
+    in_hand: jax.Array
+    acted: jax.Array
+    button: jax.Array
+    action_count: jax.Array
+    contributed: jax.Array
+    master_key: jax.Array
+    player_states: tuple
+    current_player: jax.Array
+    current_round: jax.Array
+    min_raise: jax.Array
+    current_bet: jax.Array
+
+    @property
+    def eligible_mask(self) -> jax.Array:
+        return self.in_hand & self.seated
+
+    @property
+    def can_act_mask(self) -> jax.Array:
+        return self.eligible_mask & (self.stacks > 0)
+
+    @property
+    def num_eligible(self) -> jax.Array:
+        return jnp.sum(self.eligible_mask, dtype=jnp.int32)
+
+    @property
+    def num_can_act(self) -> jax.Array:
+        return jnp.sum(self.can_act_mask, dtype=jnp.int32)
+
+    @property
+    def is_early_fold_out(self) -> jax.Array:
+        return self.num_eligible <= 1
+
+    @property
+    def is_all_in_runout(self) -> jax.Array:
+        return (self.num_eligible >= 2) & (self.num_can_act <= 1)
+
+    @property
+    def betting_active(self) -> jax.Array:
+        return (self.num_eligible >= 2) & (self.num_can_act >= 2)
+
+    @property
+    def num_seated(self) -> jax.Array:
+        return jnp.sum(self.seated)
+
+class PokerEnv(NamedTuple):
+    init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, tuple], TableState]
+    player_metadata: tuple
+
+def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_blind=1, big_blind=2):
+    num_hole = 2 * max_players
+    board_end = num_hole + 5
+
+    def extract_player_meta(player):
+        return player.metadata()
+
+    def get_deck_state(key):
+        deck_order = jax.random.permutation(key=key, x=52)
+        hole_cards = deck_order[:num_hole].reshape(2, max_players).T
+        runout = deck_order[num_hole : board_end]
+        return DeckState(hole_cards, runout)
+
+    player_metadata = tuple(extract_player_meta(player) for player in players)
+
+    def init(
+        key,
+        seated_mask,
+        starting_stacks,
+        button=0,
+        player_states=None
+    ) -> TableState:
+        button = jnp.asarray(button, dtype=jnp.int32)
+        starting_stacks = jnp.asarray(starting_stacks, dtype=jnp.int32)
+        seated_mask = seated_mask & (starting_stacks > 0)
+        
+        keys = jax.random.split(key, 2 + max_players)
+        master_key, deck_key = keys[0], keys[1]
+        player_keys = keys[2:]
+        deck = get_deck_state(deck_key)
+        history = ActionRecord.init(max_actions=max_actions)
+
+        seat_order = (button + 1 + jnp.arange(max_players)) % max_players
+        is_seated_ordered = seated_mask[seat_order]
+        seated_rank = jnp.cumsum(is_seated_ordered)
+        num_seated = seated_rank[-1]
+
+        is_heads_up = num_seated == 2
+        first_seat_idx = jnp.argmax(seated_rank == 1)
+        second_seat_idx = jnp.argmax(seated_rank == 2)
+
+        sb_seat = jnp.where(is_heads_up, button, seat_order[first_seat_idx])
+        bb_seat = jnp.where(is_heads_up, seat_order[first_seat_idx], seat_order[second_seat_idx])
+
+        # Dedup blind posts and clamp to starting chips
+        sb_amt = jnp.minimum(starting_stacks[sb_seat], small_blind)
+        bb_amt = jnp.minimum(starting_stacks[bb_seat], big_blind)
+
+        contributed = jnp.zeros((max_players,), dtype=jnp.int32)
+        contributed = contributed.at[sb_seat].set(sb_amt)
+        contributed = contributed.at[bb_seat].set(bb_amt)
+
+        stacks = starting_stacks.at[sb_seat].add(-sb_amt)
+        stacks = stacks.at[bb_seat].add(-bb_amt)
+
+        if player_states is None:
+            player_states = tuple(
+                player.init_state(player_keys[i]) for i, player in enumerate(players)
+            )
+
+        third_seat_idx = jnp.argmax(seated_rank == 3)
+        utg_seat = seat_order[third_seat_idx]
+        current_player = jnp.where(is_heads_up, sb_seat, utg_seat)
+
+        acted = jnp.zeros(shape=(max_players,), dtype=jnp.bool_)
+        action_count = jnp.array(0, dtype=jnp.int32)
+        min_raise = jnp.asarray(big_blind, dtype=jnp.int32)
+
+        return TableState(
+            deck=deck,
+            history=history,
+            starting_stacks=starting_stacks,
+            seated=seated_mask,
+            stacks=stacks,
+            in_hand=seated_mask,
+            acted=acted,
+            button=button,
+            action_count=action_count,
+            contributed=contributed,
+            master_key=master_key,
+            player_states=player_states,
+            current_player=current_player,
+            current_round=jnp.array(Round.PRE_FLOP, dtype=jnp.int32),
+            min_raise=min_raise,
+            current_bet=jnp.asarray(big_blind, dtype=jnp.int32)
+        )
+
+    def get_hole_cards_for_player(hole_cards: jax.Array, current_player: jax.Array) -> jax.Array:
+        return hole_cards[current_player]
+    
+    def get_board_at_round(runout: jax.Array, current_round: jax.Array) -> jax.Array:
+        visible_counts = jnp.array([0, 3, 4, 5], dtype=jnp.int32)
+        num_visible = visible_counts[current_round]
+        board_indices = jnp.arange(5, dtype=jnp.int32)
+        return jnp.where(
+            board_indices < num_visible,
+            runout,
+            -1
+        )
+
+    def get_relative_history(history: ActionRecord, current_player: jax.Array) -> ActionRecord:
+        shifted_ids = (history.player_id - current_player) % max_players
+
+        rel_player_id = jnp.where(history.is_valid, shifted_ids, -1)
+
+        return history._replace(player_id=rel_player_id)
+
+    def get_relative_indices(current_player: jax.Array) -> jax.Array:
+        return (current_player + jnp.arange(max_players)) % max_players
+    
+    def get_relative_stacks(stacks: jax.Array, current_player: jax.Array) -> jax.Array:
+        return stacks[get_relative_indices(current_player)]
+
+    def get_relative_seated(seated: jax.Array, current_player: jax.Array) -> jax.Array:
+        return seated[get_relative_indices(current_player)]
+
+    def get_relative_in_hand(in_hand: jax.Array, current_player: jax.Array) -> jax.Array:
+        return in_hand[get_relative_indices(current_player)]
+    
+    def get_relative_button(button: jax.Array, current_player: jax.Array) -> jax.Array:
+        return (button - current_player) % max_players
+
+    def get_relative_contributed(contributed: jax.Array, current_player: jax.Array) -> jax.Array:
+        return contributed[get_relative_indices(current_player)]
+    
+    def get_pot_total(starting_stacks: jax.Array, stacks: jax.Array) -> jax.Array:
+        return jnp.sum(starting_stacks - stacks)
+
+    def get_current_player_can_raise(acted: jax.Array, contributed: jax.Array, current_bet: jax.Array, min_raise: jax.Array, stacks: jax.Array, num_can_act: jax.Array, current_player: jax.Array) -> jax.Array:
+        to_call = current_bet - contributed[current_player]
+        action_reopened = to_call >= min_raise
+        acted_already = acted[current_player]
+        would_be_all_in = to_call >= stacks[current_player]
+        other_players = num_can_act > 1
+        return (action_reopened | ~acted_already) & ~would_be_all_in & other_players
+
+    def get_raise_lower_bound(
+        contributed: jax.Array,
+        current_bet: jax.Array,
+        min_raise: jax.Array,
+        stacks: jax.Array,
+        current_player: jax.Array
+    ) -> jax.Array:
+        return jnp.minimum(contributed[current_player] + stacks[current_player], current_bet + min_raise)
+
+    def get_raise_upper_bound(
+        contributed: jax.Array,
+        stacks: jax.Array,
+        current_player: jax.Array
+    ) -> jax.Array:
+        return contributed[current_player] + stacks[current_player]
+
+
+    def construct_player_table_state(table_state: TableState) -> PlayerTableState:
+        hole_cards = get_hole_cards_for_player(table_state.deck.hole_cards, table_state.current_player)
+        board = get_board_at_round(table_state.deck.runout, table_state.current_round)
+        history = get_relative_history(table_state.history, table_state.current_player)
+        stacks = get_relative_stacks(table_state.stacks, table_state.current_player)
+        seated = get_relative_seated(table_state.seated, table_state.current_player)
+        in_hand = get_relative_in_hand(table_state.in_hand, table_state.current_player)
+        button = get_relative_button(table_state.button, table_state.current_player)
+        contributed = get_relative_contributed(table_state.contributed, table_state.current_player)
+        current_round = table_state.current_round
+        min_raise = table_state.min_raise
+        current_bet = table_state.current_bet
+        pot = get_pot_total(table_state.starting_stacks, table_state.stacks)
+        can_raise = get_current_player_can_raise(table_state.acted, table_state.contributed, table_state.current_bet, table_state.min_raise, table_state.stacks, table_state.num_can_act, table_state.current_player)
+        raise_lower_bound = get_raise_lower_bound(
+            table_state.contributed,
+            table_state.current_bet,
+            table_state.min_raise,
+            table_state.stacks,
+            table_state.current_player
+        )
+        raise_upper_bound = get_raise_upper_bound(
+            table_state.contributed, 
+            table_state.stacks, 
+            table_state.current_player
+        )
+        call_amount = jnp.minimum(table_state.current_bet, raise_upper_bound)
+        raise_lower_bound = jnp.where(can_raise, raise_lower_bound, call_amount)
+        raise_upper_bound = jnp.where(can_raise, raise_upper_bound, call_amount)
+        bb = jnp.asarray(big_blind, dtype=jnp.int32)
+
+        return PlayerTableState(
+            hole_cards=hole_cards,
+            board=board,
+            history=history,
+            stacks=stacks,
+            seated=seated,
+            in_hand=in_hand,
+            button=button,
+            contributed=contributed,
+            current_round=current_round,
+            min_raise=min_raise,
+            current_bet=current_bet,
+            pot=pot,
+            can_raise=can_raise,
+            raise_lower_bound=raise_lower_bound,
+            raise_upper_bound=raise_upper_bound,
+            big_blind=bb
+        )
+
+
+    return PokerEnv(
+        init=init, 
+        player_metadata=player_metadata
+    )
+
+
+
+# class PlayerTableState(NamedTuple):
+#     hole_cards: jax.Array
+#     board: jax.Array
+#     history: ActionRecord
+#     stacks: jax.Array
+#     in_hand: jax.Array
+#     button: jax.Array
+#     contributed: jax.Array
+#     current_round: jax.Array
+#     min_raise: jax.Array
+#     current_bet: jax.Array
+#     pot: jax.Array
+#     can_raise: jax.Array
+#     raise_lower_bound: jax.Array
+#     raise_upper_bound: jax.Array
+#     big_blind: jax.Array
+
+    # class TableState(NamedTuple):
+    #     deck: DeckState
+    #     history: ActionRecord
+    #     starting_stacks: jax.Array
+    #     stacks: jax.Array
+    #     in_hand: jax.Array
+    #     acted: jax.Array
+    #     button: jax.Array
+    #     action_count: jax.Array
+    #     contributed: jax.Array
+    #     master_key: jax.Array
+    #     player_states: tuple
+    #     current_player: jax.Array
+    #     current_round: jax.Array
+    #     min_raise: jax.Array
+    #     current_bet: jax.Array
+
+    # @jax.jit
+    # def init(key, seated_mask, starting_stacks, button, player_states=None):
+    #     keys = jax.random.split(key, 2 + max_players)
+    #     master_key, deck_key = keys[0], keys[1]
+    #     player_keys = keys[2:]
+    #     deck = get_deck_state(deck_key)
+    #     history = ActionRecord.init(max_actions=max_actions)
+
+    #     seat_order = (button + 1 + jnp.arange(max_players)) % max_players
+    #     is_seated_ordered = seated_mask[seat_order]
+    #     seated_rank = jnp.cumsum(is_seated_ordered)
+    #     num_seated = seated_rank[-1]
+
+    #     is_heads_up = num_seated == 2
+    #     first_seat_idx = jnp.argmax(seated_rank == 1)
+    #     second_seat_idx = jnp.argmax(seated_rank == 2)
+
+    #     sb_seat = jnp.where(is_heads_up, button, seat_order[first_seat_idx])
+    #     bb_seat = jnp.where(is_heads_up, seat_order[first_seat_idx], seat_order[second_seat_idx])
+
+    #     sb_amt = jnp.minimum(starting_stacks[sb_seat], small_blind)
+    #     bb_amt = jnp.minimum(starting_stacks[bb_seat], big_blind)
+
+    #     bets = jnp.zeros((max_players,), dtype=jnp.int32)
+    #     bets = bets.at[sb_seat].set(sb_amt)
+    #     bets = bets.at[bb_seat].set(bb_amt)
+
+    #     stacks = starting_stacks.at[sb_seat].add(-sb_amt)
+    #     stacks = stacks.at[bb_seat].add(-bb_amt)
+
+    #     if player_states is None:
+    #         player_states = tuple(
+    #             player.init_state(player_keys[i]) for i, player in enumerate(players)
+    #         )
+
+    #     third_seat_idx = jnp.argmax(seated_rank == 3)
+    #     utg_seat = seat_order[third_seat_idx]
+    #     current_player = jnp.where(is_heads_up, sb_seat, utg_seat)
+
+    #     return TableState(
+    #         deck=deck,
+    #         history=history,
+    #         seated_mask=seated_mask,
+    #         starting_stacks=starting_stacks,
+    #         stacks=stacks,
+    #         active_mask=seated_mask,
+    #         button=button,
+    #         pot=jnp.array(0, dtype=jnp.int32),
+    #         action_count=jnp.array(0, dtype=jnp.int32),
+    #         small_blind=jnp.array(small_blind, dtype=jnp.int32),
+    #         big_blind=jnp.array(big_blind, dtype=jnp.int32),
+    #         bets=bets,
+    #         master_key=master_key,
+    #         player_states=player_states,
+    #         current_player=current_player,
+    #         current_round=jnp.array(Round.PRE_FLOP, dtype=jnp.int32),
+    #         min_raise=jnp.array(big_blind, dtype=jnp.int32)
+    #     )
+
+# class RoundState(NamedTuple):
+#     action_history: jax.Array
+#     action_count: jax.Array
+
+# # class TableState(NamedTuple):
+# #     deck: DeckState
+# #     history: ActionRecord
+# #     seated_mask: jax.Array
+# #     starting_stacks: jax.Array
+# #     stacks: jax.Array
+# #     active_mask: jax.Array
+# #     button: jax.Array
+# #     pot: jax.Array
+# #     action_count: jax.Array
+# #     small_blind: jax.Array
+# #     big_blind: jax.Array
+# #     bets: jax.Array
+# #     master_key: jax.Array
+# #     player_states: tuple
+# #     current_player: jax.Array
+# #     current_round: jax.Array
+# #     min_raise: jax.Array
+
+
+
+# class PlayerTableState(NamedTuple):
+#     hole_cards: jax.Array
+#     history: ActionRecord
+#     stacks: jax.Array
+#     active_players: jax.Array
+#     button: jax.Array
+#     pot: jax.Array
+#     current_bet: jax.Array
+#     big_blind: jax.Array
+#     min_raise: jax.Array
+#     current_round: jax.Array
+#     bets: jax.Array
+#     current_board: jax.Array
+
+# class ActionData(NamedTuple):
+#     type: jax.Array
+#     value: jax.Array
+
+# class PlayerActionResponse(NamedTuple):
+#     player_state: jax.Array
+#     action: ActionData
+
+# def extract_player_meta(player):
+#     return player.metadata()
+
+# def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_blind=1, big_blind=2):
+#     num_hole = 2 * max_players
+#     board_end = num_hole + 5
+
+#     def get_deck_state(key):
+#         deck_order = jax.random.permutation(key=key, x=52)
+#         hole_cards = deck_order[:num_hole].reshape(2, max_players).T
+#         runout = deck_order[num_hole : board_end]
+#         return DeckState(hole_cards, runout)
+
+#     player_metadata = tuple(extract_player_meta(player) for player in players)
+
+#     @jax.jit
+#     def init(key, seated_mask, starting_stacks, button, player_states=None):
+#         keys = jax.random.split(key, 2 + max_players)
+#         master_key, deck_key = keys[0], keys[1]
+#         player_keys = keys[2:]
+#         deck = get_deck_state(deck_key)
+#         history = ActionRecord.init(max_actions=max_actions)
+
+#         seat_order = (button + 1 + jnp.arange(max_players)) % max_players
+#         is_seated_ordered = seated_mask[seat_order]
+#         seated_rank = jnp.cumsum(is_seated_ordered)
+#         num_seated = seated_rank[-1]
+
+#         is_heads_up = num_seated == 2
+#         first_seat_idx = jnp.argmax(seated_rank == 1)
+#         second_seat_idx = jnp.argmax(seated_rank == 2)
+
+#         sb_seat = jnp.where(is_heads_up, button, seat_order[first_seat_idx])
+#         bb_seat = jnp.where(is_heads_up, seat_order[first_seat_idx], seat_order[second_seat_idx])
+
+#         sb_amt = jnp.minimum(starting_stacks[sb_seat], small_blind)
+#         bb_amt = jnp.minimum(starting_stacks[bb_seat], big_blind)
+
+#         bets = jnp.zeros((max_players,), dtype=jnp.int32)
+#         bets = bets.at[sb_seat].set(sb_amt)
+#         bets = bets.at[bb_seat].set(bb_amt)
+
+#         stacks = starting_stacks.at[sb_seat].add(-sb_amt)
+#         stacks = stacks.at[bb_seat].add(-bb_amt)
+
+#         if player_states is None:
+#             player_states = tuple(
+#                 player.init_state(player_keys[i]) for i, player in enumerate(players)
+#             )
+
+#         third_seat_idx = jnp.argmax(seated_rank == 3)
+#         utg_seat = seat_order[third_seat_idx]
+#         current_player = jnp.where(is_heads_up, sb_seat, utg_seat)
+
+#         return TableState(
+#             deck=deck,
+#             history=history,
+#             seated_mask=seated_mask,
+#             starting_stacks=starting_stacks,
+#             stacks=stacks,
+#             active_mask=seated_mask,
+#             button=button,
+#             pot=jnp.array(0, dtype=jnp.int32),
+#             action_count=jnp.array(0, dtype=jnp.int32),
+#             small_blind=jnp.array(small_blind, dtype=jnp.int32),
+#             big_blind=jnp.array(big_blind, dtype=jnp.int32),
+#             bets=bets,
+#             master_key=master_key,
+#             player_states=player_states,
+#             current_player=current_player,
+#             current_round=jnp.array(Round.PRE_FLOP, dtype=jnp.int32),
+#             min_raise=jnp.array(big_blind, dtype=jnp.int32)
+#         )
+    
+#     # def get_hole_cards(hole_cards: jax.Array, current_player: jax.Array) -> jax.Array:
+#     #     return hole_cards[current_player]
+
+    # def get_history(history: ActionRecord, current_player: jax.Array):
+    #     shifted_ids = (history.player_id - current_player) % max_players
+
+    #     rel_player_id = jnp.where(history.is_valid, shifted_ids, -1)
+
+    #     return history._replace(player_id=rel_player_id)
+
+#     def get_stacks(stacks: jax.Array, current_player: jax.Array):
+#         relative_indices = (current_player + jnp.arange(max_players)) % max_players
+#         return stacks[relative_indices]
+
+#     def get_active_players(active_players: jax.Array, current_player: jax.Array):
+#         relative_indices = (current_player + jnp.arange(max_players)) % max_players
+#         return active_players[relative_indices]
+
+    # def get_button(button: jax.Array, current_player: jax.Array):
+    #     return (button - current_player) % max_players
+
+#     # def get_pot(pot: jax.Array):
+#     #     return pot
+
+#     def get_current_bet(bets: jax.Array):
+#         return jnp.max(bets)
+
+#     # def get_big_blind(big_blind: jax.Array):
+#     #     return big_blind
+
+#     def get_bets(bets: jax.Array, current_player: jax.Array):
+#         relative_indices = (current_player + jnp.arange(max_players)) % max_players
+#         return bets[relative_indices]
+
+#     def get_current_board(runout: jax.Array, current_round: jax.Array):
+        # visible_counts = jnp.array([0, 3, 4, 5], dtype=jnp.int32)
+        # num_visible = visible_counts[current_round]
+        # board_indices = jnp.arange(5, dtype=jnp.int32)
+        # return jnp.where(
+        #     board_indices < num_visible,
+        #     runout,
+        #     -1
+        # )
+
+#     def filter_player_state(table_state: TableState):
+#         return PlayerTableState(
+#             hole_cards=table_state.deck.hole_cards[table_state.current_player],
+#             history=get_history(table_state.history, table_state.current_player),
+#             stacks=get_stacks(table_state.stacks, table_state.current_player),
+#             active_players=get_active_players(table_state.active_mask, table_state.current_player),
+#             button=get_button(table_state.button, table_state.current_player),
+#             pot=table_state.pot,
+#             current_bet=get_current_bet(table_state.bets),
+#             big_blind=table_state.big_blind,
+#             min_raise=table_state.min_raise,
+#             current_round=table_state.current_round,
+#             bets=get_bets(table_state.bets, table_state.current_player),
+#             current_board=get_current_board(table_state.deck.runout, table_state.current_round)
+#         )
+
+#     def get_action(table_state: TableState):
+#         return players[table_state.current_player].act(filter_player_state(table_state), table_state.player_states[table_state.current_player])
+
+#     # def get_call_or_raise_value(table_state: TableState, action_data: ActionData):
+#     #     to_call = get_current_bet(table_state.bets) - table_state.bets[table_state.current_player]
+#     #     return jnp.where(action_data.type == Action.CHECK_CALL, to_call, )
+
+#     # def clamp_action_to_nearest_legal(table_state: TableState, action_data: ActionData):
+#     #     clamped_action = jnp.where(
+#     #         action_data.type == Action.RAISE,
+#     #         jnp.where(
+#     #             action_data.value - get_current_bet(table_state.bets) >= table_state.min_raise,
+#     #             action_data,
+#     #             ActionData(
+#     #                 type=Action.RAISE,
+#     #                 value=get_current_bet(table_state.bets) + table_state.min_raise
+#     #             )
+#     #         ),
+#     #         action_data
+#     #     )
+#     #     return clamped_action
+
+#     def clamp_action_to_nearest_legal(table_state: TableState, action_data: ActionData) -> ActionData:
+#         current_bet = get_current_bet(table_state.bets)
+        
+#         # 1. Minimum legal raise threshold
+#         min_legal_raise = current_bet + table_state.min_raise
+        
+#         # 2. Maximum possible commitment (all-in)
+#         hero_max = table_state.bets[table_state.current_player] + table_state.stacks[table_state.current_player]
+        
+#         # Effective lower bound cannot exceed their all-in stack
+#         effective_min = jnp.minimum(min_legal_raise, hero_max)
+        
+#         # Clamp the proposed raise amount into [effective_min, hero_max]
+#         clamped_raise_val = jnp.clip(action_data.value, effective_min, hero_max)
+        
+#         # Only modify the payload if the action type was RAISE; otherwise leave value as-is
+#         new_value = jnp.where(
+#             action_data.type == Action.RAISE,
+#             clamped_raise_val,
+#             action_data.value
+#         )
+        
+#         return action_data._replace(value=new_value)
+
+#     def make_new_action_record(table_state: TableState, player_action: ActionData):
+#         hero = table_state.current_player
+#         hero_bet = table_state.bets[hero]
+#         hero_stack = table_state.stacks[hero]
+
+#         action_type = player_action.type
+#         raw_amount = player_action.value
+
+#         # Use | instead of python 'or'
+#         is_committing = (action_type == Action.RAISE) | (action_type == Action.CHECK_CALL)
+
+#         # Clean amount: non-committing actions (FOLD/NO_OP) commit 0 chips
+#         amount = jnp.where(is_committing, raw_amount, 0)
+
+#         # Boolean logic without nested jnp.where
+#         is_all_in = is_committing & (raw_amount - hero_bet >= hero_stack)
+
+#         return ActionRecord(
+#             player_id=hero,
+#             action_type=action_type,
+#             amount=amount,
+#             is_all_in=is_all_in,
+#             is_valid=jnp.bool_(True)
+#         )
+
+#     def make_new_player_bet_amount(table_state: TableState, player_action: ActionData) -> jax.Array:
+#         hero = table_state.current_player
+#         hero_bet = table_state.bets[hero]
+#         hero_stack = table_state.stacks[hero]
+#         current_bet = get_current_bet(table_state.bets)
+
+#         # CALL matches current_bet up to total stack ceiling
+#         call_amount = jnp.minimum(hero_bet + hero_stack, current_bet)
+
+#         # Branchless selection across the three outcomes:
+#         # 1. CHECK_CALL -> call_amount
+#         # 2. RAISE -> player_action.value (already clamped to [min_raise, hero_max])
+#         # 3. FOLD / NO_OP -> hero_bet (chips committed earlier on this street stay on the table)
+#         return jnp.where(
+#             player_action.type == Action.CHECK_CALL,
+#             call_amount,
+#             jnp.where(
+#                 player_action.type == Action.RAISE,
+#                 player_action.value,
+#                 hero_bet
+#             )
+#         )
+
+
+
+#     # def get_new_action_record(table_state: TableState, player_action: ActionData):
+#     #     player_id = table_state.current_player
+#     #     action_type = player_action.type
+#     #     current_gap = get_current_bet(table_state.bets) - table_state.bets[table_state.current_player]
+#     #     amount = jnp.where(
+#     #         player_action.type == Action.CHECK_CALL,
+#     #         get_current_bet(table_state.bets),
+#     #         jnp.where(
+#     #             player_action.type == Action.RAISE,
+#     #             player_action.value,
+#     #             jnp.array(0, dtype=jnp.int32)
+#     #         )
+#     #     )
+#     #     is_all_in = jnp.where(
+#     #         player_action
+#     #     )
+    
+#     # def update_table_state_in_response_to_action(table_state: TableState, player_response: PlayerActionResponse):
+
+#         # new_history = table_state.history.at[table_state.action_count].set(
+#         #     ActionRecord(
+#         #         player_id=table_state.current_player,
+#         #         action_type=player_response.action.type,
+#         #         amount=jnp.where(player_response.action.type == Action.CHECK_CALL, get_current_bet(table_state.bets), jnp.where(player_response.action.type == Action.RAISE, player_response.action.value, 0)),
+#         #         is_all_in=jnp.where(
+#         #              table_state.bets[table_state.current_player])
+#         #     )
+#         # )
+#     # player_id: jax. Array
+#     # action_type: jax.Array
+#     # amount: jax.Array
+#     # is_all_in: jax.Array
+#     # is_valid: jax.Array
+#     return PokerEnv(init=init, player_metadata=player_metadata)
+
+
+
+
+
+
+
+
+
+
+
+
+
+class TestBot:
+    def __init__(self):
+        pass
+    def init_state(self, key):
+        return None
+    
+    def act(self, action_sequence, state):
+        return None
+    
+    def observe(self, data):
+        return None
+    
+    def metadata(self):
+        return {
+            "bot_type": "test_bot"
+        }
+
+
+
+
+# if __name__ == "__main__":
+#     # print(ID_TO_CARD)
+#     # print(CARD_TO_ID)
+#     # get_deck_state = make_poker_env(9).get_deck_state
+#     # key = jax.random.PRNGKey(0)
+#     # print(get_deck_state(key))
+#     # test_bot = TestBot()
+#     # print(make_poker_env((test_bot,), max_players=1))
