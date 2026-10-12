@@ -118,6 +118,10 @@ class TableState(NamedTuple):
     def num_seated(self) -> jax.Array:
         return jnp.sum(self.seated)
 
+class ActionData(NamedTuple):
+    type: jax.Array
+    value: jax.Array
+
 class PokerEnv(NamedTuple):
     init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, tuple], TableState]
     player_metadata: tuple
@@ -324,6 +328,39 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             raise_upper_bound=raise_upper_bound,
             big_blind=bb
         )
+
+    def make_act_branch(i) -> Callable[[PlayerTableState, jax.Array, jax.Array], tuple[ActionData, jax.Array]]:
+        def branch(player_table_state: PlayerTableState, player_states, key) -> tuple[ActionData, jax.Array]:
+            action, new_state = players[i].act(
+                player_table_state,
+                player_states[i],
+                key
+            )
+            return action, player_states[:i] + (new_state,) + player_states[i + 1:]
+        return branch
+
+    act_branches = tuple(make_act_branch(i) for i in range(max_players))
+
+    def get_player_move(table_state: TableState) -> tuple[ActionData, TableState]:
+        player_states = table_state.player_states
+        master_key, action_key = jax.random.split(table_state.master_key, 2)
+        player_table_state = construct_player_table_state(table_state)
+        action, player_states = jax.lax.switch(
+            table_state.current_player,
+            act_branches,
+            player_table_state,
+            player_states,
+            action_key
+        )
+        return action, table_state._replace(
+            master_key=master_key,
+            player_states=player_states
+        )
+
+    
+
+    # def get_player_move(table_state: TableState):
+
 
 
     return PokerEnv(
