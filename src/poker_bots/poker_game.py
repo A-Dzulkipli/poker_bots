@@ -122,6 +122,10 @@ class ActionData(NamedTuple):
     type: jax.Array
     value: jax.Array
 
+class PlayerActionResponse(NamedTuple):
+    table_state: TableState
+    action: ActionData
+
 class PokerEnv(NamedTuple):
     init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, tuple], TableState]
     player_metadata: tuple
@@ -341,7 +345,7 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
 
     act_branches = tuple(make_act_branch(i) for i in range(max_players))
 
-    def get_player_move(table_state: TableState) -> tuple[ActionData, TableState]:
+    def get_player_move(table_state: TableState) -> PlayerActionResponse:
         player_states = table_state.player_states
         master_key, action_key = jax.random.split(table_state.master_key, 2)
         player_table_state = construct_player_table_state(table_state)
@@ -352,15 +356,156 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             player_states,
             action_key
         )
-        return action, table_state._replace(
-            master_key=master_key,
-            player_states=player_states
+        return PlayerActionResponse(
+            table_state=table_state._replace(
+                master_key=master_key,
+                player_states=player_states
+            ),
+            action=action
         )
+
+    # def create_action_record(player_action_response: PlayerActionResponse, table_state: TableState) -> ActionRecord:
+    #     player_id = table_state.current_player
 
     
 
-    # def get_player_move(table_state: TableState):
+    # class ActionRecord(NamedTuple):
+    #     player_id: jax. Array
+    #     action_type: jax.Array
+    #     amount: jax.Array
+    #     is_all_in: jax.Array
+    #     is_valid: jax.Array
 
+    #     @classmethod
+    #     def init(cls, max_actions: int) -> "ActionRecord":
+    #         return cls(
+    #             player_id=jnp.full((max_actions,), fill_value=-1, dtype=jnp.int32),
+    #             action_type=jnp.full((max_actions,), fill_value=Action.NO_OP, dtype=jnp.int32),
+    #             amount=jnp.zeros((max_actions,), dtype=jnp.int32),
+    #             is_all_in=jnp.zeros((max_actions,), dtype=jnp.bool_),
+    #             is_valid=jnp.zeros((max_actions,), dtype=jnp.bool_)
+    #         )
+    def process_player_move(player_action_response: PlayerActionResponse):
+        current_player = player_action_response.table_state.current_player
+        contributed = player_action_response.table_state.contributed
+        stacks = player_action_response.table_state.stacks
+        current_bet = player_action_response.table_state.current_bet
+        min_raise = player_action_response.table_state.min_raise
+        acted = player_action_response.table_state.acted
+        num_can_act = player_action_response.table_state.num_can_act
+        in_hand = player_action_response.table_state.in_hand
+        history = player_action_response.table_state.history
+        action_count = player_action_response.table_state.action_count
+
+        all_in_to = contributed[current_player] + stacks[current_player]
+        call_to = jnp.minimum(current_bet, all_in_to)
+        raise_to = jnp.clip(
+            player_action_response.action.value, 
+            get_raise_lower_bound(
+                contributed,
+                current_bet, 
+                min_raise,
+                stacks,
+                current_player
+            ),
+            get_raise_upper_bound(
+                contributed,
+                stacks,
+                current_player
+            )
+        )
+        can_raise = get_current_player_can_raise(
+            acted,
+            contributed,
+            current_bet,
+            min_raise,
+            stacks,
+            num_can_act,
+            current_player
+        )
+        is_fold = (player_action_response.action.type == Action.FOLD) | (player_action_response.action.type == Action.NO_OP)
+        is_raise = (player_action_response.action.type == Action.RAISE) & can_raise
+        target_contribution = jnp.where(
+            is_fold,
+            contributed[current_player],
+            jnp.where(
+                is_raise,
+                raise_to,
+                call_to
+            )
+        )
+        delta = target_contribution - contributed[current_player]
+        increment = target_contribution - current_bet
+        full_raise = increment >= min_raise
+
+        player_id = current_player
+        action_type = jnp.where(
+            is_fold,
+            Action.FOLD,
+            jnp.where(
+                is_raise,
+                Action.RAISE,
+                Action.CHECK_CALL
+            )
+        )
+        amount = target_contribution
+        is_all_in = delta == stacks[current_player]
+        is_valid = jnp.asarray(True, dtype=jnp.bool_)
+        action_record = ActionRecord(
+            player_id=player_id,
+            action_type=action_type,
+            amount=amount,
+            is_all_in=is_all_in,
+            is_valid=is_valid
+        )
+
+        history = jax.tree.map(
+            lambda buffer, x: buffer.at[action_count].set(x),
+            history,
+            action_record
+        )
+        action_count = action_count + 1
+        stacks = stacks.at[current_player].add(-delta)
+        contributed = contributed.at[current_player].set(target_contribution)
+        in_hand = in_hand.at[current_player].set(in_hand[current_player] & ~is_fold)
+        acted = acted.at[current_player].set(True)
+        min_raise = jnp.where(
+            full_raise,
+            increment,
+            min_raise
+        )
+        current_bet = jnp.maximum(current_bet, target_contribution)
+
+        return player_action_response.table_state._replace(
+            history=history,
+            action_count=action_count,
+            stacks=stacks,
+            contributed=contributed,
+            in_hand=in_hand,
+            acted=acted,
+            min_raise=min_raise,
+            current_bet=current_bet
+        )
+
+
+
+# class TableState(NamedTuple):
+#     deck: DeckState
+#     history: ActionRecord
+#     starting_stacks: jax.Array
+#     seated: jax.Array
+#     stacks: jax.Array
+#     in_hand: jax.Array
+#     acted: jax.Array
+#     button: jax.Array
+#     action_count: jax.Array
+#     contributed: jax.Array
+#     master_key: jax.Array
+#     player_states: tuple
+#     current_player: jax.Array
+#     current_round: jax.Array
+#     min_raise: jax.Array
+#     current_bet: jax.Array
 
 
     return PokerEnv(
