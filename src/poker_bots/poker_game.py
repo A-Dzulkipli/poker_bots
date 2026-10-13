@@ -42,6 +42,8 @@ class ActionRecord(NamedTuple):
     player_id: jax. Array
     action_type: jax.Array
     amount: jax.Array
+    requested_type: jax.Array
+    requested: jax.Array
     is_all_in: jax.Array
     round: jax.Array
     is_valid: jax.Array
@@ -52,6 +54,8 @@ class ActionRecord(NamedTuple):
             player_id=jnp.full((max_actions,), fill_value=-1, dtype=jnp.int32),
             action_type=jnp.full((max_actions,), fill_value=Action.NO_OP, dtype=jnp.int32),
             amount=jnp.zeros((max_actions,), dtype=jnp.int32),
+            requested_type=jnp.full((max_actions,), fill_value=Action.NO_OP, dtype=jnp.int32),
+            requested=jnp.zeros((max_actions,), dtype=jnp.int32),
             is_all_in=jnp.zeros((max_actions,), dtype=jnp.bool_),
             round=jnp.zeros((max_actions,), dtype=jnp.int32),
             is_valid=jnp.zeros((max_actions,), dtype=jnp.bool_)
@@ -84,12 +88,16 @@ class TableState(NamedTuple):
     starting_stacks: jax.Array
     seated: jax.Array
     stacks: jax.Array
+    buy_in: jax.Array
+    min_stack: jax.Array
+    max_stack: jax.Array
     in_hand: jax.Array
     acted: jax.Array
     button: jax.Array
     sb_seat: jax.Array
     bb_seat: jax.Array
     action_count: jax.Array
+    hand_count: jax.Array
     contributed: jax.Array
     master_key: jax.Array
     player_states: tuple
@@ -144,11 +152,36 @@ class PlayerActionResponse(NamedTuple):
     table_state: TableState
     action: ActionData
 
+class HandRecord(NamedTuple):
+    hand_index: jax.Array
+    button: jax.Array
+    sb_seat: jax.Array
+    bb_seat: jax.Array
+    seated: jax.Array
+    seat_bot: jax.Array
+    starting_stacks: jax.Array
+    hole_cards: jax.Array
+    board: jax.Array
+    board_dealt: jax.Array
+    history: ActionRecord
+    action_count: jax.Array
+    in_hand: jax.Array
+    went_to_showdown: jax.Array
+    hand_ranks: jax.Array
+    payouts: jax.Array
+    ending_stacks: jax.Array
+    rebuys: jax.Array
+    cash_outs: jax.Array
+
 class PokerEnv(NamedTuple):
-    init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, jax.Array, tuple], TableState]
+    init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, jax.Array, tuple, jax.Array, jax.Array], TableState]
     get_payouts: Callable[[TableState, jax.Array], jax.Array]
     step: Callable[[TableState], TableState]
+    run_hands: Callable[[TableState, int], tuple[TableState, HandRecord, jax.Array]]
     player_metadata: tuple
+    max_players: int
+    small_blind: int
+    big_blind: int
 
 # bot protocol
 
@@ -159,7 +192,7 @@ class Bot(Protocol[S]):
     def act(self, obs: PlayerTableState, state: S, key: jax.Array) -> tuple[ActionData, S]: ...
     def metadata(self) -> dict: ...
 
-def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int = 100, small_blind: int = 1, big_blind: int = 2) -> PokerEnv:
+def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int = 100, small_blind: int = 1, big_blind: int = 2, rebuy: bool = True) -> PokerEnv:
     num_hole = 2 * max_players
     board_end = num_hole + 5
 
@@ -194,6 +227,8 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
             player_id=blind_seats,
             action_type=jnp.array([Action.SMALL_BLIND, Action.BIG_BLIND], dtype=jnp.int32),
             amount=blind_amts,
+            requested_type=jnp.array([Action.SMALL_BLIND, Action.BIG_BLIND], dtype=jnp.int32),
+            requested=blind_amts,
             is_all_in=stacks[blind_seats] == 0,
             round=jnp.full((2,), Round.PRE_FLOP, dtype=jnp.int32),
             is_valid=blind_amts > 0
@@ -219,12 +254,16 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
     def init(
         key: jax.Array,
         seated_mask: jax.Array,
-        starting_stacks: jax.Array,
+        starting_stacks: jax.Array | None = None,
         button: jax.Array | int = 0,
         seat_bot: jax.Array | None = None,
-        player_states: tuple | None = None
+        player_states: tuple | None = None,
+        min_stack: jax.Array | int = 0,
+        max_stack: jax.Array | int = 300 * big_blind
     ) -> TableState:
         button = jnp.asarray(button, dtype=jnp.int32)
+        if starting_stacks is None:
+            starting_stacks = jnp.full((max_players,), 100 * big_blind, dtype=jnp.int32)
         starting_stacks = jnp.asarray(starting_stacks, dtype=jnp.int32)
         seated_mask = seated_mask & (starting_stacks > 0)
         if seat_bot is None:
@@ -264,12 +303,16 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
             starting_stacks=starting_stacks,
             seated=seated_mask,
             stacks=starting_stacks,
+            buy_in=starting_stacks,
+            min_stack=jnp.asarray(min_stack, dtype=jnp.int32),
+            max_stack=jnp.asarray(max_stack, dtype=jnp.int32),
             in_hand=seated_mask,
             acted=acted,
             button=button,
             sb_seat=sb_seat,
             bb_seat=bb_seat,
             action_count=action_count,
+            hand_count=jnp.asarray(0, dtype=jnp.int32),
             contributed=jnp.zeros((max_players,), dtype=jnp.int32),
             master_key=master_key,
             player_states=player_states,
@@ -299,7 +342,7 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
 
         rel_player_id = jnp.where(history.is_valid, shifted_ids, -1)
 
-        return history._replace(player_id=rel_player_id)
+        return history._replace(player_id=rel_player_id, requested_type=history.action_type, requested=history.amount)
 
     def get_relative_indices(current_player: jax.Array) -> jax.Array:
         return (current_player + jnp.arange(max_players)) % max_players
@@ -529,6 +572,8 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
             player_id=player_id,
             action_type=action_type,
             amount=amount,
+            requested_type=player_action_response.action.type,
+            requested=player_action_response.action.value,
             is_all_in=is_all_in,
             round=current_round,
             is_valid=is_valid
@@ -659,8 +704,45 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
             current_player=first_after(new_state.button, new_state.to_act_mask)
         )
 
-    def next_hand(table_state: TableState) -> TableState:
-        stacks = table_state.stacks + get_payouts(table_state, get_hand_ranks(table_state))
+    def get_hand_record(table_state: TableState) -> HandRecord:
+        hand_ranks = get_hand_ranks(table_state)
+        payouts = get_payouts(table_state, hand_ranks)
+        ending_stacks = table_state.stacks + payouts
+        if rebuy:
+            rebuys = jnp.where(
+                table_state.seated & (ending_stacks <= table_state.min_stack),
+                jnp.maximum(table_state.buy_in - ending_stacks, 0),
+                0
+            )
+            cash_outs = jnp.maximum(ending_stacks + rebuys - table_state.max_stack, 0)
+        else:
+            rebuys = jnp.zeros((max_players,), dtype=jnp.int32)
+            cash_outs = jnp.zeros((max_players,), dtype=jnp.int32)
+        visible_counts = jnp.array([0, 3, 4, 5], dtype=jnp.int32)
+        return HandRecord(
+            hand_index=table_state.hand_count,
+            button=table_state.button,
+            sb_seat=table_state.sb_seat,
+            bb_seat=table_state.bb_seat,
+            seated=table_state.seated,
+            seat_bot=table_state.seat_bot,
+            starting_stacks=table_state.starting_stacks,
+            hole_cards=table_state.deck.hole_cards,
+            board=table_state.deck.runout,
+            board_dealt=visible_counts[table_state.current_round],
+            history=table_state.history,
+            action_count=table_state.action_count,
+            in_hand=table_state.eligible_mask,
+            went_to_showdown=table_state.num_eligible >= 2,
+            hand_ranks=hand_ranks,
+            payouts=payouts,
+            ending_stacks=ending_stacks,
+            rebuys=rebuys,
+            cash_outs=cash_outs
+        )
+
+    def next_hand(table_state: TableState, hand_record: HandRecord) -> TableState:
+        stacks = hand_record.ending_stacks + hand_record.rebuys - hand_record.cash_outs
         seated = table_state.seated & (stacks > 0)
         table_state = table_state._replace(stacks=stacks, seated=seated)
         button, sb_seat, bb_seat = get_next_positions(table_state)
@@ -675,6 +757,7 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
             sb_seat=sb_seat,
             bb_seat=bb_seat,
             action_count=jnp.asarray(0, dtype=jnp.int32),
+            hand_count=table_state.hand_count + 1,
             contributed=jnp.zeros((max_players,), dtype=jnp.int32),
             master_key=master_key,
             current_round=jnp.asarray(Round.PRE_FLOP, dtype=jnp.int32),
@@ -691,7 +774,7 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
     def take_action(table_state: TableState) -> TableState:
         return next_player(process_player_move(get_player_move(table_state)))
 
-    def step(table_state: TableState) -> TableState:
+    def step_with_record(table_state: TableState) -> tuple[TableState, HandRecord, jax.Array]:
         table_finished = table_state.num_seated <= 1
         case = jnp.where(
             table_finished,
@@ -706,11 +789,52 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
                 )
             )
         )
-        return jax.lax.switch(
+        hand_record = get_hand_record(table_state)
+        table_state = jax.lax.switch(
             case,
-            (lambda table_state: table_state, next_hand, next_street, take_action),
-            table_state
+            (
+                lambda table_state, hand_record: table_state,
+                next_hand,
+                lambda table_state, hand_record: next_street(table_state),
+                lambda table_state, hand_record: take_action(table_state)
+            ),
+            table_state,
+            hand_record
         )
+        return table_state, hand_record, case == 1
+
+    def step(table_state: TableState) -> TableState:
+        return step_with_record(table_state)[0]
+
+    def run_hands(table_state: TableState, num_hands: int) -> tuple[TableState, HandRecord, jax.Array]:
+        records = jax.tree.map(
+            lambda x: jnp.zeros((num_hands,) + x.shape, dtype=x.dtype),
+            jax.eval_shape(get_hand_record, table_state)
+        )
+        first_hand = table_state.hand_count
+        max_steps = num_hands * (max_actions + 5)
+
+        def keep_running(carry: tuple[TableState, HandRecord, jax.Array]) -> jax.Array:
+            table_state, _, steps = carry
+            return (table_state.hand_count - first_hand < num_hands) & (table_state.num_seated > 1) & (steps < max_steps)
+
+        def run_step(carry: tuple[TableState, HandRecord, jax.Array]) -> tuple[TableState, HandRecord, jax.Array]:
+            table_state, records, steps = carry
+            index = table_state.hand_count - first_hand
+            table_state, hand_record, hand_ended = step_with_record(table_state)
+            records = jax.tree.map(
+                lambda buffer, x: buffer.at[index].set(jnp.where(hand_ended, x, buffer[index])),
+                records,
+                hand_record
+            )
+            return table_state, records, steps + 1
+
+        table_state, records, _ = jax.lax.while_loop(
+            keep_running,
+            run_step,
+            (table_state, records, jnp.asarray(0, dtype=jnp.int32))
+        )
+        return table_state, records, table_state.hand_count - first_hand
 
     
 
@@ -741,7 +865,11 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
         init=init, 
         get_payouts=get_payouts,
         step=step,
-        player_metadata=player_metadata
+        run_hands=run_hands,
+        player_metadata=player_metadata,
+        max_players=max_players,
+        small_blind=small_blind,
+        big_blind=big_blind
     )
 
 

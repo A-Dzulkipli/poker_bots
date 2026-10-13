@@ -154,7 +154,7 @@ def test_random_play_invariants():
     max_actions = 100
     num_tables = 64
     num_steps = 3000
-    env = make_poker_env((RandomBot(),), max_players=max_players, max_actions=max_actions)
+    env = make_poker_env((RandomBot(),), max_players=max_players, max_actions=max_actions, rebuy=False)
 
     keys = jax.random.split(jax.random.PRNGKey(0), num_tables)
     starting_stacks = jax.random.randint(jax.random.PRNGKey(1), (num_tables, max_players), 20, 200)
@@ -220,7 +220,7 @@ def test_heads_up_big_blind_acts_first_postflop():
 
 
 def test_three_to_two_players_big_blind_moves_forward():
-    env = make_poker_env((TestBot(),), max_players=3)
+    env = make_poker_env((TestBot(),), max_players=3, rebuy=False)
     state = env.init(jax.random.PRNGKey(0), jnp.array([True, True, True]), jnp.array([100, 100, 100]), 0)
     # Button 0, SB 1, BB 2. Seat 1 busts this hand.
     state = state._replace(starting_stacks=state.starting_stacks.at[1].set(1), stacks=state.stacks.at[1].set(0))
