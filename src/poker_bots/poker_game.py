@@ -4,6 +4,8 @@ import jax.numpy as jnp
 from typing import NamedTuple, Callable
 from typing import Protocol, TypeVar
 
+from poker_bots.hand_eval import evaluate_hands
+
 Card = namedtuple('Card', ['Rank', 'Suit'])
 
 RANKS = "2 3 4 5 6 7 8 9 10 J Q K A".split()
@@ -91,6 +93,7 @@ class TableState(NamedTuple):
     contributed: jax.Array
     master_key: jax.Array
     player_states: tuple
+    seat_bot: jax.Array
     current_player: jax.Array
     current_round: jax.Array
     min_raise: jax.Array
@@ -142,7 +145,9 @@ class PlayerActionResponse(NamedTuple):
     action: ActionData
 
 class PokerEnv(NamedTuple):
-    init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, tuple], TableState]
+    init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, jax.Array, tuple], TableState]
+    get_payouts: Callable[[TableState, jax.Array], jax.Array]
+    step: Callable[[TableState], TableState]
     player_metadata: tuple
 
 # bot protocol
@@ -152,21 +157,22 @@ S = TypeVar("S")
 class Bot(Protocol[S]):
     def init_state(self, key: jax.Array) -> S: ...
     def act(self, obs: PlayerTableState, state: S, key: jax.Array) -> tuple[ActionData, S]: ...
+    def metadata(self) -> dict: ...
 
-def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_blind=1, big_blind=2):
+def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int = 100, small_blind: int = 1, big_blind: int = 2) -> PokerEnv:
     num_hole = 2 * max_players
     board_end = num_hole + 5
 
-    def extract_player_meta(player):
-        return player.metadata()
+    def extract_player_meta(bot: Bot) -> dict:
+        return bot.metadata()
 
-    def get_deck_state(key):
+    def get_deck_state(key: jax.Array) -> DeckState:
         deck_order = jax.random.permutation(key=key, x=52)
         hole_cards = deck_order[:num_hole].reshape(2, max_players).T
         runout = deck_order[num_hole : board_end]
         return DeckState(hole_cards, runout)
 
-    player_metadata = tuple(extract_player_meta(player) for player in players)
+    player_metadata = tuple(extract_player_meta(bot) for bot in bots)
 
     def post_blinds(table_state: TableState) -> TableState:
         sb_seat = table_state.sb_seat
@@ -211,15 +217,19 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
         )
 
     def init(
-        key,
-        seated_mask,
-        starting_stacks,
-        button=0,
-        player_states=None
+        key: jax.Array,
+        seated_mask: jax.Array,
+        starting_stacks: jax.Array,
+        button: jax.Array | int = 0,
+        seat_bot: jax.Array | None = None,
+        player_states: tuple | None = None
     ) -> TableState:
         button = jnp.asarray(button, dtype=jnp.int32)
         starting_stacks = jnp.asarray(starting_stacks, dtype=jnp.int32)
-        seated_mask = seated_mask & (starting_stacks > 0) & (jnp.arange(max_players) < len(players))
+        seated_mask = seated_mask & (starting_stacks > 0)
+        if seat_bot is None:
+            seat_bot = jnp.zeros((max_players,), dtype=jnp.int32)
+        seat_bot = jnp.asarray(seat_bot, dtype=jnp.int32)
         
         keys = jax.random.split(key, 2 + max_players)
         master_key, deck_key = keys[0], keys[1]
@@ -241,7 +251,7 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
 
         if player_states is None:
             player_states = tuple(
-                player.init_state(player_keys[i]) for i, player in enumerate(players)
+                jax.vmap(bot.init_state)(player_keys) for bot in bots
             )
 
         acted = jnp.zeros(shape=(max_players,), dtype=jnp.bool_)
@@ -263,6 +273,7 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             contributed=jnp.zeros((max_players,), dtype=jnp.int32),
             master_key=master_key,
             player_states=player_states,
+            seat_bot=seat_bot,
             current_player=bb_seat,
             current_round=jnp.array(Round.PRE_FLOP, dtype=jnp.int32),
             min_raise=min_raise,
@@ -390,27 +401,32 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             big_blind=bb
         )
 
-    def make_act_branch(i) -> Callable[[PlayerTableState, jax.Array, jax.Array], tuple[ActionData, jax.Array]]:
-        def branch(player_table_state: PlayerTableState, player_states, key) -> tuple[ActionData, jax.Array]:
-            action, new_state = players[i].act(
+    def make_act_branch(b: int) -> Callable[[PlayerTableState, tuple, jax.Array, jax.Array], tuple[ActionData, tuple]]:
+        def branch(player_table_state: PlayerTableState, player_states: tuple, seat: jax.Array, key: jax.Array) -> tuple[ActionData, tuple]:
+            bot_states = player_states[b]
+            seat_state = jax.tree.map(lambda x: x[seat], bot_states)
+            action, seat_state = bots[b].act(
                 player_table_state,
-                player_states[i],
+                seat_state,
                 key
             )
-            return action, player_states[:i] + (new_state,) + player_states[i + 1:]
+            bot_states = jax.tree.map(lambda x, y: x.at[seat].set(y), bot_states, seat_state)
+            return action, player_states[:b] + (bot_states,) + player_states[b + 1:]
         return branch
 
-    act_branches = tuple(make_act_branch(i) for i in range(len(players)))
+    act_branches = tuple(make_act_branch(b) for b in range(len(bots)))
 
     def get_player_move(table_state: TableState) -> PlayerActionResponse:
         player_states = table_state.player_states
         master_key, action_key = jax.random.split(table_state.master_key, 2)
         player_table_state = construct_player_table_state(table_state)
+        action: ActionData
         action, player_states = jax.lax.switch(
-            table_state.current_player,
+            table_state.seat_bot[table_state.current_player],
             act_branches,
             player_table_state,
             player_states,
+            table_state.current_player,
             action_key
         )
         return PlayerActionResponse(
@@ -554,6 +570,33 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
         fold_out = jnp.sum(table_state.eligible_mask) <= 1
         return river_complete | fold_out
 
+    def get_hand_ranks(table_state: TableState) -> jax.Array:
+        board = jnp.broadcast_to(table_state.deck.runout, (max_players, 5))
+        cards = jnp.concatenate([table_state.deck.hole_cards, board], axis=1)
+        return evaluate_hands(cards)
+
+    def get_payouts(table_state: TableState, hand_ranks: jax.Array) -> jax.Array:
+        committed = table_state.starting_stacks - table_state.stacks
+        levels = jnp.sort(committed)
+        payouts = jnp.zeros((max_players,), dtype=jnp.int32)
+        button_order = (table_state.button + jnp.arange(1, max_players + 1)) % max_players
+        previous_level = jnp.asarray(0, dtype=jnp.int32)
+        for i in range(max_players):
+            level = levels[i]
+            pot_slice = jnp.sum(jnp.clip(committed, previous_level, level) - previous_level)
+            contenders = table_state.eligible_mask & (committed >= level)
+            best_rank = jnp.max(jnp.where(contenders, hand_ranks, -1))
+            winners = contenders & (hand_ranks == best_rank)
+            num_winners = jnp.sum(winners, dtype=jnp.int32)
+            share = pot_slice // jnp.maximum(num_winners, 1)
+            odd_chips = pot_slice - share * num_winners
+            winners_ordered = winners[button_order]
+            gets_odd_chip_ordered = winners_ordered & (jnp.cumsum(winners_ordered) <= odd_chips)
+            gets_odd_chip = jnp.zeros((max_players,), dtype=jnp.bool_).at[button_order].set(gets_odd_chip_ordered)
+            payouts = payouts + jnp.where(winners, share, 0) + gets_odd_chip
+            previous_level = level
+        return payouts
+
     # def get_next_button(table_state: TableState) -> jax.Array:
     #     # needs dead button stuff
     #     button = table_state.button
@@ -584,9 +627,13 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
 
     def get_next_positions(table_state: TableState) -> tuple[jax.Array, jax.Array, jax.Array]:
         live = table_state.seated & (table_state.stacks > 0)
-        next_button = table_state.sb_seat
-        next_sb_seat = table_state.bb_seat
         next_bb_seat = first_after(table_state.bb_seat, live)
+        # Heads-up: the button posts the small blind. The big blind still moves
+        # forward one live seat, so nobody skips or repeats it going from 3 to 2.
+        is_heads_up = jnp.sum(live) == 2
+        heads_up_button = first_after(next_bb_seat, live)
+        next_button = jnp.where(is_heads_up, heads_up_button, table_state.sb_seat)
+        next_sb_seat = jnp.where(is_heads_up, heads_up_button, table_state.bb_seat)
         return next_button, next_sb_seat, next_bb_seat
 
     def next_player(table_state: TableState) -> TableState:
@@ -610,6 +657,59 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
         )
         return new_state._replace(
             current_player=first_after(new_state.button, new_state.to_act_mask)
+        )
+
+    def next_hand(table_state: TableState) -> TableState:
+        stacks = table_state.stacks + get_payouts(table_state, get_hand_ranks(table_state))
+        seated = table_state.seated & (stacks > 0)
+        table_state = table_state._replace(stacks=stacks, seated=seated)
+        button, sb_seat, bb_seat = get_next_positions(table_state)
+        master_key, deck_key = jax.random.split(table_state.master_key)
+        table_state = table_state._replace(
+            deck=get_deck_state(deck_key),
+            history=ActionRecord.init(max_actions=max_actions),
+            starting_stacks=stacks,
+            in_hand=seated,
+            acted=jnp.zeros((max_players,), dtype=jnp.bool_),
+            button=button,
+            sb_seat=sb_seat,
+            bb_seat=bb_seat,
+            action_count=jnp.asarray(0, dtype=jnp.int32),
+            contributed=jnp.zeros((max_players,), dtype=jnp.int32),
+            master_key=master_key,
+            current_round=jnp.asarray(Round.PRE_FLOP, dtype=jnp.int32),
+            min_raise=jnp.asarray(big_blind, dtype=jnp.int32),
+            current_bet=jnp.asarray(0, dtype=jnp.int32)
+        )
+        table_finished = table_state.num_seated <= 1
+        return jax.tree.map(
+            lambda finished, posted: jnp.where(table_finished, finished, posted),
+            table_state,
+            post_blinds(table_state)
+        )
+
+    def take_action(table_state: TableState) -> TableState:
+        return next_player(process_player_move(get_player_move(table_state)))
+
+    def step(table_state: TableState) -> TableState:
+        table_finished = table_state.num_seated <= 1
+        case = jnp.where(
+            table_finished,
+            0,
+            jnp.where(
+                is_hand_over(table_state),
+                1,
+                jnp.where(
+                    is_street_over(table_state),
+                    2,
+                    3
+                )
+            )
+        )
+        return jax.lax.switch(
+            case,
+            (lambda table_state: table_state, next_hand, next_street, take_action),
+            table_state
         )
 
     
@@ -639,6 +739,8 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
 
     return PokerEnv(
         init=init, 
+        get_payouts=get_payouts,
+        step=step,
         player_metadata=player_metadata
     )
 
@@ -1080,6 +1182,30 @@ class TestBot:
     def metadata(self):
         return {
             "bot_type": "test_bot"
+        }
+
+class RandomBot:
+    def init_state(self, key: jax.Array) -> None:
+        return None
+
+    def act(self, obs: PlayerTableState, state: None, key: jax.Array) -> tuple[ActionData, None]:
+        type_key, value_key, shove_key = jax.random.split(key, 3)
+        action_type = jax.random.choice(
+            type_key,
+            jnp.array([Action.FOLD, Action.CHECK_CALL, Action.RAISE], dtype=jnp.int32),
+            p=jnp.array([0.15, 0.6, 0.25])
+        )
+        small_raise_cap = jnp.minimum(obs.raise_upper_bound, obs.raise_lower_bound + 3 * obs.big_blind)
+        value = jnp.where(
+            jax.random.bernoulli(shove_key, 0.1),
+            obs.raise_upper_bound,
+            jax.random.randint(value_key, (), obs.raise_lower_bound, small_raise_cap + 1)
+        )
+        return ActionData(type=action_type, value=value), state
+
+    def metadata(self) -> dict:
+        return {
+            "bot_type": "random_bot"
         }
 
 
