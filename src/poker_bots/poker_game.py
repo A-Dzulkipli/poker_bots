@@ -2,6 +2,7 @@ from collections import namedtuple
 import jax
 import jax.numpy as jnp
 from typing import NamedTuple, Callable
+from typing import Protocol, TypeVar
 
 Card = namedtuple('Card', ['Rank', 'Suit'])
 
@@ -11,6 +12,7 @@ ID_TO_CARD = [(rank, suit) for suit in SUITS for rank in RANKS]
 CARD_TO_ID = {
     card: i for i, card in enumerate(ID_TO_CARD)
 }
+
 
 # convenience structs
 
@@ -37,6 +39,7 @@ class ActionRecord(NamedTuple):
     action_type: jax.Array
     amount: jax.Array
     is_all_in: jax.Array
+    round: jax.Array
     is_valid: jax.Array
 
     @classmethod
@@ -46,6 +49,7 @@ class ActionRecord(NamedTuple):
             action_type=jnp.full((max_actions,), fill_value=Action.NO_OP, dtype=jnp.int32),
             amount=jnp.zeros((max_actions,), dtype=jnp.int32),
             is_all_in=jnp.zeros((max_actions,), dtype=jnp.bool_),
+            round=jnp.zeros((max_actions,), dtype=jnp.bool_),
             is_valid=jnp.zeros((max_actions,), dtype=jnp.bool_)
         )
 
@@ -134,6 +138,14 @@ class PlayerActionResponse(NamedTuple):
 class PokerEnv(NamedTuple):
     init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, tuple], TableState]
     player_metadata: tuple
+
+# bot protocol
+
+S = TypeVar("S")
+
+class Bot(Protocol[S]):
+    def init_state(self, key: jax.Array) -> S: ...
+    def act(self, obs: PlayerTableState, state: S, key: jax.Array) -> tuple[ActionData, S]: ...
 
 def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_blind=1, big_blind=2):
     num_hole = 2 * max_players
@@ -401,6 +413,7 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
         in_hand = player_action_response.table_state.in_hand
         history = player_action_response.table_state.history
         action_count = player_action_response.table_state.action_count
+        current_round = player_action_response.table_state.current_round
 
         all_in_to = contributed[current_player] + stacks[current_player]
         call_to = jnp.minimum(current_bet, all_in_to)
@@ -461,6 +474,7 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             action_type=action_type,
             amount=amount,
             is_all_in=is_all_in,
+            round=current_round,
             is_valid=is_valid
         )
 
@@ -500,26 +514,62 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
         fold_out = jnp.sum(table_state.eligible_mask) <= 1
         return river_complete | fold_out
 
-    def get_next_button(table_state: TableState) -> jax.Array:
-        # needs dead button stuff
-        button = table_state.button
-        has_chips = table_state.stacks > 0
-        button_relative_indices = (button + jnp.arange(1, max_players + 1)) % max_players
-        has_chips_relative= has_chips[button_relative_indices]
-        next_button = button_relative_indices[jnp.argmax(has_chips_relative)]
-        return next_button
+    # def get_next_button(table_state: TableState) -> jax.Array:
+    #     # needs dead button stuff
+    #     button = table_state.button
+    #     has_chips = table_state.stacks > 0
+    #     button_relative_indices = (button + jnp.arange(1, max_players + 1)) % max_players
+    #     has_chips_relative= has_chips[button_relative_indices]
+    #     next_button = button_relative_indices[jnp.argmax(has_chips_relative)]
+    #     return next_button
+
+    # def get_next_player(table_state: TableState) -> jax.Array:
+    #     street_over = is_street_over(table_state)
+    #     current_player = table_state.current_player
+    #     current_player_relative_indices = (current_player + jnp.arange(1, max_players + 1)) % max_players
+    #     can_act_relative = table_state.can_act_mask[current_player_relative_indices]
+    #     next_player = current_player_relative_indices[jnp.argmax(can_act_relative)]
+    #     return jnp.where(
+    #         ~street_over,
+    #         next_player,
+    #         jnp.asarray(0, dtype=jnp.int32)
+    #     )
+
+    def first_after(seat: jax.Array, mask: jax.Array) -> jax.Array:
+        order = (seat + jnp.arange(1, max_players + 1)) % max_players
+        return order[jnp.argmax(mask[order])]
 
     def get_next_player(table_state: TableState) -> jax.Array:
-        street_over = is_street_over(table_state)
-        current_player = table_state.current_player
-        current_player_relative_indices = (current_player + jnp.arange(1, max_players + 1)) % max_players
-        can_act_relative = table_state.can_act_mask[current_player_relative_indices]
-        next_player = current_player_relative_indices[jnp.argmax(can_act_relative)]
-        return jnp.where(
-            ~street_over,
-            next_player,
-            jnp.asarray(0, dtype=jnp.int32)
+        return first_after(table_state.current_player, table_state.to_act_mask)
+
+    def get_next_button(table_state: TableState) -> jax.Array:
+        return first_after(table_state.button, table_state.seated & (table_state.stacks > 0))
+
+    def next_player(table_state: TableState) -> TableState:
+        return table_state._replace(
+            current_player=get_next_player(table_state)
         )
+    
+    def next_street(table_state: TableState) -> TableState:
+        next_round = (table_state.current_round + 1) % (Round.RIVER + 1)
+        # next_player = get_next_player(table_state)
+        new_round_contribution = jnp.zeros((max_players,), dtype=jnp.int32)
+        new_current_bet = jnp.asarray(0, dtype=jnp.int32)
+        new_min_raise = jnp.asarray(big_blind, dtype=jnp.int32)
+        new_acted = jnp.zeros(shape=(max_players,), dtype=jnp.bool_)
+        new_state = table_state._replace(
+            acted=new_acted,
+            current_round=next_round,
+            contributed=new_round_contribution,
+            current_bet=new_current_bet,
+            min_raise=new_min_raise
+        )
+        return new_state._replace(
+            current_player=first_after(new_state.button, new_state.to_act_mask)
+        )
+
+    
+
 
 
 
