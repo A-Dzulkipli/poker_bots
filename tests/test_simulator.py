@@ -89,5 +89,6 @@ def test_init_jitted_execution():
     jitted_init = jax.jit(env.init)
     state = jitted_init(key, seated, starting_stacks, jnp.int32(0))
 
-    assert int(state.action_count) == 0
+    # Blind posts are the first two history entries
+    assert int(state.action_count) == 2
     assert int(state.current_round) == int(Round.PRE_FLOP)

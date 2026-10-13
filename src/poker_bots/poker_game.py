@@ -21,6 +21,8 @@ class Action:
     CHECK_CALL = 1
     RAISE = 2
     NO_OP = 3
+    SMALL_BLIND = 4
+    BIG_BLIND = 5
 
 class Round:
     PRE_FLOP = 0
@@ -49,7 +51,7 @@ class ActionRecord(NamedTuple):
             action_type=jnp.full((max_actions,), fill_value=Action.NO_OP, dtype=jnp.int32),
             amount=jnp.zeros((max_actions,), dtype=jnp.int32),
             is_all_in=jnp.zeros((max_actions,), dtype=jnp.bool_),
-            round=jnp.zeros((max_actions,), dtype=jnp.bool_),
+            round=jnp.zeros((max_actions,), dtype=jnp.int32),
             is_valid=jnp.zeros((max_actions,), dtype=jnp.bool_)
         )
 
@@ -61,6 +63,8 @@ class PlayerTableState(NamedTuple):
     seated: jax.Array
     in_hand: jax.Array
     button: jax.Array
+    sb_seat: jax.Array
+    bb_seat: jax.Array
     contributed: jax.Array
     current_round: jax.Array
     min_raise: jax.Array
@@ -81,6 +85,8 @@ class TableState(NamedTuple):
     in_hand: jax.Array
     acted: jax.Array
     button: jax.Array
+    sb_seat: jax.Array
+    bb_seat: jax.Array
     action_count: jax.Array
     contributed: jax.Array
     master_key: jax.Array
@@ -162,6 +168,48 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
 
     player_metadata = tuple(extract_player_meta(player) for player in players)
 
+    def post_blinds(table_state: TableState) -> TableState:
+        sb_seat = table_state.sb_seat
+        bb_seat = table_state.bb_seat
+        stacks = table_state.stacks
+        sb_amt = jnp.minimum(stacks[sb_seat], small_blind)
+        bb_amt = jnp.minimum(stacks[bb_seat], big_blind)
+
+        contributed = jnp.zeros((max_players,), dtype=jnp.int32)
+        contributed = contributed.at[sb_seat].set(sb_amt)
+        contributed = contributed.at[bb_seat].set(bb_amt)
+
+        stacks = stacks.at[sb_seat].add(-sb_amt)
+        stacks = stacks.at[bb_seat].add(-bb_amt)
+
+        blind_seats = jnp.stack([sb_seat, bb_seat])
+        blind_amts = jnp.stack([sb_amt, bb_amt])
+        blind_records = ActionRecord(
+            player_id=blind_seats,
+            action_type=jnp.array([Action.SMALL_BLIND, Action.BIG_BLIND], dtype=jnp.int32),
+            amount=blind_amts,
+            is_all_in=stacks[blind_seats] == 0,
+            round=jnp.full((2,), Round.PRE_FLOP, dtype=jnp.int32),
+            is_valid=blind_amts > 0
+        )
+        record_indices = table_state.action_count + jnp.arange(2)
+        history = jax.tree.map(
+            lambda buffer, x: buffer.at[record_indices].set(x),
+            table_state.history,
+            blind_records
+        )
+
+        table_state = table_state._replace(
+            history=history,
+            action_count=table_state.action_count + 2,
+            stacks=stacks,
+            contributed=contributed,
+            current_bet=jnp.asarray(big_blind, dtype=jnp.int32)
+        )
+        return table_state._replace(
+            current_player=first_after(bb_seat, table_state.to_act_mask)
+        )
+
     def init(
         key,
         seated_mask,
@@ -171,7 +219,7 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
     ) -> TableState:
         button = jnp.asarray(button, dtype=jnp.int32)
         starting_stacks = jnp.asarray(starting_stacks, dtype=jnp.int32)
-        seated_mask = seated_mask & (starting_stacks > 0)
+        seated_mask = seated_mask & (starting_stacks > 0) & (jnp.arange(max_players) < len(players))
         
         keys = jax.random.split(key, 2 + max_players)
         master_key, deck_key = keys[0], keys[1]
@@ -191,48 +239,36 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
         sb_seat = jnp.where(is_heads_up, button, seat_order[first_seat_idx])
         bb_seat = jnp.where(is_heads_up, seat_order[first_seat_idx], seat_order[second_seat_idx])
 
-        # Dedup blind posts and clamp to starting chips
-        sb_amt = jnp.minimum(starting_stacks[sb_seat], small_blind)
-        bb_amt = jnp.minimum(starting_stacks[bb_seat], big_blind)
-
-        contributed = jnp.zeros((max_players,), dtype=jnp.int32)
-        contributed = contributed.at[sb_seat].set(sb_amt)
-        contributed = contributed.at[bb_seat].set(bb_amt)
-
-        stacks = starting_stacks.at[sb_seat].add(-sb_amt)
-        stacks = stacks.at[bb_seat].add(-bb_amt)
-
         if player_states is None:
             player_states = tuple(
                 player.init_state(player_keys[i]) for i, player in enumerate(players)
             )
 
-        third_seat_idx = jnp.argmax(seated_rank == 3)
-        utg_seat = seat_order[third_seat_idx]
-        current_player = jnp.where(is_heads_up, sb_seat, utg_seat)
-
         acted = jnp.zeros(shape=(max_players,), dtype=jnp.bool_)
         action_count = jnp.array(0, dtype=jnp.int32)
         min_raise = jnp.asarray(big_blind, dtype=jnp.int32)
 
-        return TableState(
+        table_state = TableState(
             deck=deck,
             history=history,
             starting_stacks=starting_stacks,
             seated=seated_mask,
-            stacks=stacks,
+            stacks=starting_stacks,
             in_hand=seated_mask,
             acted=acted,
             button=button,
+            sb_seat=sb_seat,
+            bb_seat=bb_seat,
             action_count=action_count,
-            contributed=contributed,
+            contributed=jnp.zeros((max_players,), dtype=jnp.int32),
             master_key=master_key,
             player_states=player_states,
-            current_player=current_player,
+            current_player=bb_seat,
             current_round=jnp.array(Round.PRE_FLOP, dtype=jnp.int32),
             min_raise=min_raise,
-            current_bet=jnp.asarray(big_blind, dtype=jnp.int32)
+            current_bet=jnp.asarray(0, dtype=jnp.int32)
         )
+        return post_blinds(table_state)
 
     def get_hole_cards_for_player(hole_cards: jax.Array, current_player: jax.Array) -> jax.Array:
         return hole_cards[current_player]
@@ -266,8 +302,8 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
     def get_relative_in_hand(in_hand: jax.Array, current_player: jax.Array) -> jax.Array:
         return in_hand[get_relative_indices(current_player)]
     
-    def get_relative_button(button: jax.Array, current_player: jax.Array) -> jax.Array:
-        return (button - current_player) % max_players
+    def get_relative_seat(seat: jax.Array, current_player: jax.Array) -> jax.Array:
+        return (seat - current_player) % max_players
 
     def get_relative_contributed(contributed: jax.Array, current_player: jax.Array) -> jax.Array:
         return contributed[get_relative_indices(current_player)]
@@ -307,7 +343,9 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
         stacks = get_relative_stacks(table_state.stacks, table_state.current_player)
         seated = get_relative_seated(table_state.seated, table_state.current_player)
         in_hand = get_relative_in_hand(table_state.in_hand, table_state.current_player)
-        button = get_relative_button(table_state.button, table_state.current_player)
+        button = get_relative_seat(table_state.button, table_state.current_player)
+        sb_seat = get_relative_seat(table_state.sb_seat, table_state.current_player)
+        bb_seat = get_relative_seat(table_state.bb_seat, table_state.current_player)
         contributed = get_relative_contributed(table_state.contributed, table_state.current_player)
         current_round = table_state.current_round
         min_raise = table_state.min_raise
@@ -339,6 +377,8 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             seated=seated,
             in_hand=in_hand,
             button=button,
+            sb_seat=sb_seat,
+            bb_seat=bb_seat,
             contributed=contributed,
             current_round=current_round,
             min_raise=min_raise,
@@ -360,7 +400,7 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             return action, player_states[:i] + (new_state,) + player_states[i + 1:]
         return branch
 
-    act_branches = tuple(make_act_branch(i) for i in range(max_players))
+    act_branches = tuple(make_act_branch(i) for i in range(len(players)))
 
     def get_player_move(table_state: TableState) -> PlayerActionResponse:
         player_states = table_state.player_states
@@ -542,8 +582,12 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
     def get_next_player(table_state: TableState) -> jax.Array:
         return first_after(table_state.current_player, table_state.to_act_mask)
 
-    def get_next_button(table_state: TableState) -> jax.Array:
-        return first_after(table_state.button, table_state.seated & (table_state.stacks > 0))
+    def get_next_positions(table_state: TableState) -> tuple[jax.Array, jax.Array, jax.Array]:
+        live = table_state.seated & (table_state.stacks > 0)
+        next_button = table_state.sb_seat
+        next_sb_seat = table_state.bb_seat
+        next_bb_seat = first_after(table_state.bb_seat, live)
+        return next_button, next_sb_seat, next_bb_seat
 
     def next_player(table_state: TableState) -> TableState:
         return table_state._replace(
@@ -1023,8 +1067,12 @@ class TestBot:
     def init_state(self, key):
         return None
     
-    def act(self, action_sequence, state):
-        return None
+    def act(self, obs, state, key):
+        action = ActionData(
+            type=jnp.asarray(Action.CHECK_CALL, dtype=jnp.int32),
+            value=jnp.asarray(0, dtype=jnp.int32)
+        )
+        return action, state
     
     def observe(self, data):
         return None
