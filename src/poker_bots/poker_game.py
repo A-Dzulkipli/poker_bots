@@ -118,6 +118,11 @@ class TableState(NamedTuple):
     def num_seated(self) -> jax.Array:
         return jnp.sum(self.seated)
 
+    @property
+    def to_act_mask(self):
+        owes = self.contributed < self.current_bet
+        return self.can_act_mask & (~self.acted | owes) & ((self.num_can_act >= 2) | owes)
+
 class ActionData(NamedTuple):
     type: jax.Array
     value: jax.Array
@@ -486,6 +491,36 @@ def make_poker_env(players, max_players: int = 9, max_actions: int = 100, small_
             min_raise=min_raise,
             current_bet=current_bet
         )
+
+    def is_street_over(table_state: TableState) -> jax.Array:
+        return ~jnp.any(table_state.to_act_mask)
+
+    def is_hand_over(table_state: TableState) -> jax.Array:
+        river_complete = is_street_over(table_state) & (table_state.current_round == Round.RIVER)
+        fold_out = jnp.sum(table_state.eligible_mask) <= 1
+        return river_complete | fold_out
+
+    def get_next_button(table_state: TableState) -> jax.Array:
+        # needs dead button stuff
+        button = table_state.button
+        has_chips = table_state.stacks > 0
+        button_relative_indices = (button + jnp.arange(1, max_players + 1)) % max_players
+        has_chips_relative= has_chips[button_relative_indices]
+        next_button = button_relative_indices[jnp.argmax(has_chips_relative)]
+        return next_button
+
+    def get_next_player(table_state: TableState) -> jax.Array:
+        street_over = is_street_over(table_state)
+        current_player = table_state.current_player
+        current_player_relative_indices = (current_player + jnp.arange(1, max_players + 1)) % max_players
+        can_act_relative = table_state.can_act_mask[current_player_relative_indices]
+        next_player = current_player_relative_indices[jnp.argmax(can_act_relative)]
+        return jnp.where(
+            ~street_over,
+            next_player,
+            jnp.asarray(0, dtype=jnp.int32)
+        )
+
 
 
 
