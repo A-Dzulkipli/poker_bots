@@ -65,7 +65,8 @@ class PlaySession:
     """One human seat (seat 0) plus bots. `seat_bots` names a registry bot per other seat, in seat order."""
 
     def __init__(self, seat_bots: list[str], small_blind: int = 1, big_blind: int = 2, starting_bb: int = 100,
-                 seed: int | None = None, flush_every: int = 10, sessions_dir=None, jit: bool = True):
+                 seed: int | None = None, flush_every: int = 10, sessions_dir=None, jit: bool = True,
+                 player_name: str | None = None):
         self.seed = int(seed if seed is not None else time.time_ns() % 2 ** 31)
         self.max_players = len(seat_bots) + 1
         names = list(dict.fromkeys(seat_bots))
@@ -87,7 +88,7 @@ class PlaySession:
             config={"max_players": self.max_players, "small_blind": small_blind, "big_blind": big_blind,
                     "starting_stack_bb": starting_bb, "rebuy": True, "human_seat": HUMAN_SEAT,
                     "seats": self.seat_names},
-            seed=self.seed, flush_every=flush_every, root=sessions_dir,
+            seed=self.seed, flush_every=flush_every, root=sessions_dir, player_name=player_name,
             bot_types=[("human", None, HumanSeat, "human")] + [(short_name(name), name, classes[name], "bot") for name in names])
         self.human_net = 0
 

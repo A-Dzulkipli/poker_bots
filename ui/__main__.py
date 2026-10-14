@@ -15,9 +15,12 @@ def main() -> None:
     parser.add_argument("--bot-delay", type=int, default=600, help="milliseconds between bot actions (adjustable in the page)")
     parser.add_argument("--eager", action="store_true", help="run without jit so print() inside bots works")
     parser.add_argument("--no-browser", action="store_true")
+    parser.add_argument("--max-tables", type=int, default=8, help="concurrent play tables (one per browser)")
+    parser.add_argument("--idle-minutes", type=int, default=30, help="close a table after this long untouched")
     args = parser.parse_args()
 
-    server.settings.update(jit=not args.eager, bot_delay_ms=args.bot_delay)
+    server.settings.update(jit=not args.eager, bot_delay_ms=args.bot_delay, max_tables=args.max_tables,
+                           idle_minutes=args.idle_minutes)
     if args.eager:
         jax.config.update("jax_disable_jit", True)
     url = f"http://{args.host}:{args.port}"

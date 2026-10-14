@@ -1,0 +1,13 @@
+equity.py: OK
+bench.py: OK
+opponents/aggressor.py: OK
+opponents/alan_wake_claude.py: OK
+opponents/bassander_lin_glm.py: OK
+opponents/hadrian_marlowe_gpt.py: OK
+opponents/invoker_gpt.py: OK
+opponents/jack_joyce_gemini.py: OK
+opponents/jesse_faden_glm.py: OK
+opponents/max_payne_gpt.py: OK
+opponents/meepo_claude.py: OK
+opponents/valka_onderra_claude.py: OK
+opponents/windrunner_glm.py: OK

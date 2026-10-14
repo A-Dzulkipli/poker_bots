@@ -1,0 +1,18 @@
+# One file per bot. Run from bots/phase_4_sea_monsters: python fill_prompt.py kraken_gpt/prompt.toml
+output = "./PROMPT.md"                 # relative to this file
+template = "../botgen_v4_prompt.md"    # relative to this file
+
+[slots]
+BOT_NAME = "kraken_gpt"             # snake_case; must match the bot's directory name
+LINEAGE = "phase_4_sea_monsters/kraken_gpt"
+BENCHMARK_SET = "The twelve-bot field (`field`): the eleven opponents in `opponents/` plus RandomBot (`random`), scored by the weighted score, which is your primary score; and every earlier version of your own bot (`vK:Bot`)."
+CONSTRAINTS = "None beyond the restrictions below."
+ROOT_DIR = "/Users/alik/Documents/Projects/poker_bots/poker_bots/bots/phase_4_sea_monsters"
+
+[[slots.METADATA_BLOCKS]]
+role = "requester"
+who = "a"
+
+[[slots.METADATA_BLOCKS]]
+role = "generator"
+interface = "GPT (Codex)"

@@ -5,6 +5,8 @@
 | `phase_1_remedy/` | 1 (outcomes only) | 6-max round robin of the phase-1 finals. See its README. |
 | `phase_2_suneater/` | 2 (full hand histories) | Heads-up round robin: phase-2 finals, phase-1 finals, RandomBot. |
 | `phase_3_dota/` | 2 (full hand histories) | Heads-up round robin: phase-3 finals, phase-2 finals, the aggressor probe, phase-1 finals, RandomBot. Run `verify_finals.py` first. |
+| `phase_4_sea_monsters/` | 2 (full hand histories) | Heads-up round robin: phase-4 finals (stateful, opponent tracking), phase-3, phase-2 and phase-1 finals, the aggressor probe, RandomBot, in 250-hand sessions. Run `verify_finals.py` first. Also writes `results/weighted.parquet`, the strength-weighted score over the phase-4 benchmark field. |
+| `rubick_switch/` | 2 (full hand histories) | Rubick: builds the hole-card switching tables from phase-3 data (`build_tables.py`) and plays both Rubick variants against every finals bot on held-out seeds 2 and 3. |
 
 Shared code:
 - `hand_records.py` turns `env.run_hands` output into the three format-2 tables (`records_to_frames`).

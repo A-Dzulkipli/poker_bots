@@ -1,0 +1,18 @@
+Start of timed development: 2026-10-14 03:57:03 UTC (14:27:03 Australia/Adelaide).
+Iteration cutoff: 04:47:03 UTC. Completion target: 04:57:03 UTC.
+Reminder scheduling was unavailable (no future run accepted); elapsed time is checked between steps.
+The initial ordinary environment check was blocked by sandbox access to the uv cache. The explicitly escalated retry succeeded.
+Successful check output:
+python      /Users/alik/Documents/Projects/poker_bots/poker_bots/.venv/bin/python3 (3.13.12)
+jax         0.11.2 (cpu)
+poker_bots  /Users/alik/Documents/Projects/poker_bots/poker_bots/src/poker_bots
+engine      sha256 295477eff7637056 (matches the contract)
+smoke test  random vs aggressor, 40 hands in 2s: OK
+
+Disclosure: before the initial pasted request had been read, a repository-wide filename listing was performed. No source outside kraken_gpt was read. All strategy work, source reads and output files after reading the scope restriction stay in kraken_gpt. No commits.
+
+Borrowed ideas: supplied frozen windrunner_glm strategy informed wide button openings, light three-bets, equity-based bets, and pressure counting. Supplied frozen invoker_gpt informed the remaining-range equity transform and removing unmatched all-in chips from pot odds. No opponent identity detection or fingerprinting.
+
+v1: stateless baseline with range truncation preserving near-nut equity.
+v2: v1 plus two behavioral rates, smoothed with 20 pseudo-opportunities. Betting rate adjusts retained range; folding rate adjusts bluff probability. Otherwise identical to v1.
+v3: v2 with later-street bluff decay removed (0.65 -> 1.0). Hypothesis: persistent overfolding should remain exploitable on turns and rivers rather than automatically reducing bluffs.

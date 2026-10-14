@@ -1,0 +1,551 @@
+[
+  {
+    "version": "v1",
+    "decision_lines": 50,
+    "sha256": "dd5d057ac6ab427ceeda1a88f6c475286a56e90bfd8d56fff77ebe52a1a0501e",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 1,
+      "parent": null,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 0.65,
+        "bet_pot_fraction": 0.65,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v2",
+    "decision_lines": 72,
+    "sha256": "a076df9ce56510d413e3364a65ca87a9f2942bc5826db87aa7b714e099d38339",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 2,
+      "parent": 1,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 0.65,
+        "bet_pot_fraction": 0.65,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v3",
+    "decision_lines": 72,
+    "sha256": "4bdec271c3b86917155fb9299e19fdb476e5a0388cec1cada180ec91ee2fc08f",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 3,
+      "parent": 2,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.65,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v4",
+    "decision_lines": 72,
+    "sha256": "c83ff566cd48c9e5115c6473f137afe737369d4e336ebdcfcc86c14dc545ca42",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 4,
+      "parent": 3,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.9,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v5",
+    "decision_lines": 76,
+    "sha256": "56d9750aba2f3ec8c93ef638fcf64e172d20c7eb9b3619f870a94e8ed3d8f930",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 5,
+      "parent": 3,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.65,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25,
+        "bluff_raise_frequency": 0.35
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v6",
+    "decision_lines": 83,
+    "sha256": "fd6e8fe5a11edc996b1976f91a59ce1fd9e8e485d6e38ac322838d4e5a0617d4",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 6,
+      "parent": 3,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.65,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25,
+        "prior_raise_rate": 0.15,
+        "reraise_range_retention": 0.4
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v7",
+    "decision_lines": 83,
+    "sha256": "c0aef508f9a79c8264d7bce9f447b84b984cb7c5e646afaa07a1690b83577791",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 7,
+      "parent": 6,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.9,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25,
+        "prior_raise_rate": 0.15,
+        "reraise_range_retention": 0.4
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v8",
+    "decision_lines": 66,
+    "sha256": "0160e3203d6e594dfc9cba2e65fae6b08dff0f4c327afecfefd820e71960b273",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 8,
+      "parent": 6,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.65,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25,
+        "prior_raise_rate": 0.15,
+        "reraise_range_retention": 0.4
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v9",
+    "decision_lines": 66,
+    "sha256": "ccfa63654aa4c5b507bc799994dc457284a7328203f651cfd99c6887920be0a4",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 9,
+      "parent": 7,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.9,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25,
+        "prior_raise_rate": 0.15,
+        "reraise_range_retention": 0.4
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v10",
+    "decision_lines": 85,
+    "sha256": "859226d76095852864ddc1ceb9450129fdbb2f9bb0bc5844a3cabdcecc3db863",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 10,
+      "parent": 6,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.65,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25,
+        "prior_raise_rate": 0.15,
+        "reraise_range_retention": 0.4,
+        "trap_frequency": 0.65
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v11",
+    "decision_lines": 68,
+    "sha256": "0873e9ea1e6b1b763afb22974099b17a7392643faf4f61f6c1ca96f4134c6619",
+    "metadata": {
+      "bot_name": "kraken_gpt",
+      "version": 11,
+      "parent": 10,
+      "lineage": "phase_4_sea_monsters/kraken_gpt",
+      "model": "GPT-6 (Codex; exact serving variant unavailable)",
+      "prompt_version": "botgen-v4",
+      "phase": "phase_4_sea_monsters",
+      "engine": "decafb9 sha256:295477eff7637056",
+      "params": {
+        "num_samples": 128,
+        "open_size_bb": 2.5,
+        "reraise_multiple": 3.0,
+        "threebet_equity": 0.63,
+        "light_threebet_frequency": 0.15,
+        "isolate_equity": 0.55,
+        "value_equity": 0.62,
+        "raise_equity": 0.85,
+        "bluff_frequency": 0.35,
+        "semibluff_frequency": 0.5,
+        "bluff_split_equity": 0.45,
+        "bluff_street_decay": 1.0,
+        "bet_pot_fraction": 0.65,
+        "range_retention": 0.58,
+        "prior_street_weight": 0.5,
+        "realization_fraction": 0.9,
+        "call_margin_equity": 0.02,
+        "prior_events": 20.0,
+        "prior_bet_rate": 0.4,
+        "prior_fold_rate": 0.5,
+        "betting_adjustment": 0.65,
+        "bluff_adjustment": 1.25,
+        "prior_raise_rate": 0.15,
+        "reraise_range_retention": 0.4,
+        "trap_frequency": 0.65
+      },
+      "contributions": [
+        {
+          "role": "requester",
+          "who": "a"
+        },
+        {
+          "role": "generator",
+          "interface": "GPT (Codex)"
+        }
+      ]
+    }
+  }
+]

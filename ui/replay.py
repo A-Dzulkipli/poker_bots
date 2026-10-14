@@ -68,6 +68,7 @@ def list_sessions(root: Path = SESSIONS) -> list[dict]:
         seat_hands = pl.read_parquet(manifest_path.parent / "seat_hands.parquet")
         sessions.append({
             "session": manifest["session"],
+            "player_name": manifest.get("player_name"),
             "created_at": manifest["created_at"],
             "seats": manifest["format"]["seats"],
             "hands": manifest.get("hands", 0),
@@ -82,7 +83,7 @@ def load_session(session: str, root: Path = SESSIONS) -> dict:
     manifest = json.loads((folder / "manifest.json").read_text())
     frames = {name: pl.read_parquet(folder / f"{name}.parquet") for name in TABLES}
     view = frames_to_view(frames["seat_hands"], frames["hands"], frames["actions"], manifest["format"]["max_players"])
-    return {**view, "big_blind": manifest["format"]["big_blind"], "warning": None}
+    return {**view, "big_blind": manifest["format"]["big_blind"], "player_name": manifest.get("player_name"), "warning": None}
 
 
 # tournaments
@@ -99,10 +100,12 @@ def list_tournaments() -> list[dict]:
         version = manifest.get("format_version", 1)
         for key, block in manifest["blocks"].items():
             pair, seed = key.split("/seed=")
+            stored = all((EXPERIMENTS / experiment / "results" / name / pair / f"seed_{seed}.parquet").exists() for name in TABLES)
             out.append({
                 "experiment": experiment, "pair": pair, "seed": int(seed), "tables": block["tables"],
                 "hands": block["hands"], "format_version": version,
-                "replayable": version >= 2 or block.get("engine_sha256") == current,
+                # format 2 needs its stored tables, which are gitignored, so a fresh clone has none
+                "replayable": stored if version >= 2 else block.get("engine_sha256") == current,
             })
     return out
 

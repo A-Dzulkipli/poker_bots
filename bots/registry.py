@@ -8,7 +8,8 @@ Names are paths:
     "builtin/random"                       bots that ship with the engine
 
 Folders: phase_1_remedy (6-max, 20 lines), phase_2_suneater (heads-up, 50 lines),
-phase_3_dota (heads-up, 100 lines), probes, rubick. Any folder with an `__init__.py` is scanned.
+phase_3_dota (heads-up, 100 lines), phase_4_sea_monsters (heads-up, 100 lines, opponent
+tracking), probes, rubick. Any folder with an `__init__.py` is scanned.
 
     from bots.registry import get_bot, list_bots, FINAL
     bot = get_bot("phase_1_remedy/alan_wake_claude")()     # registry entries are classes

@@ -1,0 +1,4 @@
+v2:Bot vs            aggressor:   +50.03 bb/100  (SE 5.84; first 50 hands +50.6, rest +49.9; 64x250, seed 0, 86s)
+v2:Bot vs       windrunner_glm:    -6.83 bb/100  (SE 6.22; first 50 hands -31.6, rest -0.6; 64x250, seed 0, 122s)
+v2:Bot vs          invoker_gpt:   +18.60 bb/100  (SE 9.98; first 50 hands +34.3, rest +14.7; 64x250, seed 0, 127s)
+v2:Bot vs         meepo_claude:    -1.51 bb/100  (SE 10.14; first 50 hands -3.7, rest -1.0; 64x250, seed 0, 138s)

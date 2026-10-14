@@ -1,0 +1,1 @@
+"""Phase 4 (sea monsters): heads-up bots in about 100 lines with opponent tracking allowed, benchmarked against the phase-1 to phase-3 finals, the aggressor and random by a strength-weighted score."""

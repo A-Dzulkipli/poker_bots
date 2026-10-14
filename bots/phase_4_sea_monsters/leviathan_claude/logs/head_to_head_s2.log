@@ -1,0 +1,4 @@
+v3:Bot vs               v1:Bot:   +27.84 bb/100  (SE 6.55; first 50 hands +31.8, rest +26.8; 64x250, seed 2, 71s)
+v4:Bot vs               v3:Bot:    +0.77 bb/100  (SE 7.02; first 50 hands +0.4, rest +0.8; 64x250, seed 2, 72s)
+v4:Bot vs               v1:Bot:   +16.70 bb/100  (SE 6.65; first 50 hands +36.0, rest +11.9; 64x250, seed 2, 72s)
+v5:Bot vs               v4:Bot:    -9.53 bb/100  (SE 8.06; first 50 hands +3.7, rest -12.8; 64x250, seed 2, 73s)

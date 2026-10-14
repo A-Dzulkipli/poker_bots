@@ -20,6 +20,9 @@
   <form id="setup" class="card-panel">
     <h2>New table</h2>
     <div class="row">
+      <label>Your name <input type="text" id="player-name" required maxlength="40" autocomplete="nickname"></label>
+    </div>
+    <div class="row">
       <label>Seats <select id="seat-count"></select></label>
       <label>Opponent <select id="fill-bot"></select></label>
       <label class="check"><input type="checkbox" id="show-versions"> list every version</label>
@@ -61,7 +64,7 @@
     <div class="row">
       <label>Source
         <select id="replay-source">
-          <option value="sessions">My sessions</option>
+          <option value="sessions">Play sessions</option>
           <option value="tournaments">Tournament blocks</option>
         </select>
       </label>

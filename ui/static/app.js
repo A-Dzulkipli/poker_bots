@@ -7,10 +7,22 @@ const STREET_BOARD = { preflop: 0, flop: 3, turn: 4, river: 5 };
 const CATEGORY_BASE = 13 ** 5;
 const CATEGORIES = ["high card", "pair", "two pair", "three of a kind", "straight", "flush", "full house", "four of a kind", "straight flush"];
 
+// Each browser gets its own table on the server; the id survives reloads so a running game resumes.
+const CLIENT = (() => {
+  const fresh = () => (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now().toString(36));
+  try {
+    const id = localStorage.getItem("poker-client") || fresh();
+    localStorage.setItem("poker-client", id);
+    return id;
+  } catch {
+    return fresh();
+  }
+})();
+
 async function api(method, path, body) {
   const response = await fetch(path, {
     method,
-    headers: body ? { "Content-Type": "application/json" } : {},
+    headers: { "X-Client": CLIENT, ...(body ? { "Content-Type": "application/json" } : {}) },
     body: body ? JSON.stringify(body) : undefined,
   });
   const data = await response.json().catch(() => ({}));
@@ -180,6 +192,7 @@ async function initSetup() {
   botList = bots;
   botOptions($("fill-bot"));
   $("bot-delay").value = config.bot_delay_ms;
+  try { $("player-name").value = localStorage.getItem("poker-name") || ""; } catch { /* storage blocked */ }
   $("seat-count").addEventListener("change", () => {
     $("fill-bot").parentElement.firstChild.textContent = Number($("seat-count").value) === 2 ? "Opponent " : "Fill with ";
     renderSeatBots();
@@ -202,11 +215,13 @@ $("setup").addEventListener("submit", async (event) => {
   event.preventDefault();
   $("start").disabled = true;
   $("setup-msg").className = "msg";
-  $("setup-msg").textContent = "Building the table (compiling the bots, a few seconds)…";
+  $("setup-msg").textContent = "Building the table (compiling the bots; up to a minute on a slow server)…";
   try {
     const seed = $("seed").value === "" ? null : Number($("seed").value);
+    const name = $("player-name").value.trim();
+    try { localStorage.setItem("poker-name", name); } catch { /* storage blocked */ }
     const r = await api("POST", "/api/play/new" + cardsQuery(), {
-      seat_bots: seatBots(), small_blind: Number($("sb").value), big_blind: Number($("bb").value),
+      player_name: name, seat_bots: seatBots(), small_blind: Number($("sb").value), big_blind: Number($("bb").value),
       starting_bb: Number($("stack-bb").value), seed,
     });
     $("setup-msg").textContent = "";
@@ -377,12 +392,12 @@ $("show-bot-cards").addEventListener("change", async () => {
 
 $("end-session").addEventListener("click", async () => {
   if (dealNext) dealNext();
-  const r = await api("POST", "/api/play/end");
+  const r = await api("POST", "/api/play/end").catch(() => null);   // null: the server already closed it
   $("game").hidden = true;
   $("setup").hidden = false;
   $("result").hidden = true;
   $("setup-msg").className = "msg";
-  $("setup-msg").textContent = `Saved ${r.hands} hands to ui/sessions/${r.session}/`;
+  $("setup-msg").textContent = r ? `Saved ${r.hands} hands to ui/sessions/${r.session}/` : "";
 });
 
 document.addEventListener("keydown", (event) => {
@@ -417,8 +432,9 @@ async function loadReplaySources() {
     replay.sources = sessions;
     sessions.forEach((s, i) => {
       const opponents = [...new Set(s.seats.slice(1).map(shortName))].join(", ");
-      const net = s.human_net === null ? "" : ` · you ${signed(s.human_net)}`;
-      const o = el("option", "", `${s.created_at.slice(0, 16).replace("T", " ")} · vs ${opponents} · ${s.hands} hands${net}${s.closed ? "" : " · open"}`);
+      const who = s.player_name || "unnamed";
+      const net = s.human_net === null ? "" : ` · ${who} ${signed(s.human_net)}`;
+      const o = el("option", "", `${s.created_at.slice(0, 16).replace("T", " ")} · ${who} vs ${opponents} · ${s.hands} hands${net}${s.closed ? "" : " · open"}`);
       o.value = i;
       pick.append(o);
     });
@@ -427,7 +443,7 @@ async function loadReplaySources() {
     const blocks = await api("GET", "/api/replay/tournaments");
     replay.sources = blocks;
     blocks.forEach((b, i) => {
-      const o = el("option", "", `${b.experiment} · ${b.pair} · seed ${b.seed} (${b.tables} tables × ${b.hands} hands)${b.format_version < 2 ? " · from seed" : ""}${b.replayable ? "" : " · engine changed"}`);
+      const o = el("option", "", `${b.experiment} · ${b.pair} · seed ${b.seed} (${b.tables} tables × ${b.hands} hands)${b.format_version < 2 ? " · from seed" : ""}${b.replayable ? "" : b.format_version < 2 ? " · engine changed" : " · hands not stored here"}`);
       o.value = i;
       o.disabled = !b.replayable;
       pick.append(o);
@@ -460,6 +476,7 @@ $("replay-load").addEventListener("click", async () => {
     let data;
     if (source === "sessions") {
       data = await api("GET", `/api/replay/session/${encodeURIComponent(item.session)}`);
+      if (data.player_name) data.seat_names = data.seat_names.map((n) => (n === "human" ? data.player_name : n));
       replay.hero = 0;
     } else {
       data = await api("GET", `/api/replay/tournament/${item.experiment}/${item.pair}/${item.seed}/${Number($("replay-table").value)}`);

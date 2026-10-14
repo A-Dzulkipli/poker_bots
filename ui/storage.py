@@ -41,7 +41,7 @@ class SessionWriter:
     """`bot_types` are the env's bots in order, as (name in the tables, registry name or None, class, kind)."""
 
     def __init__(self, config: dict, seed: int, bot_types: list[tuple[str, str | None, type, str]],
-                 flush_every: int = 10, root: Path | None = None):
+                 flush_every: int = 10, root: Path | None = None, player_name: str | None = None):
         self.session_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
         self.dir = Path(root or SESSIONS) / self.session_id
         self.bot_names = [name for name, _, _, _ in bot_types]
@@ -55,6 +55,7 @@ class SessionWriter:
             "session": self.session_id,
             "created_at": datetime.now(timezone.utc).isoformat(),
             "seed": seed,
+            "player_name": player_name,   # typed by the player when sitting down; not verified
             "format": config,
             "engine": {
                 "files_sha256": {p.name: sha256(p) for p in sorted(engine_dir.glob("*.py"))},
