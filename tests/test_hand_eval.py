@@ -59,3 +59,12 @@ def test_matches_reference_on_random_hands():
     ranks = np.asarray(jax.jit(evaluate_hands)(hands))
     reference = [score_seven_reference(tuple(int(card) for card in hand)) for hand in np.asarray(hands)]
     np.testing.assert_array_equal(ranks, reference)
+
+
+def test_five_and_six_cards_match_reference():
+    keys = jax.random.split(jax.random.PRNGKey(1), 1000)
+    for num_cards in (5, 6):
+        hands = jax.vmap(lambda key: jax.random.permutation(key, 52)[:num_cards])(keys)
+        ranks = np.asarray(jax.jit(evaluate_hands)(hands))
+        reference = [score_seven_reference(tuple(int(card) for card in hand)) for hand in np.asarray(hands)]
+        np.testing.assert_array_equal(ranks, reference)

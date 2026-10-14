@@ -1,0 +1,12 @@
+v1.py 61 decision lines: PASS
+v2.py 56 decision lines: PASS
+v3.py 66 decision lines: PASS
+v4.py 67 decision lines: PASS
+v5.py 88 decision lines: PASS
+v6.py 67 decision lines: PASS
+v7.py 67 decision lines: PASS
+v8.py 67 decision lines: PASS
+v9.py 68 decision lines: PASS
+v10.py 68 decision lines: PASS
+v11.py 68 decision lines: PASS
+All source, metadata, JIT/vmap, dtype, free-check and short-stack checks passed.

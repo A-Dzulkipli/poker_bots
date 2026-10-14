@@ -1,0 +1,13 @@
+{
+  "selected": "v6",
+  "heldout_means": {
+    "6": 192.1,
+    "9": 190.17
+  },
+  "conservative_two_se_difference": 19.35,
+  "recorded_elapsed_minutes": 30.334096516666666,
+  "finish_utc": "2026-10-13T16:12:26.045791+00:00",
+  "total_logged_hands": 2848040,
+  "benchmark_matchups": 85,
+  "version_count": 9
+}

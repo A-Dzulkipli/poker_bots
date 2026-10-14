@@ -1,0 +1,17 @@
+# One file per bot. Run: python fill_prompt.py example.toml
+output = "./PROMPT.md"     # relative to this file
+
+[slots]
+BOT_NAME = "alan_wake_claude"             # snake_case; must match the bot's directory name
+LINEAGE = "phase_1_remedy/alan_wake_claude"
+BENCHMARK_SET = "RandomBot (`random`) and every earlier version of your own bot (`vK:Bot`)."
+CONSTRAINTS = "None beyond the restrictions below."
+# ROOT_DIR defaults to this file's directory; set it to override.
+
+[[slots.METADATA_BLOCKS]]
+role = "requester"
+who = "a"
+
+[[slots.METADATA_BLOCKS]]
+role = "generator"
+interface = "Claude desktop (Code)"

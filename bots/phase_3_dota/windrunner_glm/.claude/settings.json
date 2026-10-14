@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run python bench.py:*)",
+      "Bash(date:*)"
+    ],
+    "deny": [
+      "Read(//Users/alik/Documents/Projects/poker_bots/poker_bots/bots/phase_3_dota/meepo_claude/**)", "Edit(//Users/alik/Documents/Projects/poker_bots/poker_bots/bots/phase_3_dota/meepo_claude/**)", "Read(//Users/alik/Documents/Projects/poker_bots/poker_bots/bots/phase_3_dota/invoker_gpt/**)", "Edit(//Users/alik/Documents/Projects/poker_bots/poker_bots/bots/phase_3_dota/invoker_gpt/**)", "Read(//Users/alik/Documents/Projects/poker_bots/poker_bots/src/**)",
+      "Edit(//Users/alik/Documents/Projects/poker_bots/poker_bots/src/**)",
+      "Edit(//Users/alik/Documents/Projects/poker_bots/poker_bots/bots/phase_1_remedy/**)",
+      "Edit(//Users/alik/Documents/Projects/poker_bots/poker_bots/bots/phase_2_suneater/**)",
+      "Edit(//Users/alik/Documents/Projects/poker_bots/poker_bots/experiments/**)"
+    ]
+  }
+}

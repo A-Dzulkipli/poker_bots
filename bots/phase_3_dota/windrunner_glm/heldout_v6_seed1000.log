@@ -1,0 +1,11 @@
+v6:Bot vs            aggressor:   +38.49 bb/100  (SE 4.91, 16000 hands, seed 1000, 12s)
+v6:Bot vs    bassander_lin_glm:  +129.18 bb/100  (SE 15.94, 16000 hands, seed 1000, 19s)
+v6:Bot vs  hadrian_marlowe_gpt:   +39.48 bb/100  (SE 6.68, 16000 hands, seed 1000, 14s)
+v6:Bot vs valka_onderra_claude:   +59.20 bb/100  (SE 13.46, 16000 hands, seed 1000, 19s)
+v6:Bot vs     alan_wake_claude:  +107.60 bb/100  (SE 13.16, 16000 hands, seed 1000, 18s)
+v6:Bot vs    jack_joyce_gemini:  +258.21 bb/100  (SE 23.93, 16000 hands, seed 1000, 24s)
+v6:Bot vs      jesse_faden_glm:  +202.82 bb/100  (SE 19.85, 16000 hands, seed 1000, 26s)
+v6:Bot vs        max_payne_gpt:   +53.90 bb/100  (SE 5.00, 16000 hands, seed 1000, 7s)
+v6:Bot mean vs core:   +66.59 bb/100
+v6:Bot mean vs legacy:  +155.63 bb/100
+v6:Bot vs               random:  +403.15 bb/100  (SE 14.62, 16000 hands, seed 1000, 16s)

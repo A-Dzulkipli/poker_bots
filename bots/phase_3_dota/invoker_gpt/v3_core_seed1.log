@@ -1,0 +1,5 @@
+v3:Bot vs            aggressor:   -13.74 bb/100  (SE 4.62, 32000 hands, seed 1, 18s)
+v3:Bot vs    bassander_lin_glm:   +89.46 bb/100  (SE 10.88, 32000 hands, seed 1, 28s)
+v3:Bot vs  hadrian_marlowe_gpt:   +11.35 bb/100  (SE 4.96, 32000 hands, seed 1, 24s)
+v3:Bot vs valka_onderra_claude:   +38.32 bb/100  (SE 8.56, 32000 hands, seed 1, 42s)
+v3:Bot mean vs core:   +31.35 bb/100

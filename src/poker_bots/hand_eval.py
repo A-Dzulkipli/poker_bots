@@ -68,9 +68,9 @@ def get_multiset_index(sorted_ranks: tuple[int, ...]) -> int:
     return sum(comb(r + i, i + 1) for i, r in enumerate(sorted_ranks))
 
 @cache
-def build_rank_tables() -> tuple[np.ndarray, np.ndarray]:
-    multiset_table = np.zeros(comb(NUM_RANKS + 6, 7), dtype=np.int32)
-    for multiset in combinations_with_replacement(range(NUM_RANKS), 7):
+def build_rank_tables(num_cards: int = 7) -> tuple[np.ndarray, np.ndarray]:
+    multiset_table = np.zeros(comb(NUM_RANKS + num_cards - 1, num_cards), dtype=np.int32)
+    for multiset in combinations_with_replacement(range(NUM_RANKS), num_cards):
         if max(multiset.count(r) for r in multiset) > 4:
             continue
         multiset_table[get_multiset_index(multiset)] = max(
@@ -86,7 +86,11 @@ def build_rank_tables() -> tuple[np.ndarray, np.ndarray]:
 COMB_TABLE = np.array([[comb(n, k) for k in range(8)] for n in range(NUM_RANKS + 6)], dtype=np.int32)
 
 def evaluate_hands(cards: jax.Array) -> jax.Array:
-    multiset_table, flush_table = build_rank_tables()
+    """Scores hands of 5, 6 or 7 cards along the last axis; higher is better and rank // CATEGORY_BASE
+    is the Category. Every entry must be a real card: -1 padding gives garbage."""
+    num_cards = cards.shape[-1]
+    assert 5 <= num_cards <= 7, f"evaluate_hands takes 5 to 7 cards, got {num_cards}"
+    multiset_table, flush_table = build_rank_tables(num_cards)
     ranks = cards % NUM_RANKS
     suits = cards // NUM_RANKS
 
@@ -99,7 +103,7 @@ def evaluate_hands(cards: jax.Array) -> jax.Array:
     )
 
     sorted_ranks = jnp.sort(ranks, axis=-1)
-    positions = jnp.arange(7)
+    positions = jnp.arange(num_cards)
     multiset_index = jnp.sum(jnp.asarray(COMB_TABLE)[sorted_ranks + positions, positions + 1], axis=-1)
 
     return jnp.where(

@@ -1,0 +1,18 @@
+# One file per bot. Run from bots/phase_2_suneater: python fill_prompt.py hadrian_marlowe_gpt/prompt.toml
+output = "./PROMPT.md"                 # relative to this file
+template = "../botgen_v2_prompt.md"    # relative to this file
+
+[slots]
+BOT_NAME = "hadrian_marlowe_gpt"             # snake_case; must match the bot's directory name
+LINEAGE = "phase_2_suneater/hadrian_marlowe_gpt"
+BENCHMARK_SET = "The four phase-1 finals in `opponents/` (`finals`, or one by name), every earlier version of your own bot (`vK:Bot`), and RandomBot (`random`) as a sanity check only."
+CONSTRAINTS = "None beyond the restrictions below."
+# ROOT_DIR defaults to this file's parent directory (bots/phase_2_suneater); set it to override.
+
+[[slots.METADATA_BLOCKS]]
+role = "requester"
+who = "a"
+
+[[slots.METADATA_BLOCKS]]
+role = "generator"
+interface = "GPT (Codex)"

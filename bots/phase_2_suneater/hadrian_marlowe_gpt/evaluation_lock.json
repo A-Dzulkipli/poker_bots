@@ -1,0 +1,14 @@
+{
+  "recorded_start_utc": "2026-10-13T15:42:06+00:00",
+  "frozen_utc": "2026-10-13T15:58:56.670713+00:00",
+  "finalists": [
+    "v6",
+    "v9"
+  ],
+  "held_out_seed": 1000,
+  "tables": 512,
+  "hands_per_table": 250,
+  "rule": "Compare mean bb/100 across the four finals. Prefer simpler v6 if the difference is within twice the conservative sum of the candidates mean-SE bounds (each mean bound is average marginal SE); otherwise use the higher mean. A clear loss to its parent is a warning requiring disclosure. RandomBot is only a sanity check.",
+  "excluded_v8": "256 samples showed no development improvement over v6 and doubles candidate Monte Carlo cost.",
+  "no_further_strategy_edits": true
+}

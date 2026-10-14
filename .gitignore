@@ -11,3 +11,16 @@ wheels/
 
 # LLM contract
 CLAUDE.md
+
+# UI play sessions
+ui/sessions/
+
+# Experiment game data: raw per-block parquets (seat_hands, hands, actions) are large and
+# regenerable from the manifest; keep manifest.json, pairs.parquet, standings.parquet and logs
+experiments/*/results/seat_hands/
+experiments/*/results/hands/
+experiments/*/results/actions/
+experiments/*/results/replays/
+
+# Tool caches created inside bot folders
+.uv-cache/

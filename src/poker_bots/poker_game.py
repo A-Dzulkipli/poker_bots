@@ -80,6 +80,7 @@ class PlayerTableState(NamedTuple):
     raise_lower_bound: jax.Array
     raise_upper_bound: jax.Array
     big_blind: jax.Array
+    hand_count: jax.Array
 
 
 class TableState(NamedTuple):
@@ -145,6 +146,10 @@ class TableState(NamedTuple):
         return self.can_act_mask & (~self.acted | owes) & ((self.num_can_act >= 2) | owes)
 
 class ActionData(NamedTuple):
+    """type is an Action. FOLD (and NO_OP) always folds, even when checking is free. CHECK_CALL checks
+    or calls, capped at the stack. RAISE treats value as a raise-to total: this street's contribution
+    after the raise, clipped to [raise_lower_bound, raise_upper_bound]. A RAISE when can_raise is
+    False is a CHECK_CALL."""
     type: jax.Array
     value: jax.Array
 
@@ -177,6 +182,9 @@ class PokerEnv(NamedTuple):
     init: Callable[[jax.Array, jax.Array, jax.Array, jax.Array, jax.Array, tuple, jax.Array, jax.Array], TableState]
     get_payouts: Callable[[TableState, jax.Array], jax.Array]
     step: Callable[[TableState], TableState]
+    step_with_record: Callable[[TableState, "ActionData | None"], tuple[TableState, HandRecord, jax.Array]]
+    next_event: Callable[[TableState], jax.Array]
+    get_observation: Callable[[TableState, jax.Array], PlayerTableState]
     run_hands: Callable[[TableState, int], tuple[TableState, HandRecord, jax.Array]]
     player_metadata: tuple
     max_players: int
@@ -188,6 +196,13 @@ class PokerEnv(NamedTuple):
 S = TypeVar("S")
 
 class Bot(Protocol[S]):
+    """The engine holds each seat's S, stacked over seats per bot type; act and observe are traced
+    under jit and vmap. Observations are seat-relative: index 0 is the bot's own seat and seat values
+    (button, sb_seat, bb_seat, history.player_id) count onward from it.
+
+    Optional: observe(record: HandRecord, state: S, key: jax.Array) -> S, called at the end of every
+    hand for each seated seat of this type with that seat's relative HandRecord. Opponents' hole_cards
+    and all hand_ranks are -1 unless shown at showdown, undealt board cards are -1, seat_bot is -1."""
     def init_state(self, key: jax.Array) -> S: ...
     def act(self, obs: PlayerTableState, state: S, key: jax.Array) -> tuple[ActionData, S]: ...
     def metadata(self) -> dict: ...
@@ -390,33 +405,34 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
         return contributed[current_player] + stacks[current_player]
 
 
-    def construct_player_table_state(table_state: TableState) -> PlayerTableState:
-        hole_cards = get_hole_cards_for_player(table_state.deck.hole_cards, table_state.current_player)
+    def construct_player_table_state(table_state: TableState, seat: jax.Array) -> PlayerTableState:
+        # For a seat other than current_player, can_raise and the raise bounds are as if it were to act
+        hole_cards = get_hole_cards_for_player(table_state.deck.hole_cards, seat)
         board = get_board_at_round(table_state.deck.runout, table_state.current_round)
-        history = get_relative_history(table_state.history, table_state.current_player)
-        stacks = get_relative_stacks(table_state.stacks, table_state.current_player)
-        seated = get_relative_seated(table_state.seated, table_state.current_player)
-        in_hand = get_relative_in_hand(table_state.in_hand, table_state.current_player)
-        button = get_relative_seat(table_state.button, table_state.current_player)
-        sb_seat = get_relative_seat(table_state.sb_seat, table_state.current_player)
-        bb_seat = get_relative_seat(table_state.bb_seat, table_state.current_player)
-        contributed = get_relative_contributed(table_state.contributed, table_state.current_player)
+        history = get_relative_history(table_state.history, seat)
+        stacks = get_relative_stacks(table_state.stacks, seat)
+        seated = get_relative_seated(table_state.seated, seat)
+        in_hand = get_relative_in_hand(table_state.in_hand, seat)
+        button = get_relative_seat(table_state.button, seat)
+        sb_seat = get_relative_seat(table_state.sb_seat, seat)
+        bb_seat = get_relative_seat(table_state.bb_seat, seat)
+        contributed = get_relative_contributed(table_state.contributed, seat)
         current_round = table_state.current_round
         min_raise = table_state.min_raise
         current_bet = table_state.current_bet
         pot = get_pot_total(table_state.starting_stacks, table_state.stacks)
-        can_raise = get_current_player_can_raise(table_state.acted, table_state.contributed, table_state.current_bet, table_state.min_raise, table_state.stacks, table_state.num_can_act, table_state.current_player)
+        can_raise = get_current_player_can_raise(table_state.acted, table_state.contributed, table_state.current_bet, table_state.min_raise, table_state.stacks, table_state.num_can_act, seat)
         raise_lower_bound = get_raise_lower_bound(
             table_state.contributed,
             table_state.current_bet,
             table_state.min_raise,
             table_state.stacks,
-            table_state.current_player
+            seat
         )
         raise_upper_bound = get_raise_upper_bound(
             table_state.contributed, 
             table_state.stacks, 
-            table_state.current_player
+            seat
         )
         call_amount = jnp.minimum(table_state.current_bet, raise_upper_bound)
         raise_lower_bound = jnp.where(can_raise, raise_lower_bound, call_amount)
@@ -441,7 +457,8 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
             can_raise=can_raise,
             raise_lower_bound=raise_lower_bound,
             raise_upper_bound=raise_upper_bound,
-            big_blind=bb
+            big_blind=bb,
+            hand_count=table_state.hand_count
         )
 
     def make_act_branch(b: int) -> Callable[[PlayerTableState, tuple, jax.Array, jax.Array], tuple[ActionData, tuple]]:
@@ -462,7 +479,7 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
     def get_player_move(table_state: TableState) -> PlayerActionResponse:
         player_states = table_state.player_states
         master_key, action_key = jax.random.split(table_state.master_key, 2)
-        player_table_state = construct_player_table_state(table_state)
+        player_table_state = construct_player_table_state(table_state, table_state.current_player)
         action: ActionData
         action, player_states = jax.lax.switch(
             table_state.seat_bot[table_state.current_player],
@@ -741,6 +758,47 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
             cash_outs=cash_outs
         )
 
+    def get_relative_hand_record(hand_record: HandRecord, seat: jax.Array) -> HandRecord:
+        indices = get_relative_indices(seat)
+        shown = hand_record.went_to_showdown & hand_record.in_hand
+        hole_visible = shown.at[seat].set(True)
+        return hand_record._replace(
+            button=get_relative_seat(hand_record.button, seat),
+            sb_seat=get_relative_seat(hand_record.sb_seat, seat),
+            bb_seat=get_relative_seat(hand_record.bb_seat, seat),
+            seated=hand_record.seated[indices],
+            seat_bot=jnp.full((max_players,), -1, dtype=jnp.int32),
+            starting_stacks=hand_record.starting_stacks[indices],
+            hole_cards=jnp.where(hole_visible[:, None], hand_record.hole_cards, -1)[indices],
+            board=jnp.where(jnp.arange(5) < hand_record.board_dealt, hand_record.board, -1),
+            history=get_relative_history(hand_record.history, seat),
+            in_hand=hand_record.in_hand[indices],
+            hand_ranks=jnp.where(shown, hand_record.hand_ranks, -1)[indices],
+            payouts=hand_record.payouts[indices],
+            ending_stacks=hand_record.ending_stacks[indices],
+            rebuys=hand_record.rebuys[indices],
+            cash_outs=hand_record.cash_outs[indices]
+        )
+
+    observers = tuple(b for b, bot in enumerate(bots) if getattr(bot, "observe", None) is not None)
+
+    def observe_hand(table_state: TableState, hand_record: HandRecord) -> TableState:
+        if not observers:
+            return table_state
+        master_key, observe_key = jax.random.split(table_state.master_key)
+        records = jax.vmap(get_relative_hand_record, in_axes=(None, 0))(hand_record, jnp.arange(max_players))
+        keys = jax.random.split(observe_key, max_players)
+        player_states = list(table_state.player_states)
+        for b in observers:
+            observed = jax.vmap(bots[b].observe)(records, player_states[b], keys)
+            is_observer = hand_record.seated & (hand_record.seat_bot == b)
+            player_states[b] = jax.tree.map(
+                lambda new, old: jnp.where(is_observer.reshape((-1,) + (1,) * (new.ndim - 1)), new, old),
+                observed,
+                player_states[b]
+            )
+        return table_state._replace(master_key=master_key, player_states=tuple(player_states))
+
     def next_hand(table_state: TableState, hand_record: HandRecord) -> TableState:
         stacks = hand_record.ending_stacks + hand_record.rebuys - hand_record.cash_outs
         seated = table_state.seated & (stacks > 0)
@@ -774,9 +832,10 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
     def take_action(table_state: TableState) -> TableState:
         return next_player(process_player_move(get_player_move(table_state)))
 
-    def step_with_record(table_state: TableState) -> tuple[TableState, HandRecord, jax.Array]:
+    def next_event(table_state: TableState) -> jax.Array:
+        """0 table finished, 1 hand over, 2 street over, 3 player to act."""
         table_finished = table_state.num_seated <= 1
-        case = jnp.where(
+        return jnp.where(
             table_finished,
             0,
             jnp.where(
@@ -789,14 +848,22 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
                 )
             )
         )
+
+    def step_with_record(table_state: TableState, action: ActionData | None = None) -> tuple[TableState, HandRecord, jax.Array]:
+        """With action given, a player-to-act step applies it for current_player instead of asking the bot."""
+        case = next_event(table_state)
         hand_record = get_hand_record(table_state)
+        if action is None:
+            act = take_action
+        else:
+            act = lambda table_state: next_player(process_player_move(PlayerActionResponse(table_state, action)))
         table_state = jax.lax.switch(
             case,
             (
                 lambda table_state, hand_record: table_state,
-                next_hand,
+                lambda table_state, hand_record: next_hand(observe_hand(table_state, hand_record), hand_record),
                 lambda table_state, hand_record: next_street(table_state),
-                lambda table_state, hand_record: take_action(table_state)
+                lambda table_state, hand_record: act(table_state)
             ),
             table_state,
             hand_record
@@ -865,6 +932,9 @@ def make_poker_env(bots: tuple[Bot, ...], max_players: int = 9, max_actions: int
         init=init, 
         get_payouts=get_payouts,
         step=step,
+        step_with_record=step_with_record,
+        next_event=next_event,
+        get_observation=construct_player_table_state,
         run_hands=run_hands,
         player_metadata=player_metadata,
         max_players=max_players,
@@ -1304,12 +1374,31 @@ class TestBot:
         )
         return action, state
     
-    def observe(self, data):
-        return None
+    def observe(self, record, state, key):
+        return state
     
     def metadata(self):
         return {
             "bot_type": "test_bot"
+        }
+
+class HumanSeat:
+    """Placeholder for a seat a person plays by passing actions to step_with_record. act is only
+    reached if that seat's turn is stepped without an action, and then it folds."""
+    def init_state(self, key: jax.Array) -> None:
+        return None
+
+    def act(self, obs: PlayerTableState, state: None, key: jax.Array) -> tuple[ActionData, None]:
+        action = ActionData(
+            type=jnp.asarray(Action.FOLD, dtype=jnp.int32),
+            value=jnp.asarray(0, dtype=jnp.int32)
+        )
+        return action, state
+
+    def metadata(self) -> dict:
+        return {
+            "bot_type": "human",
+            "kind": "human"
         }
 
 class RandomBot:

@@ -1,0 +1,5 @@
+v5:Bot vs     alan_wake_claude:   +84.31 bb/100  (SE 12.54, 16000 hands, seed 1000, 51s)
+v5:Bot vs    jack_joyce_gemini:  +293.77 bb/100  (SE 18.72, 16000 hands, seed 1000, 34s)
+v5:Bot vs      jesse_faden_glm:  +249.49 bb/100  (SE 24.26, 16000 hands, seed 1000, 33s)
+v5:Bot vs        max_payne_gpt:   +61.83 bb/100  (SE 10.67, 16000 hands, seed 1000, 10s)
+v5:Bot mean vs legacy:  +172.35 bb/100

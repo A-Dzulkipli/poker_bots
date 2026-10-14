@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poker Bots</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>Poker Bots</h1>
+  <nav>
+    <button class="tab active" data-tab="play">Play</button>
+    <button class="tab" data-tab="replay">Replay</button>
+  </nav>
+</header>
+
+<main>
+<section id="play" class="panel active">
+  <form id="setup" class="card-panel">
+    <h2>New table</h2>
+    <div class="row">
+      <label>Seats <select id="seat-count"></select></label>
+      <label>Opponent <select id="fill-bot"></select></label>
+      <label class="check"><input type="checkbox" id="show-versions"> list every version</label>
+    </div>
+    <div id="seat-bots" class="seat-bots"></div>
+    <div class="row">
+      <label>Small blind <input type="number" id="sb" value="1" min="1"></label>
+      <label>Big blind <input type="number" id="bb" value="2" min="1"></label>
+      <label>Stack (bb) <input type="number" id="stack-bb" value="100" min="1"></label>
+      <label>Seed <input type="number" id="seed" placeholder="random"></label>
+    </div>
+    <div class="row">
+      <button type="submit" class="primary" id="start">Sit down</button>
+      <span id="setup-msg" class="msg"></span>
+    </div>
+  </form>
+
+  <div id="game" hidden>
+    <div class="toolbar">
+      <span id="session-info"></span>
+      <label>Bot delay <input type="number" id="bot-delay" min="0" step="100"> ms</label>
+      <label class="check"><input type="checkbox" id="show-bot-cards"> show bot cards</label>
+      <label class="check"><input type="checkbox" id="auto-deal"> auto-deal</label>
+      <button id="end-session">End session</button>
+    </div>
+    <div class="game-layout">
+      <div>
+        <div id="play-table" class="table"></div>
+        <div id="result" class="result" hidden></div>
+        <div id="controls" class="controls"></div>
+      </div>
+      <ol id="play-log" class="log"></ol>
+    </div>
+  </div>
+</section>
+
+<section id="replay" class="panel">
+  <div class="card-panel">
+    <div class="row">
+      <label>Source
+        <select id="replay-source">
+          <option value="sessions">My sessions</option>
+          <option value="tournaments">Tournament blocks</option>
+        </select>
+      </label>
+      <label id="replay-pick-label">Session <select id="replay-pick"></select></label>
+      <label id="replay-table-label" hidden>Table <input type="number" id="replay-table" value="0" min="0"></label>
+      <button id="replay-load" class="primary">Load</button>
+      <label class="check"><input type="checkbox" id="replay-show-all" checked> show all cards</label>
+      <span id="replay-msg" class="msg"></span>
+    </div>
+  </div>
+  <div id="replay-warning" class="warning" hidden></div>
+  <div id="replay-view" class="game-layout" hidden>
+    <div>
+      <div class="toolbar">
+        <button id="r-prev-hand" title="previous hand (↑)">⏮ hand</button>
+        <button id="r-back" title="step back (←)">◀ step</button>
+        <span id="r-position"></span>
+        <button id="r-fwd" title="step forward (→)">step ▶</button>
+        <button id="r-next-hand" title="next hand (↓)">hand ⏭</button>
+        <label>Hand <select id="r-hand"></select></label>
+      </div>
+      <div id="replay-table-view" class="table"></div>
+      <div id="replay-result" class="result" hidden></div>
+    </div>
+    <ol id="replay-log" class="log"></ol>
+  </div>
+</section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "equity.py": "db3b665bb5319b3739d30f459397a01b325220be99b824191f37ad361858a254",
+  "bench.py": "fcdbdce40ccc5236f7b4efaee626594dd08f83807b08158e99ee613f0f326a60",
+  "opponents/max_payne_gpt.py": "f44830c7b5911408687e8310c622bf769cbe802cd930bddcac23ced9ed8af7f7",
+  "opponents/alan_wake_claude.py": "5dc1c1ff6598b0a0c2eb47f21163b4abffdb92b5a2fa22ae6b424f2fb3f9f2dc",
+  "opponents/jack_joyce_gemini.py": "bcb1284384b56e9192bf628fc5a9488dd05267bd89b9f948713827c716dd05d8",
+  "opponents/jesse_faden_glm.py": "314f32014377e317b589514ac283594dab9a106c41e9047aae23a98ecb55915c"
+}

@@ -19,6 +19,10 @@ dependencies = [
 dev = [
     "ipykernel>=7.4.0",
 ]
+ui = [
+    "fastapi",
+    "uvicorn",
+]
 
 [build-system]
 requires = ["hatchling"]

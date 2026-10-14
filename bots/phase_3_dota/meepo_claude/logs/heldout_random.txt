@@ -1,0 +1,2 @@
+v5:Bot vs               random:  +474.58 bb/100  (SE 14.68, 16000 hands, seed 1000, 18s)
+v9:Bot vs               random:  +449.95 bb/100  (SE 14.98, 16000 hands, seed 1000, 18s)

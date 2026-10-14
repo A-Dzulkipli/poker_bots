@@ -35,9 +35,12 @@ def get_engine_commit() -> str | None:
     except (OSError, subprocess.CalledProcessError):
         return None
 
+def get_kind(metadata: dict) -> str:
+    return metadata.get("kind", "bot")
+
 def make_header(env: PokerEnv, table_states: TableState, seed: int | None) -> dict:
-    seated = np.asarray(table_states.seated)
-    seat_bot = np.asarray(table_states.seat_bot)
+    seated = np.atleast_2d(np.asarray(table_states.seated))
+    seat_bot = np.atleast_2d(np.asarray(table_states.seat_bot))
     return {
         "schema_version": SCHEMA_VERSION,
         "engine_commit": get_engine_commit(),
@@ -51,7 +54,7 @@ def make_header(env: PokerEnv, table_states: TableState, seed: int | None) -> di
             {
                 "table": table,
                 "seats": [
-                    {"seat": seat, "kind": "bot", "bot_index": int(seat_bot[table, seat])} if seated[table, seat]
+                    {"seat": seat, "kind": get_kind(env.player_metadata[seat_bot[table, seat]]), "bot_index": int(seat_bot[table, seat])} if seated[table, seat]
                     else {"seat": seat, "kind": "empty"}
                     for seat in range(env.max_players)
                 ]
@@ -60,8 +63,9 @@ def make_header(env: PokerEnv, table_states: TableState, seed: int | None) -> di
         ]
     }
 
-def hand_to_json(hand: HandRecord, table: int) -> dict:
+def hand_to_json(hand: HandRecord, table: int, player_metadata: tuple) -> dict:
     seated = hand.seated.tolist()
+    seat_kinds = [get_kind(player_metadata[bot]) for bot in hand.seat_bot.tolist()]
     shown = (hand.went_to_showdown & hand.in_hand).tolist()
     history = hand.history
     return {
@@ -88,7 +92,7 @@ def hand_to_json(hand: HandRecord, table: int) -> dict:
                 "value_requested": int(history.requested[i]),
                 "value_applied": int(history.amount[i]),
                 "is_all_in": bool(history.is_all_in[i]),
-                "by": "bot"
+                "by": seat_kinds[int(history.player_id[i])]
             }
             for i in range(int(hand.action_count)) if history.is_valid[i]
         ],
@@ -139,7 +143,7 @@ def simulate(
 
             for table in range(len(num_recorded)):
                 for hand in range(int(num_recorded[table])):
-                    log.write(json.dumps(hand_to_json(jax.tree.map(lambda x: x[table, hand], records), table)) + "\n")
+                    log.write(json.dumps(hand_to_json(jax.tree.map(lambda x: x[table, hand], records), table, env.player_metadata)) + "\n")
 
             recorded = np.arange(num_hands)[None, :] < num_recorded[:, None]
             seat_mask = records.seated & recorded[:, :, None]

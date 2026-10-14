@@ -1,0 +1,13 @@
+{
+  "start_utc": "2026-10-13T17:15:56+00:00",
+  "freeze_utc": "2026-10-13T17:39:10.168987+00:00",
+  "finalists": [
+    6,
+    9,
+    11
+  ],
+  "heldout_seed": 1000,
+  "tables": 256,
+  "hands_per_table": 250,
+  "selection_rule": "Primary core mean, with per-opponent balance, uncertainty, parent matches, clarity and compute cost considered. No more strategy changes after this freeze."
+}

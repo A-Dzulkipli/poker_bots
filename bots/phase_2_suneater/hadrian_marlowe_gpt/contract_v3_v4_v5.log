@@ -1,0 +1,3 @@
+v3 passed jit/vmap, state, action, metadata and protected-file checks; 49 decision lines
+v4 passed jit/vmap, state, action, metadata and protected-file checks; 52 decision lines
+v5 passed jit/vmap, state, action, metadata and protected-file checks; 55 decision lines

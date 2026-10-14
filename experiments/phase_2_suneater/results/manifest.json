@@ -1,0 +1,674 @@
+{
+  "blocks": {
+    "bassander_lin_glm__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.4,
+      "finished_at": "2026-10-13T16:34:28.470377+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.7,
+      "finished_at": "2026-10-13T16:34:39.230381+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.9,
+      "finished_at": "2026-10-13T16:34:52.153172+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.8,
+      "finished_at": "2026-10-13T16:35:05.021988+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.1,
+      "finished_at": "2026-10-13T16:35:19.157851+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.2,
+      "finished_at": "2026-10-13T16:35:33.411537+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.9,
+      "finished_at": "2026-10-13T16:35:49.331642+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.0,
+      "finished_at": "2026-10-13T16:36:05.334530+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.1,
+      "finished_at": "2026-10-13T16:36:20.507730+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.8,
+      "finished_at": "2026-10-13T16:36:35.388606+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.3,
+      "finished_at": "2026-10-13T16:36:40.699538+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.2,
+      "finished_at": "2026-10-13T16:36:45.975907+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.7,
+      "finished_at": "2026-10-13T16:36:54.760878+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.8,
+      "finished_at": "2026-10-13T16:37:03.585906+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.5,
+      "finished_at": "2026-10-13T16:37:14.148322+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.7,
+      "finished_at": "2026-10-13T16:37:24.925616+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.2,
+      "finished_at": "2026-10-13T16:37:40.194799+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.9,
+      "finished_at": "2026-10-13T16:37:55.133215+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.1,
+      "finished_at": "2026-10-13T16:38:09.253873+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.2,
+      "finished_at": "2026-10-13T16:38:23.491974+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.8,
+      "finished_at": "2026-10-13T16:38:38.285063+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.6,
+      "finished_at": "2026-10-13T16:38:52.959521+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.0,
+      "finished_at": "2026-10-13T16:38:59.018841+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.0,
+      "finished_at": "2026-10-13T16:39:05.055476+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.0,
+      "finished_at": "2026-10-13T16:39:13.064466+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.8,
+      "finished_at": "2026-10-13T16:39:20.950728+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.6,
+      "finished_at": "2026-10-13T16:39:35.560958+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.3,
+      "finished_at": "2026-10-13T16:39:49.874224+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.7,
+      "finished_at": "2026-10-13T16:40:05.596951+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.5,
+      "finished_at": "2026-10-13T16:40:21.185629+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.9,
+      "finished_at": "2026-10-13T16:40:36.095405+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.3,
+      "finished_at": "2026-10-13T16:40:51.469253+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.3,
+      "finished_at": "2026-10-13T16:40:56.844772+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.3,
+      "finished_at": "2026-10-13T16:41:02.150274+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.8,
+      "finished_at": "2026-10-13T16:41:10.950863+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.7,
+      "finished_at": "2026-10-13T16:41:19.737555+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.9,
+      "finished_at": "2026-10-13T16:41:36.710167+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.5,
+      "finished_at": "2026-10-13T16:41:53.256736+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.6,
+      "finished_at": "2026-10-13T16:42:09.912220+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.8,
+      "finished_at": "2026-10-13T16:42:26.772581+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.2,
+      "finished_at": "2026-10-13T16:42:37.051334+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.1,
+      "finished_at": "2026-10-13T16:42:47.167618+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.6,
+      "finished_at": "2026-10-13T16:42:55.862520+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.8,
+      "finished_at": "2026-10-13T16:43:04.677515+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 18.5,
+      "finished_at": "2026-10-13T16:43:23.243929+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 18.4,
+      "finished_at": "2026-10-13T16:43:41.711433+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.8,
+      "finished_at": "2026-10-13T16:43:51.582718+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.4,
+      "finished_at": "2026-10-13T16:44:01.016826+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.5,
+      "finished_at": "2026-10-13T16:44:10.536803+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.9,
+      "finished_at": "2026-10-13T16:44:20.478594+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jesse_faden_glm__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.9,
+      "finished_at": "2026-10-13T16:44:30.441680+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jesse_faden_glm__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.8,
+      "finished_at": "2026-10-13T16:44:40.307208+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jesse_faden_glm__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.9,
+      "finished_at": "2026-10-13T16:44:49.268627+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jesse_faden_glm__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.8,
+      "finished_at": "2026-10-13T16:44:58.110559+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "max_payne_gpt__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.1,
+      "finished_at": "2026-10-13T16:45:03.201730+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "max_payne_gpt__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.0,
+      "finished_at": "2026-10-13T16:45:08.225009+00:00",
+      "engine_sha256": "295477eff7637056"
+    }
+  },
+  "format_version": 2,
+  "updated_at": "2026-10-13T16:45:08.225363+00:00",
+  "format": {
+    "max_players": 2,
+    "small_blind": 1,
+    "big_blind": 2,
+    "starting_stack_bb": 100,
+    "rebuy": true,
+    "seating": "A in even seats on even tables, odd seats on odd tables"
+  },
+  "engine": {
+    "git_head": "02abc49ab90769cd39061baeb126a55e533cb036",
+    "git_dirty": true,
+    "files_sha256": {
+      "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hand_eval.py": "28e243dc342fb8f1d04427dac201946141eeffdf1ea9e670882b1349670d1552",
+      "poker_game.py": "8f15737fa55648fac2df546f5441bd1ceaa65339438fc3b7df2d7f2fc923afe6",
+      "simulate.py": "b820752610fc56cec3430dce0bc442a1d98f3fe02119848f864d99f7be139448"
+    },
+    "jax_version": "0.11.2",
+    "backend": "cpu"
+  },
+  "bots": {
+    "bassander_lin_glm": {
+      "registry_name": "phase_2_suneater/bassander_lin_glm",
+      "metadata": {
+        "bot_name": "bassander_lin_glm",
+        "version": 8,
+        "parent": 7,
+        "lineage": "phase_2_suneater/bassander_lin_glm",
+        "model": "GLM-5.3",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 96,
+          "button_open_bb": 2.5,
+          "limp_raise_equity": 0.55,
+          "limp_raise_bb": 3.5,
+          "three_bet_equity": 0.6,
+          "value_bet_equity": 0.64,
+          "reraise_equity": 0.8,
+          "bet_pot_fraction": 0.9,
+          "call_margin": 0.02,
+          "per_raise_factor": 0.75,
+          "preflop_reraise_multiple": 3.0
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/bassander_lin_glm_final.py",
+      "source_sha256": "ac693a566e3a38ce480f4956a4b0620356e2c951ba4f9aeaeb2228a33d97f119"
+    },
+    "hadrian_marlowe_gpt": {
+      "registry_name": "phase_2_suneater/hadrian_marlowe_gpt",
+      "metadata": {
+        "bot_name": "hadrian_marlowe_gpt",
+        "version": 6,
+        "parent": 4,
+        "lineage": "phase_2_suneater/hadrian_marlowe_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "button_open_equity": 0.43,
+          "isolation_equity": 0.6,
+          "preflop_value_equity": 0.69,
+          "postflop_value_equity": 0.68,
+          "reraise_margin_equity": 0.12,
+          "range_exclusion_fraction": 0.3,
+          "prior_raise_weight": 0.5,
+          "call_margin_equity": 0.03,
+          "realization_fraction": 0.9,
+          "opening_size_bb": 2.5,
+          "premium_equity": 0.9,
+          "premium_pot_fraction": 1.25,
+          "bet_pot_fraction": 0.66,
+          "preflop_reraise_multiple": 3.0
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/hadrian_marlowe_gpt_final.py",
+      "source_sha256": "2f73440f2ef9346d4f554167c4c4f58fbfda3d91fd5306ecd8ea2dbd4f2eb68e"
+    },
+    "valka_onderra_claude": {
+      "registry_name": "phase_2_suneater/valka_onderra_claude",
+      "metadata": {
+        "bot_name": "valka_onderra_claude",
+        "version": 5,
+        "parent": 4,
+        "lineage": "phase_2_suneater/valka_onderra_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_equity": 0.4,
+          "preflop_raise_equity": 0.55,
+          "postflop_bet_equity": 0.66,
+          "reraise_equity_step": 0.08,
+          "call_margin": 0.02,
+          "raise_discount": 0.12,
+          "missed_board_weight": 0.35,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "min_bet_pot_fraction": 0.5,
+          "max_bet_pot_fraction": 1.0,
+          "shove_commit_fraction": 0.45
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop (Code)"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/valka_onderra_claude_final.py",
+      "source_sha256": "c960de99ef862fbef3b04ea1afd5142c6e837df1b7c69585a11a9ab32bfd403d"
+    },
+    "alan_wake_claude": {
+      "registry_name": "phase_1_remedy/alan_wake_claude",
+      "metadata": {
+        "bot_name": "alan_wake_claude",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_1_remedy/alan_wake_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "num_samples": 128,
+          "raise_strength": 1.5,
+          "raise_discount": 0.15,
+          "call_margin": 0.03,
+          "preflop_raise_multiple": 3.0,
+          "bet_pot_fraction": 0.66,
+          "shove_commit_fraction": 0.4
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop (Code)"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/alan_wake_claude_final.py",
+      "source_sha256": "5dc1c1ff6598b0a0c2eb47f21163b4abffdb92b5a2fa22ae6b424f2fb3f9f2dc"
+    },
+    "jack_joyce_gemini": {
+      "registry_name": "phase_1_remedy/jack_joyce_gemini",
+      "metadata": {
+        "bot_name": "jack_joyce_gemini",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_1_remedy/jack_joyce_gemini",
+        "model": "Gemini-2.5-Pro",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "raise_eq": 0.6,
+          "massive_eq": 0.8,
+          "bluff_prob": 0.1
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Gemini"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/jack_joyce_gemini_final.py",
+      "source_sha256": "bcb1284384b56e9192bf628fc5a9488dd05267bd89b9f948713827c716dd05d8"
+    },
+    "jesse_faden_glm": {
+      "registry_name": "phase_1_remedy/jesse_faden_glm",
+      "metadata": {
+        "bot_name": "jesse_faden_glm",
+        "version": 1,
+        "parent": null,
+        "lineage": "phase_1_remedy/jesse_faden_glm",
+        "model": "GLM-5.3",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "call_margin": 0.03,
+          "raise_equity": 0.62,
+          "bet_fraction": 0.75,
+          "num_samples": 128
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/jesse_faden_glm_final.py",
+      "source_sha256": "314f32014377e317b589514ac283594dab9a106c41e9047aae23a98ecb55915c"
+    },
+    "max_payne_gpt": {
+      "registry_name": "phase_1_remedy/max_payne_gpt",
+      "metadata": {
+        "bot_name": "max_payne_gpt",
+        "version": 1,
+        "parent": null,
+        "lineage": "phase_1_remedy/max_payne_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "num_samples": 64,
+          "realization_fraction": 0.85,
+          "call_margin_equity": 0.04,
+          "preflop_entry_multiplier": 1.15,
+          "preflop_raise_multiplier": 1.8,
+          "value_raise_equity": 0.62,
+          "bet_pot_fraction": 0.75,
+          "opening_size_bb": 2.5
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/max_payne_gpt_final.py",
+      "source_sha256": "f44830c7b5911408687e8310c622bf769cbe802cd930bddcac23ced9ed8af7f7"
+    },
+    "random": {
+      "registry_name": "builtin/random",
+      "metadata": {
+        "bot_type": "random_bot"
+      },
+      "source": "src/poker_bots/poker_game.py",
+      "source_sha256": "8f15737fa55648fac2df546f5441bd1ceaa65339438fc3b7df2d7f2fc923afe6"
+    }
+  }
+}
