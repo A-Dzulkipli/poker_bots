@@ -8,6 +8,7 @@
 | `phase_4_sea_monsters/` | 2 (full hand histories) | Heads-up round robin: phase-4 finals (stateful, opponent tracking), phase-3, phase-2 and phase-1 finals, the aggressor probe, RandomBot, in 250-hand sessions. Run `verify_finals.py` first. Also writes `results/weighted.parquet`, the strength-weighted score over the phase-4 benchmark field. |
 | `phase_5_cowboy_bebop/` | 2 (full hand histories) | Heads-up round robin: phase-5 finals plus the phase-4 roster, in 250-hand sessions. Run `build_finals.py` and `verify_finals.py` first. Writes `results/weighted.parquet` with the phase-5 ranks. |
 | `phase_6_trails/` | 2 (full hand histories) | Heads-up round robin: phase-6 finals (stateless, opponent ranges) plus the phase-5 roster, in 250-hand sessions. Run `build_finals.py` and `verify_finals.py` first. Writes `results/weighted.parquet` with the phase-6 ranks. |
+| `phase_7_lemonade_stand/` | 2 (full hand histories) | Heads-up round robin: phase-7 finals (open design, 12 hours, speed-limited) plus the phase-6 roster, in 250-hand sessions. Run `build_finals.py` and `verify_finals.py` first. Writes `results/weighted.parquet` with the phase-7 ranks. |
 | `rubick_switch/` | 2 (full hand histories) | Rubick: builds the hole-card switching tables from phase-3 data (`build_tables.py`) and plays both Rubick variants against every finals bot on held-out seeds 2 and 3. |
 
 Shared code:
