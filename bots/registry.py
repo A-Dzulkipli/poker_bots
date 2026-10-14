@@ -4,10 +4,11 @@ Names are paths:
     "phase_1_remedy/alan_wake_claude"      final (deployed) version of a lineage
     "phase_1_remedy/alan_wake_claude/v2"   any individual version of that lineage
     "probes/aggressor"                     probe bots that measure one leak (bots/probes/)
+    "rubick/rubick", "rubick/rubick_strict" meta-bots that switch between finals by hole cards (bots/rubick/)
     "builtin/random"                       bots that ship with the engine
 
 Folders: phase_1_remedy (6-max, 20 lines), phase_2_suneater (heads-up, 50 lines),
-phase_3_dota (heads-up, 100 lines), probes. Any folder with an `__init__.py` is scanned.
+phase_3_dota (heads-up, 100 lines), probes, rubick. Any folder with an `__init__.py` is scanned.
 
     from bots.registry import get_bot, list_bots, FINAL
     bot = get_bot("phase_1_remedy/alan_wake_claude")()     # registry entries are classes

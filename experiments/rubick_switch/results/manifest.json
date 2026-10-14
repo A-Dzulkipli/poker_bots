@@ -1,0 +1,823 @@
+{
+  "blocks": {
+    "rubick__invoker_gpt/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 46.3,
+      "finished_at": "2026-10-14T02:35:09.115942+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__meepo_claude/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 47.6,
+      "finished_at": "2026-10-14T02:35:56.764891+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__windrunner_glm/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 45.1,
+      "finished_at": "2026-10-14T02:36:41.958664+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__bassander_lin_glm/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 53.8,
+      "finished_at": "2026-10-14T02:37:35.855161+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__hadrian_marlowe_gpt/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 40.3,
+      "finished_at": "2026-10-14T02:38:16.182550+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__valka_onderra_claude/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 49.1,
+      "finished_at": "2026-10-14T02:39:05.387135+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__aggressor/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 31.4,
+      "finished_at": "2026-10-14T02:39:36.809897+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__alan_wake_claude/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 56.5,
+      "finished_at": "2026-10-14T02:40:33.396527+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__jack_joyce_gemini/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 59.7,
+      "finished_at": "2026-10-14T02:41:33.193066+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__jesse_faden_glm/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 58.1,
+      "finished_at": "2026-10-14T02:42:31.321311+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__max_payne_gpt/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 23.3,
+      "finished_at": "2026-10-14T02:42:54.680359+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__random/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 45.6,
+      "finished_at": "2026-10-14T02:43:40.335471+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__invoker_gpt/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 35.8,
+      "finished_at": "2026-10-14T02:44:16.188602+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__meepo_claude/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 39.4,
+      "finished_at": "2026-10-14T02:44:55.624830+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__windrunner_glm/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 32.9,
+      "finished_at": "2026-10-14T02:45:28.608313+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__bassander_lin_glm/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 45.4,
+      "finished_at": "2026-10-14T02:46:14.128977+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__hadrian_marlowe_gpt/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 32.8,
+      "finished_at": "2026-10-14T02:46:46.944169+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__valka_onderra_claude/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 46.2,
+      "finished_at": "2026-10-14T02:47:33.224942+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__aggressor/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 25.2,
+      "finished_at": "2026-10-14T02:47:58.439811+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__alan_wake_claude/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 50.2,
+      "finished_at": "2026-10-14T02:48:48.645408+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__jack_joyce_gemini/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 46.9,
+      "finished_at": "2026-10-14T02:49:35.645345+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__jesse_faden_glm/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 49.5,
+      "finished_at": "2026-10-14T02:50:25.202387+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__max_payne_gpt/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.6,
+      "finished_at": "2026-10-14T02:50:42.832095+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__random/seed=2": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 35.6,
+      "finished_at": "2026-10-14T02:51:18.492875+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__invoker_gpt/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 46.2,
+      "finished_at": "2026-10-14T02:52:04.794453+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__meepo_claude/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 47.1,
+      "finished_at": "2026-10-14T02:52:51.949886+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__windrunner_glm/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 44.2,
+      "finished_at": "2026-10-14T02:53:36.193847+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__bassander_lin_glm/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 52.8,
+      "finished_at": "2026-10-14T02:54:29.091403+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__hadrian_marlowe_gpt/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 39.3,
+      "finished_at": "2026-10-14T02:55:08.498436+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__valka_onderra_claude/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 51.0,
+      "finished_at": "2026-10-14T02:55:59.603108+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__aggressor/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 31.5,
+      "finished_at": "2026-10-14T02:56:31.190596+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__alan_wake_claude/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 57.3,
+      "finished_at": "2026-10-14T02:57:28.499158+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__jack_joyce_gemini/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 59.2,
+      "finished_at": "2026-10-14T02:58:27.771527+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__jesse_faden_glm/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 58.0,
+      "finished_at": "2026-10-14T02:59:25.854380+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__max_payne_gpt/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 23.5,
+      "finished_at": "2026-10-14T02:59:49.454342+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick__random/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 45.0,
+      "finished_at": "2026-10-14T03:00:34.492564+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__invoker_gpt/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 35.5,
+      "finished_at": "2026-10-14T03:01:10.097529+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__meepo_claude/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 40.5,
+      "finished_at": "2026-10-14T03:01:50.676128+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__windrunner_glm/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 32.9,
+      "finished_at": "2026-10-14T03:02:23.662930+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__bassander_lin_glm/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 45.5,
+      "finished_at": "2026-10-14T03:03:09.257769+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__hadrian_marlowe_gpt/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 33.9,
+      "finished_at": "2026-10-14T03:03:43.195725+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__valka_onderra_claude/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 45.7,
+      "finished_at": "2026-10-14T03:04:28.948308+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__aggressor/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 24.9,
+      "finished_at": "2026-10-14T03:04:53.936693+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__alan_wake_claude/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 51.9,
+      "finished_at": "2026-10-14T03:05:45.844846+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__jack_joyce_gemini/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 46.8,
+      "finished_at": "2026-10-14T03:06:32.697999+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__jesse_faden_glm/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 49.5,
+      "finished_at": "2026-10-14T03:07:22.243981+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__max_payne_gpt/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.0,
+      "finished_at": "2026-10-14T03:07:39.267668+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "rubick_strict__random/seed=3": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 35.3,
+      "finished_at": "2026-10-14T03:08:14.630885+00:00",
+      "engine_sha256": "295477eff7637056"
+    }
+  },
+  "format_version": 2,
+  "updated_at": "2026-10-14T03:08:14.632225+00:00",
+  "format": {
+    "max_players": 2,
+    "small_blind": 1,
+    "big_blind": 2,
+    "starting_stack_bb": 100,
+    "rebuy": true,
+    "seating": "A in even seats on even tables, odd seats on odd tables"
+  },
+  "engine": {
+    "git_head": "decafb90a45c2e20255bd6aca383f8a631c98d83",
+    "git_dirty": false,
+    "files_sha256": {
+      "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hand_eval.py": "28e243dc342fb8f1d04427dac201946141eeffdf1ea9e670882b1349670d1552",
+      "poker_game.py": "8f15737fa55648fac2df546f5441bd1ceaa65339438fc3b7df2d7f2fc923afe6",
+      "simulate.py": "b820752610fc56cec3430dce0bc442a1d98f3fe02119848f864d99f7be139448"
+    },
+    "jax_version": "0.11.2",
+    "backend": "cpu"
+  },
+  "bots": {
+    "rubick": {
+      "registry_name": "rubick/rubick",
+      "metadata": {
+        "bot_name": "rubick_argmax",
+        "kind": "bot",
+        "role": "meta",
+        "description": "plays each hand as the bot with the best realised EV for its hole-card class and seat",
+        "params": {
+          "table": "argmax",
+          "bots": [
+            "aggressor",
+            "alan_wake_claude",
+            "bassander_lin_glm",
+            "hadrian_marlowe_gpt",
+            "invoker_gpt",
+            "jack_joyce_gemini",
+            "jesse_faden_glm",
+            "max_payne_gpt",
+            "meepo_claude",
+            "valka_onderra_claude",
+            "windrunner_glm"
+          ],
+          "source": "experiments/phase_3_dota/results seeds 0-1, excluding random"
+        }
+      },
+      "source": "bots/rubick/rubick_final.py",
+      "source_sha256": "d70969ee46ec8bb81e687e426edf5d07b0ebe5d480740760ebae6824edf1edbf"
+    },
+    "rubick_strict": {
+      "registry_name": "rubick/rubick_strict",
+      "metadata": {
+        "bot_name": "rubick_strict",
+        "kind": "bot",
+        "role": "meta",
+        "description": "plays each hand as the bot with the best realised EV for its hole-card class and seat",
+        "params": {
+          "table": "strict",
+          "bots": [
+            "aggressor",
+            "alan_wake_claude",
+            "bassander_lin_glm",
+            "hadrian_marlowe_gpt",
+            "invoker_gpt",
+            "jesse_faden_glm",
+            "meepo_claude",
+            "valka_onderra_claude",
+            "windrunner_glm"
+          ],
+          "source": "experiments/phase_3_dota/results seeds 0-1, excluding random"
+        }
+      },
+      "source": "bots/rubick/rubick_strict_final.py",
+      "source_sha256": "379c8567303a7af6d92d71e1ab0d5b4cdec586c44c4b7757a365c8ffd74d441b"
+    },
+    "invoker_gpt": {
+      "registry_name": "phase_3_dota/invoker_gpt",
+      "metadata": {
+        "bot_name": "invoker_gpt",
+        "version": 9,
+        "parent": 6,
+        "lineage": "phase_3_dota/invoker_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v3",
+        "phase": "phase_3_dota",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_equity": 0.38,
+          "isolation_equity": 0.56,
+          "preflop_raise_equity": 0.6,
+          "value_equity": 0.7,
+          "raise_equity": 0.86,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "bet_pot_fraction": 0.67,
+          "premium_equity": 0.92,
+          "premium_pot_fraction": 1.15,
+          "raise_exclusion_fraction": 0.28,
+          "prior_raise_weight": 0.4,
+          "opening_raise_weight": 0.4,
+          "realization_fraction": 0.92,
+          "call_margin_equity": 0.025,
+          "bluff_frequency": 0.35,
+          "bluff_ceiling_equity": 0.5,
+          "threebet_bluff_frequency": 0.2,
+          "threebet_bluff_ceiling_equity": 0.58,
+          "trap_frequency": 0.35
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_3_dota/invoker_gpt_final.py",
+      "source_sha256": "feb0dd697604819c72e4708f29ea4af675d5e883749b35b2a5846aaca0c818fc"
+    },
+    "meepo_claude": {
+      "registry_name": "phase_3_dota/meepo_claude",
+      "metadata": {
+        "bot_name": "meepo_claude",
+        "version": 5,
+        "parent": 2,
+        "lineage": "phase_3_dota/meepo_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v3",
+        "phase": "phase_3_dota",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 192,
+          "open_equity": 0.42,
+          "preflop_raise_equity": 0.62,
+          "limp_raise_equity": 0.55,
+          "value_bet_equity": 0.64,
+          "value_raise_equity": 0.78,
+          "street_raise_discount": 0.25,
+          "earlier_raise_discount": 0.12,
+          "preflop_raise_discount": 0.1,
+          "call_margin": 0.02,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "bet_pot_fraction": 0.66,
+          "bluff_max_equity": 0.35,
+          "bluff_frequency": 0.35
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop (Code)"
+          }
+        ]
+      },
+      "source": "bots/phase_3_dota/meepo_claude_final.py",
+      "source_sha256": "99602ed1b8ec471eff7954bd01067169d3f417c93ff1c7b2990f48e0fa391185"
+    },
+    "windrunner_glm": {
+      "registry_name": "phase_3_dota/windrunner_glm",
+      "metadata": {
+        "bot_name": "windrunner_glm",
+        "version": 6,
+        "parent": 5,
+        "lineage": "phase_3_dota/windrunner_glm",
+        "model": "GLM-5.3 (account:zai-individual-coding-plan/GLM-5.3)",
+        "prompt_version": "botgen-v3",
+        "phase": "phase_3_dota",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_size_bb": 2.5,
+          "preflop_reraise_multiple": 3.0,
+          "three_bet_equity": 0.63,
+          "light_three_bet_freq": 0.15,
+          "limp_raise_equity": 0.55,
+          "value_bet_equity": 0.62,
+          "bluff_frequency": 0.33,
+          "semi_bluff_frequency": 0.5,
+          "bluff_street_decay": 0.55,
+          "bluff_equity_split": 0.45,
+          "bet_pot_fraction": 0.65,
+          "reraise_equity": 0.8,
+          "call_margin": 0.02,
+          "aggression_discount": 0.58,
+          "prior_street_weight": 0.5,
+          "realization_factor": 0.9
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_3_dota/windrunner_glm_final.py",
+      "source_sha256": "eca46637f5ffac470e1f57781af366b93e992caffad32b6fe71e73af69887305"
+    },
+    "bassander_lin_glm": {
+      "registry_name": "phase_2_suneater/bassander_lin_glm",
+      "metadata": {
+        "bot_name": "bassander_lin_glm",
+        "version": 8,
+        "parent": 7,
+        "lineage": "phase_2_suneater/bassander_lin_glm",
+        "model": "GLM-5.3",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 96,
+          "button_open_bb": 2.5,
+          "limp_raise_equity": 0.55,
+          "limp_raise_bb": 3.5,
+          "three_bet_equity": 0.6,
+          "value_bet_equity": 0.64,
+          "reraise_equity": 0.8,
+          "bet_pot_fraction": 0.9,
+          "call_margin": 0.02,
+          "per_raise_factor": 0.75,
+          "preflop_reraise_multiple": 3.0
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/bassander_lin_glm_final.py",
+      "source_sha256": "ac693a566e3a38ce480f4956a4b0620356e2c951ba4f9aeaeb2228a33d97f119"
+    },
+    "hadrian_marlowe_gpt": {
+      "registry_name": "phase_2_suneater/hadrian_marlowe_gpt",
+      "metadata": {
+        "bot_name": "hadrian_marlowe_gpt",
+        "version": 6,
+        "parent": 4,
+        "lineage": "phase_2_suneater/hadrian_marlowe_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "button_open_equity": 0.43,
+          "isolation_equity": 0.6,
+          "preflop_value_equity": 0.69,
+          "postflop_value_equity": 0.68,
+          "reraise_margin_equity": 0.12,
+          "range_exclusion_fraction": 0.3,
+          "prior_raise_weight": 0.5,
+          "call_margin_equity": 0.03,
+          "realization_fraction": 0.9,
+          "opening_size_bb": 2.5,
+          "premium_equity": 0.9,
+          "premium_pot_fraction": 1.25,
+          "bet_pot_fraction": 0.66,
+          "preflop_reraise_multiple": 3.0
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/hadrian_marlowe_gpt_final.py",
+      "source_sha256": "2f73440f2ef9346d4f554167c4c4f58fbfda3d91fd5306ecd8ea2dbd4f2eb68e"
+    },
+    "valka_onderra_claude": {
+      "registry_name": "phase_2_suneater/valka_onderra_claude",
+      "metadata": {
+        "bot_name": "valka_onderra_claude",
+        "version": 5,
+        "parent": 4,
+        "lineage": "phase_2_suneater/valka_onderra_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_equity": 0.4,
+          "preflop_raise_equity": 0.55,
+          "postflop_bet_equity": 0.66,
+          "reraise_equity_step": 0.08,
+          "call_margin": 0.02,
+          "raise_discount": 0.12,
+          "missed_board_weight": 0.35,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "min_bet_pot_fraction": 0.5,
+          "max_bet_pot_fraction": 1.0,
+          "shove_commit_fraction": 0.45
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop (Code)"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/valka_onderra_claude_final.py",
+      "source_sha256": "c960de99ef862fbef3b04ea1afd5142c6e837df1b7c69585a11a9ab32bfd403d"
+    },
+    "aggressor": {
+      "registry_name": "probes/aggressor",
+      "metadata": {
+        "bot_name": "aggressor",
+        "kind": "bot",
+        "role": "probe",
+        "description": "opens every button, bets whenever checked to, continues on pot odds above defend_equity",
+        "params": {
+          "open_size_bb": 2.5,
+          "bet_pot_fraction": 0.67,
+          "defend_equity": 0.65,
+          "num_samples": 64
+        }
+      },
+      "source": "bots/probes/aggressor_final.py",
+      "source_sha256": "4bd968dc704e26240eac740bdca0340e326c516bb9b30c6eeb439419ba306d09"
+    },
+    "alan_wake_claude": {
+      "registry_name": "phase_1_remedy/alan_wake_claude",
+      "metadata": {
+        "bot_name": "alan_wake_claude",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_1_remedy/alan_wake_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "num_samples": 128,
+          "raise_strength": 1.5,
+          "raise_discount": 0.15,
+          "call_margin": 0.03,
+          "preflop_raise_multiple": 3.0,
+          "bet_pot_fraction": 0.66,
+          "shove_commit_fraction": 0.4
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop (Code)"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/alan_wake_claude_final.py",
+      "source_sha256": "5dc1c1ff6598b0a0c2eb47f21163b4abffdb92b5a2fa22ae6b424f2fb3f9f2dc"
+    },
+    "jack_joyce_gemini": {
+      "registry_name": "phase_1_remedy/jack_joyce_gemini",
+      "metadata": {
+        "bot_name": "jack_joyce_gemini",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_1_remedy/jack_joyce_gemini",
+        "model": "Gemini-2.5-Pro",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "raise_eq": 0.6,
+          "massive_eq": 0.8,
+          "bluff_prob": 0.1
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Gemini"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/jack_joyce_gemini_final.py",
+      "source_sha256": "bcb1284384b56e9192bf628fc5a9488dd05267bd89b9f948713827c716dd05d8"
+    },
+    "jesse_faden_glm": {
+      "registry_name": "phase_1_remedy/jesse_faden_glm",
+      "metadata": {
+        "bot_name": "jesse_faden_glm",
+        "version": 1,
+        "parent": null,
+        "lineage": "phase_1_remedy/jesse_faden_glm",
+        "model": "GLM-5.3",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "call_margin": 0.03,
+          "raise_equity": 0.62,
+          "bet_fraction": 0.75,
+          "num_samples": 128
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/jesse_faden_glm_final.py",
+      "source_sha256": "314f32014377e317b589514ac283594dab9a106c41e9047aae23a98ecb55915c"
+    },
+    "max_payne_gpt": {
+      "registry_name": "phase_1_remedy/max_payne_gpt",
+      "metadata": {
+        "bot_name": "max_payne_gpt",
+        "version": 1,
+        "parent": null,
+        "lineage": "phase_1_remedy/max_payne_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "num_samples": 64,
+          "realization_fraction": 0.85,
+          "call_margin_equity": 0.04,
+          "preflop_entry_multiplier": 1.15,
+          "preflop_raise_multiplier": 1.8,
+          "value_raise_equity": 0.62,
+          "bet_pot_fraction": 0.75,
+          "opening_size_bb": 2.5
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/max_payne_gpt_final.py",
+      "source_sha256": "f44830c7b5911408687e8310c622bf769cbe802cd930bddcac23ced9ed8af7f7"
+    },
+    "random": {
+      "registry_name": "builtin/random",
+      "metadata": {
+        "bot_type": "random_bot"
+      },
+      "source": "src/poker_bots/poker_game.py",
+      "source_sha256": "8f15737fa55648fac2df546f5441bd1ceaa65339438fc3b7df2d7f2fc923afe6"
+    }
+  }
+}

@@ -1,0 +1,122 @@
+rubick vs invoker_gpt seed 2: 16000 hands in 46s
+rubick vs meepo_claude seed 2: 16000 hands in 48s
+rubick vs windrunner_glm seed 2: 16000 hands in 45s
+rubick vs bassander_lin_glm seed 2: 16000 hands in 54s
+rubick vs hadrian_marlowe_gpt seed 2: 16000 hands in 40s
+rubick vs valka_onderra_claude seed 2: 16000 hands in 49s
+rubick vs aggressor seed 2: 16000 hands in 31s
+rubick vs alan_wake_claude seed 2: 16000 hands in 57s
+rubick vs jack_joyce_gemini seed 2: 16000 hands in 60s
+rubick vs jesse_faden_glm seed 2: 16000 hands in 58s
+rubick vs max_payne_gpt seed 2: 16000 hands in 23s
+rubick vs random seed 2: 16000 hands in 46s
+rubick_strict vs invoker_gpt seed 2: 16000 hands in 36s
+rubick_strict vs meepo_claude seed 2: 16000 hands in 39s
+rubick_strict vs windrunner_glm seed 2: 16000 hands in 33s
+rubick_strict vs bassander_lin_glm seed 2: 16000 hands in 45s
+rubick_strict vs hadrian_marlowe_gpt seed 2: 16000 hands in 33s
+rubick_strict vs valka_onderra_claude seed 2: 16000 hands in 46s
+rubick_strict vs aggressor seed 2: 16000 hands in 25s
+rubick_strict vs alan_wake_claude seed 2: 16000 hands in 50s
+rubick_strict vs jack_joyce_gemini seed 2: 16000 hands in 47s
+rubick_strict vs jesse_faden_glm seed 2: 16000 hands in 49s
+rubick_strict vs max_payne_gpt seed 2: 16000 hands in 18s
+rubick_strict vs random seed 2: 16000 hands in 36s
+rubick vs invoker_gpt seed 3: 16000 hands in 46s
+rubick vs meepo_claude seed 3: 16000 hands in 47s
+rubick vs windrunner_glm seed 3: 16000 hands in 44s
+rubick vs bassander_lin_glm seed 3: 16000 hands in 53s
+rubick vs hadrian_marlowe_gpt seed 3: 16000 hands in 39s
+rubick vs valka_onderra_claude seed 3: 16000 hands in 51s
+rubick vs aggressor seed 3: 16000 hands in 32s
+rubick vs alan_wake_claude seed 3: 16000 hands in 57s
+rubick vs jack_joyce_gemini seed 3: 16000 hands in 59s
+rubick vs jesse_faden_glm seed 3: 16000 hands in 58s
+rubick vs max_payne_gpt seed 3: 16000 hands in 24s
+rubick vs random seed 3: 16000 hands in 45s
+rubick_strict vs invoker_gpt seed 3: 16000 hands in 36s
+rubick_strict vs meepo_claude seed 3: 16000 hands in 41s
+rubick_strict vs windrunner_glm seed 3: 16000 hands in 33s
+rubick_strict vs bassander_lin_glm seed 3: 16000 hands in 46s
+rubick_strict vs hadrian_marlowe_gpt seed 3: 16000 hands in 34s
+rubick_strict vs valka_onderra_claude seed 3: 16000 hands in 46s
+rubick_strict vs aggressor seed 3: 16000 hands in 25s
+rubick_strict vs alan_wake_claude seed 3: 16000 hands in 52s
+rubick_strict vs jack_joyce_gemini seed 3: 16000 hands in 47s
+rubick_strict vs jesse_faden_glm seed 3: 16000 hands in 49s
+rubick_strict vs max_payne_gpt seed 3: 16000 hands in 17s
+rubick_strict vs random seed 3: 16000 hands in 35s
+┌──────────────────────┬──────────────────────┬────────────┬──────┬───────┬───────┬────────┐
+│ bot                  ┆ opponent             ┆ bb_per_100 ┆ se   ┆ z     ┆ hands ┆ tables │
+│ ---                  ┆ ---                  ┆ ---        ┆ ---  ┆ ---   ┆ ---   ┆ ---    │
+│ str                  ┆ str                  ┆ f64        ┆ f64  ┆ f64   ┆ u32   ┆ u32    │
+╞══════════════════════╪══════════════════════╪════════════╪══════╪═══════╪═══════╪════════╡
+│ aggressor            ┆ rubick               ┆ -24.6      ┆ 4.9  ┆ -5.0  ┆ 32000 ┆ 128    │
+│ aggressor            ┆ rubick_strict        ┆ -39.2      ┆ 4.0  ┆ -9.8  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ rubick               ┆ -66.5      ┆ 10.7 ┆ -6.2  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ rubick_strict        ┆ -104.3     ┆ 9.4  ┆ -11.1 ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ rubick               ┆ -96.3      ┆ 13.7 ┆ -7.0  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ rubick_strict        ┆ -155.1     ┆ 11.1 ┆ -13.9 ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ rubick               ┆ -1.8       ┆ 6.3  ┆ -0.3  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ rubick_strict        ┆ -45.1      ┆ 5.0  ┆ -8.9  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ rubick               ┆ 7.2        ┆ 7.5  ┆ 1.0   ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ rubick_strict        ┆ -19.9      ┆ 7.0  ┆ -2.8  ┆ 32000 ┆ 128    │
+│ jack_joyce_gemini    ┆ rubick               ┆ -300.3     ┆ 17.9 ┆ -16.7 ┆ 32000 ┆ 128    │
+│ jack_joyce_gemini    ┆ rubick_strict        ┆ -281.8     ┆ 13.9 ┆ -20.3 ┆ 32000 ┆ 128    │
+│ jesse_faden_glm      ┆ rubick               ┆ -266.0     ┆ 14.5 ┆ -18.3 ┆ 32000 ┆ 128    │
+│ jesse_faden_glm      ┆ rubick_strict        ┆ -227.3     ┆ 13.9 ┆ -16.4 ┆ 32000 ┆ 128    │
+│ max_payne_gpt        ┆ rubick               ┆ -64.1      ┆ 6.2  ┆ -10.3 ┆ 32000 ┆ 128    │
+│ max_payne_gpt        ┆ rubick_strict        ┆ -47.2      ┆ 4.3  ┆ -11.0 ┆ 32000 ┆ 128    │
+│ meepo_claude         ┆ rubick               ┆ -18.9      ┆ 9.8  ┆ -1.9  ┆ 32000 ┆ 128    │
+│ meepo_claude         ┆ rubick_strict        ┆ -35.5      ┆ 7.9  ┆ -4.5  ┆ 32000 ┆ 128    │
+│ random               ┆ rubick               ┆ -441.0     ┆ 10.1 ┆ -43.7 ┆ 32000 ┆ 128    │
+│ random               ┆ rubick_strict        ┆ -391.3     ┆ 10.4 ┆ -37.8 ┆ 32000 ┆ 128    │
+│ rubick               ┆ aggressor            ┆ 24.6       ┆ 4.9  ┆ 5.0   ┆ 32000 ┆ 128    │
+│ rubick               ┆ alan_wake_claude     ┆ 66.5       ┆ 10.7 ┆ 6.2   ┆ 32000 ┆ 128    │
+│ rubick               ┆ bassander_lin_glm    ┆ 96.3       ┆ 13.7 ┆ 7.0   ┆ 32000 ┆ 128    │
+│ rubick               ┆ hadrian_marlowe_gpt  ┆ 1.8        ┆ 6.3  ┆ 0.3   ┆ 32000 ┆ 128    │
+│ rubick               ┆ invoker_gpt          ┆ -7.2       ┆ 7.5  ┆ -1.0  ┆ 32000 ┆ 128    │
+│ rubick               ┆ jack_joyce_gemini    ┆ 300.3      ┆ 17.9 ┆ 16.7  ┆ 32000 ┆ 128    │
+│ rubick               ┆ jesse_faden_glm      ┆ 266.0      ┆ 14.5 ┆ 18.3  ┆ 32000 ┆ 128    │
+│ rubick               ┆ max_payne_gpt        ┆ 64.1       ┆ 6.2  ┆ 10.3  ┆ 32000 ┆ 128    │
+│ rubick               ┆ meepo_claude         ┆ 18.9       ┆ 9.8  ┆ 1.9   ┆ 32000 ┆ 128    │
+│ rubick               ┆ random               ┆ 441.0      ┆ 10.1 ┆ 43.7  ┆ 32000 ┆ 128    │
+│ rubick               ┆ valka_onderra_claude ┆ 30.9       ┆ 10.1 ┆ 3.1   ┆ 32000 ┆ 128    │
+│ rubick               ┆ windrunner_glm       ┆ -30.9      ┆ 7.4  ┆ -4.2  ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ aggressor            ┆ 39.2       ┆ 4.0  ┆ 9.8   ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ alan_wake_claude     ┆ 104.3      ┆ 9.4  ┆ 11.1  ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ bassander_lin_glm    ┆ 155.1      ┆ 11.1 ┆ 13.9  ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ hadrian_marlowe_gpt  ┆ 45.1       ┆ 5.0  ┆ 8.9   ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ invoker_gpt          ┆ 19.9       ┆ 7.0  ┆ 2.8   ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ jack_joyce_gemini    ┆ 281.8      ┆ 13.9 ┆ 20.3  ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ jesse_faden_glm      ┆ 227.3      ┆ 13.9 ┆ 16.4  ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ max_payne_gpt        ┆ 47.2       ┆ 4.3  ┆ 11.0  ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ meepo_claude         ┆ 35.5       ┆ 7.9  ┆ 4.5   ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ random               ┆ 391.3      ┆ 10.4 ┆ 37.8  ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ valka_onderra_claude ┆ 82.1       ┆ 8.9  ┆ 9.2   ┆ 32000 ┆ 128    │
+│ rubick_strict        ┆ windrunner_glm       ┆ 3.3        ┆ 4.6  ┆ 0.7   ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ rubick               ┆ -30.9      ┆ 10.1 ┆ -3.1  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ rubick_strict        ┆ -82.1      ┆ 8.9  ┆ -9.2  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ rubick               ┆ 30.9       ┆ 7.4  ┆ 4.2   ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ rubick_strict        ┆ -3.3       ┆ 4.6  ┆ -0.7  ┆ 32000 ┆ 128    │
+└──────────────────────┴──────────────────────┴────────────┴──────┴───────┴───────┴────────┘
+┌──────────────────────┬─────────────────┬──────┬────────────────────┬────────────┬──────────────┐
+│ bot                  ┆ mean_bb_per_100 ┆ se   ┆ mean_vs_non_random ┆ clear_wins ┆ clear_losses │
+│ ---                  ┆ ---             ┆ ---  ┆ ---                ┆ ---        ┆ ---          │
+│ str                  ┆ f64             ┆ f64  ┆ f64                ┆ u32        ┆ u32          │
+╞══════════════════════╪═════════════════╪══════╪════════════════════╪════════════╪══════════════╡
+│ rubick_strict        ┆ 119.3           ┆ 2.6  ┆ 94.6               ┆ 11         ┆ 0            │
+│ rubick               ┆ 106.0           ┆ 3.1  ┆ 75.6               ┆ 8          ┆ 1            │
+│ windrunner_glm       ┆ 13.8            ┆ 4.3  ┆ 13.8               ┆ 1          ┆ 0            │
+│ invoker_gpt          ┆ -6.3            ┆ 5.1  ┆ -6.3               ┆ 0          ┆ 1            │
+│ hadrian_marlowe_gpt  ┆ -23.4           ┆ 4.1  ┆ -23.4              ┆ 0          ┆ 1            │
+│ meepo_claude         ┆ -27.2           ┆ 6.3  ┆ -27.2              ┆ 0          ┆ 1            │
+│ aggressor            ┆ -31.9           ┆ 3.2  ┆ -31.9              ┆ 0          ┆ 2            │
+│ max_payne_gpt        ┆ -55.7           ┆ 3.8  ┆ -55.7              ┆ 0          ┆ 2            │
+│ valka_onderra_claude ┆ -56.5           ┆ 6.7  ┆ -56.5              ┆ 0          ┆ 2            │
+│ alan_wake_claude     ┆ -85.4           ┆ 7.1  ┆ -85.4              ┆ 0          ┆ 2            │
+│ bassander_lin_glm    ┆ -125.7          ┆ 8.8  ┆ -125.7             ┆ 0          ┆ 2            │
+│ jesse_faden_glm      ┆ -246.6          ┆ 10.0 ┆ -246.6             ┆ 0          ┆ 2            │
+│ jack_joyce_gemini    ┆ -291.1          ┆ 11.3 ┆ -291.1             ┆ 0          ┆ 2            │
+│ random               ┆ -416.1          ┆ 7.2  ┆ -416.1             ┆ 0          ┆ 2            │
+└──────────────────────┴─────────────────┴──────┴────────────────────┴────────────┴──────────────┘

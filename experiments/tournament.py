@@ -152,8 +152,9 @@ def write_manifest(results: Path, roster: dict, max_players: int, blocks: dict) 
     path.write_text(json.dumps(manifest, indent=2, default=str))
 
 
-def main(results: Path, roster: dict[str, tuple[str, type]], max_players: int) -> None:
-    """roster maps a short, unique bot name to (registry name, bot class); pairs follow its order."""
+def main(results: Path, roster: dict[str, tuple[str, type]], max_players: int, focus: tuple[str, ...] = ()) -> None:
+    """roster maps a short, unique bot name to (registry name, bot class); pairs follow its order.
+    With `focus`, only pairs with exactly one focus bot are played (focus bots against the field)."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--seeds", type=int, nargs="+", default=[0, 1])
     parser.add_argument("--tables", type=int, default=64)
@@ -163,7 +164,8 @@ def main(results: Path, roster: dict[str, tuple[str, type]], max_players: int) -
     args = parser.parse_args()
 
     if not args.summarise:
-        for (bot_a, bot_b), seed in itertools.product(itertools.combinations(args.bots, 2), args.seeds):
+        pairs = [(a, b) for a, b in itertools.combinations(args.bots, 2) if not focus or (a in focus) != (b in focus)]
+        for seed, (bot_a, bot_b) in itertools.product(args.seeds, pairs):
             pair = f"{bot_a}__{bot_b}"
             if all(block_path(results, table, pair, seed).exists() for table in TABLES):
                 continue
