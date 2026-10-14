@@ -1,0 +1,3806 @@
+{
+  "blocks": {
+    "invoker_gpt__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.3,
+      "finished_at": "2026-10-14T01:34:55.382119+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.7,
+      "finished_at": "2026-10-14T01:35:08.100921+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.2,
+      "finished_at": "2026-10-14T01:35:19.322312+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.2,
+      "finished_at": "2026-10-14T01:35:30.555986+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.5,
+      "finished_at": "2026-10-14T01:35:43.083687+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.2,
+      "finished_at": "2026-10-14T01:35:55.352153+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.6,
+      "finished_at": "2026-10-14T01:36:05.976189+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.8,
+      "finished_at": "2026-10-14T01:36:16.804295+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.2,
+      "finished_at": "2026-10-14T01:36:30.033556+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.3,
+      "finished_at": "2026-10-14T01:36:43.369316+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.9,
+      "finished_at": "2026-10-14T01:36:50.344172+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.9,
+      "finished_at": "2026-10-14T01:36:57.295834+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.8,
+      "finished_at": "2026-10-14T01:37:13.152848+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.9,
+      "finished_at": "2026-10-14T01:37:29.107346+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.8,
+      "finished_at": "2026-10-14T01:37:43.926668+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.1,
+      "finished_at": "2026-10-14T01:37:59.072348+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.9,
+      "finished_at": "2026-10-14T01:38:14.986613+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.7,
+      "finished_at": "2026-10-14T01:38:30.680326+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.1,
+      "finished_at": "2026-10-14T01:38:35.829396+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.0,
+      "finished_at": "2026-10-14T01:38:40.879683+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.2,
+      "finished_at": "2026-10-14T01:38:49.143230+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "invoker_gpt__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.1,
+      "finished_at": "2026-10-14T01:38:57.306990+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.6,
+      "finished_at": "2026-10-14T01:39:09.955237+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.8,
+      "finished_at": "2026-10-14T01:39:22.798151+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.0,
+      "finished_at": "2026-10-14T01:39:36.807517+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.6,
+      "finished_at": "2026-10-14T01:39:51.434508+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.6,
+      "finished_at": "2026-10-14T01:40:03.031123+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.8,
+      "finished_at": "2026-10-14T01:40:14.898547+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.6,
+      "finished_at": "2026-10-14T01:40:29.566193+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.6,
+      "finished_at": "2026-10-14T01:40:44.158498+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.3,
+      "finished_at": "2026-10-14T01:40:52.537568+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.2,
+      "finished_at": "2026-10-14T01:41:00.749066+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.1,
+      "finished_at": "2026-10-14T01:41:17.866725+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.7,
+      "finished_at": "2026-10-14T01:41:34.589275+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.3,
+      "finished_at": "2026-10-14T01:41:50.958336+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.7,
+      "finished_at": "2026-10-14T01:42:07.717970+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.0,
+      "finished_at": "2026-10-14T01:42:24.759395+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.1,
+      "finished_at": "2026-10-14T01:42:41.867902+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.0,
+      "finished_at": "2026-10-14T01:42:47.886135+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.6,
+      "finished_at": "2026-10-14T01:42:53.554238+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.7,
+      "finished_at": "2026-10-14T01:43:03.253142+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "meepo_claude__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.9,
+      "finished_at": "2026-10-14T01:43:13.150844+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.6,
+      "finished_at": "2026-10-14T01:43:25.766545+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.5,
+      "finished_at": "2026-10-14T01:43:38.348168+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.2,
+      "finished_at": "2026-10-14T01:43:48.548818+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.1,
+      "finished_at": "2026-10-14T01:43:58.716776+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.5,
+      "finished_at": "2026-10-14T01:44:12.294441+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.9,
+      "finished_at": "2026-10-14T01:44:26.207318+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.5,
+      "finished_at": "2026-10-14T01:44:32.762080+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.6,
+      "finished_at": "2026-10-14T01:44:39.447265+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.8,
+      "finished_at": "2026-10-14T01:44:55.247072+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.7,
+      "finished_at": "2026-10-14T01:45:10.980910+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.6,
+      "finished_at": "2026-10-14T01:45:25.580516+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.7,
+      "finished_at": "2026-10-14T01:45:40.295101+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.3,
+      "finished_at": "2026-10-14T01:45:55.665957+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.5,
+      "finished_at": "2026-10-14T01:46:11.158783+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.8,
+      "finished_at": "2026-10-14T01:46:15.951776+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.7,
+      "finished_at": "2026-10-14T01:46:20.649709+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.5,
+      "finished_at": "2026-10-14T01:46:29.194737+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "windrunner_glm__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.5,
+      "finished_at": "2026-10-14T01:46:37.746592+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.5,
+      "finished_at": "2026-10-14T01:46:48.284062+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.6,
+      "finished_at": "2026-10-14T01:46:58.934566+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.8,
+      "finished_at": "2026-10-14T01:47:11.800750+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.8,
+      "finished_at": "2026-10-14T01:47:24.615036+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.5,
+      "finished_at": "2026-10-14T01:47:32.126939+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.5,
+      "finished_at": "2026-10-14T01:47:39.682365+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.0,
+      "finished_at": "2026-10-14T01:47:53.766228+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.2,
+      "finished_at": "2026-10-14T01:48:07.980922+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.8,
+      "finished_at": "2026-10-14T01:48:23.798158+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.9,
+      "finished_at": "2026-10-14T01:48:39.721701+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.9,
+      "finished_at": "2026-10-14T01:48:54.703846+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.8,
+      "finished_at": "2026-10-14T01:49:09.574580+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.2,
+      "finished_at": "2026-10-14T01:49:14.848019+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.2,
+      "finished_at": "2026-10-14T01:49:20.089371+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.7,
+      "finished_at": "2026-10-14T01:49:28.879820+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "bassander_lin_glm__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.8,
+      "finished_at": "2026-10-14T01:49:37.682748+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.5,
+      "finished_at": "2026-10-14T01:49:48.243164+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.6,
+      "finished_at": "2026-10-14T01:49:58.856220+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.0,
+      "finished_at": "2026-10-14T01:50:04.906507+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.9,
+      "finished_at": "2026-10-14T01:50:10.842172+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.1,
+      "finished_at": "2026-10-14T01:50:26.024476+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.9,
+      "finished_at": "2026-10-14T01:50:40.991234+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.1,
+      "finished_at": "2026-10-14T01:50:55.086953+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.4,
+      "finished_at": "2026-10-14T01:51:09.536157+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.9,
+      "finished_at": "2026-10-14T01:51:24.478013+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.7,
+      "finished_at": "2026-10-14T01:51:39.224136+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.1,
+      "finished_at": "2026-10-14T01:51:45.368622+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.1,
+      "finished_at": "2026-10-14T01:51:51.524001+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.0,
+      "finished_at": "2026-10-14T01:51:59.574507+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "hadrian_marlowe_gpt__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.8,
+      "finished_at": "2026-10-14T01:52:07.427732+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.0,
+      "finished_at": "2026-10-14T01:52:15.460454+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.8,
+      "finished_at": "2026-10-14T01:52:23.297641+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.3,
+      "finished_at": "2026-10-14T01:52:37.642617+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.2,
+      "finished_at": "2026-10-14T01:52:51.839153+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.5,
+      "finished_at": "2026-10-14T01:53:07.393866+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.5,
+      "finished_at": "2026-10-14T01:53:22.920993+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.8,
+      "finished_at": "2026-10-14T01:53:37.809497+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.9,
+      "finished_at": "2026-10-14T01:53:52.779043+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.3,
+      "finished_at": "2026-10-14T01:53:58.156730+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.2,
+      "finished_at": "2026-10-14T01:54:03.375019+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.3,
+      "finished_at": "2026-10-14T01:54:11.669965+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "valka_onderra_claude__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.3,
+      "finished_at": "2026-10-14T01:54:19.988862+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.5,
+      "finished_at": "2026-10-14T01:54:32.579597+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.3,
+      "finished_at": "2026-10-14T01:54:44.920175+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.9,
+      "finished_at": "2026-10-14T01:54:56.910768+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.7,
+      "finished_at": "2026-10-14T01:55:08.606947+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.9,
+      "finished_at": "2026-10-14T01:55:20.546494+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.8,
+      "finished_at": "2026-10-14T01:55:32.372277+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 3.6,
+      "finished_at": "2026-10-14T01:55:36.038603+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 3.7,
+      "finished_at": "2026-10-14T01:55:39.745512+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.9,
+      "finished_at": "2026-10-14T01:55:45.659307+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "aggressor__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.0,
+      "finished_at": "2026-10-14T01:55:51.698239+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.8,
+      "finished_at": "2026-10-14T01:56:07.534697+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.7,
+      "finished_at": "2026-10-14T01:56:23.235330+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.0,
+      "finished_at": "2026-10-14T01:56:39.297456+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.0,
+      "finished_at": "2026-10-14T01:56:55.307518+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.8,
+      "finished_at": "2026-10-14T01:57:05.159787+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.7,
+      "finished_at": "2026-10-14T01:57:14.900897+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.3,
+      "finished_at": "2026-10-14T01:57:23.235406+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "alan_wake_claude__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.2,
+      "finished_at": "2026-10-14T01:57:31.440896+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.7,
+      "finished_at": "2026-10-14T01:57:49.214989+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.7,
+      "finished_at": "2026-10-14T01:58:06.948713+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.3,
+      "finished_at": "2026-10-14T01:58:16.326308+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.9,
+      "finished_at": "2026-10-14T01:58:25.279977+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.1,
+      "finished_at": "2026-10-14T01:58:34.432558+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jack_joyce_gemini__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.3,
+      "finished_at": "2026-10-14T01:58:43.771256+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jesse_faden_glm__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.5,
+      "finished_at": "2026-10-14T01:58:53.278327+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jesse_faden_glm__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.4,
+      "finished_at": "2026-10-14T01:59:02.724306+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jesse_faden_glm__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.6,
+      "finished_at": "2026-10-14T01:59:11.407824+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "jesse_faden_glm__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.6,
+      "finished_at": "2026-10-14T01:59:20.024126+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "max_payne_gpt__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.8,
+      "finished_at": "2026-10-14T01:59:24.912194+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "max_payne_gpt__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.9,
+      "finished_at": "2026-10-14T01:59:29.813103+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__leviathan_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.8,
+      "finished_at": "2026-10-14T04:53:36.669605+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__megalodon_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.9,
+      "finished_at": "2026-10-14T04:53:47.595594+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.5,
+      "finished_at": "2026-10-14T04:53:59.100769+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.6,
+      "finished_at": "2026-10-14T04:54:11.776546+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.0,
+      "finished_at": "2026-10-14T04:54:21.851683+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.9,
+      "finished_at": "2026-10-14T04:54:34.816670+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.0,
+      "finished_at": "2026-10-14T04:54:44.839985+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.1,
+      "finished_at": "2026-10-14T04:54:58.982729+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.1,
+      "finished_at": "2026-10-14T04:55:06.094985+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.0,
+      "finished_at": "2026-10-14T04:55:22.145414+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.3,
+      "finished_at": "2026-10-14T04:55:36.527310+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.4,
+      "finished_at": "2026-10-14T04:55:51.979573+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.8,
+      "finished_at": "2026-10-14T04:55:56.842589+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.1,
+      "finished_at": "2026-10-14T04:56:04.949052+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__megalodon_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.7,
+      "finished_at": "2026-10-14T04:56:15.661078+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.5,
+      "finished_at": "2026-10-14T04:56:27.185074+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.3,
+      "finished_at": "2026-10-14T04:56:39.561472+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.3,
+      "finished_at": "2026-10-14T04:56:49.899001+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.1,
+      "finished_at": "2026-10-14T04:57:03.001351+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.1,
+      "finished_at": "2026-10-14T04:57:13.177254+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.9,
+      "finished_at": "2026-10-14T04:57:27.077518+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.8,
+      "finished_at": "2026-10-14T04:57:33.906474+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.7,
+      "finished_at": "2026-10-14T04:57:49.660201+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.5,
+      "finished_at": "2026-10-14T04:58:05.206967+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.9,
+      "finished_at": "2026-10-14T04:58:21.197430+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.1,
+      "finished_at": "2026-10-14T04:58:26.375997+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.9,
+      "finished_at": "2026-10-14T04:58:35.353211+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.0,
+      "finished_at": "2026-10-14T04:58:46.436846+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.3,
+      "finished_at": "2026-10-14T04:58:58.765506+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.9,
+      "finished_at": "2026-10-14T04:59:08.734686+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.7,
+      "finished_at": "2026-10-14T04:59:21.466111+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.8,
+      "finished_at": "2026-10-14T04:59:31.312073+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.3,
+      "finished_at": "2026-10-14T04:59:44.689556+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.7,
+      "finished_at": "2026-10-14T04:59:51.402097+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.5,
+      "finished_at": "2026-10-14T05:00:06.928058+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.5,
+      "finished_at": "2026-10-14T05:00:21.440436+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.4,
+      "finished_at": "2026-10-14T05:00:36.860165+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.8,
+      "finished_at": "2026-10-14T05:00:41.744998+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.2,
+      "finished_at": "2026-10-14T05:00:49.974563+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__leviathan_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.2,
+      "finished_at": "2026-10-14T05:01:00.216591+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__megalodon_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.2,
+      "finished_at": "2026-10-14T05:01:10.446156+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.3,
+      "finished_at": "2026-10-14T05:01:21.788164+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.4,
+      "finished_at": "2026-10-14T05:01:34.235909+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.2,
+      "finished_at": "2026-10-14T05:01:44.472396+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.9,
+      "finished_at": "2026-10-14T05:01:57.446556+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.0,
+      "finished_at": "2026-10-14T05:02:07.528180+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.0,
+      "finished_at": "2026-10-14T05:02:21.519164+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.9,
+      "finished_at": "2026-10-14T05:02:28.442666+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.6,
+      "finished_at": "2026-10-14T05:02:44.127806+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.0,
+      "finished_at": "2026-10-14T05:02:58.187506+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.3,
+      "finished_at": "2026-10-14T05:03:13.485479+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.7,
+      "finished_at": "2026-10-14T05:03:18.211505+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "kraken_gpt__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.0,
+      "finished_at": "2026-10-14T05:03:26.229149+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__megalodon_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.4,
+      "finished_at": "2026-10-14T05:03:36.688688+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.3,
+      "finished_at": "2026-10-14T05:03:48.009253+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.1,
+      "finished_at": "2026-10-14T05:04:00.180314+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.4,
+      "finished_at": "2026-10-14T05:04:10.592818+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.4,
+      "finished_at": "2026-10-14T05:04:24.030872+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.0,
+      "finished_at": "2026-10-14T05:04:34.055167+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.0,
+      "finished_at": "2026-10-14T05:04:48.068399+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.7,
+      "finished_at": "2026-10-14T05:04:54.829603+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.4,
+      "finished_at": "2026-10-14T05:05:10.298827+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.1,
+      "finished_at": "2026-10-14T05:05:25.457040+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.1,
+      "finished_at": "2026-10-14T05:05:41.562130+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.9,
+      "finished_at": "2026-10-14T05:05:46.510620+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "leviathan_claude__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.7,
+      "finished_at": "2026-10-14T05:05:55.268651+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.0,
+      "finished_at": "2026-10-14T05:06:06.320758+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.9,
+      "finished_at": "2026-10-14T05:06:18.262202+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.1,
+      "finished_at": "2026-10-14T05:06:28.423939+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.9,
+      "finished_at": "2026-10-14T05:06:41.366378+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.8,
+      "finished_at": "2026-10-14T05:06:51.195950+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.2,
+      "finished_at": "2026-10-14T05:07:04.475709+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.6,
+      "finished_at": "2026-10-14T05:07:11.099253+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.2,
+      "finished_at": "2026-10-14T05:07:26.314580+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.7,
+      "finished_at": "2026-10-14T05:07:41.046732+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.4,
+      "finished_at": "2026-10-14T05:07:56.522147+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 4.9,
+      "finished_at": "2026-10-14T05:08:01.434151+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "megalodon_glm__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.4,
+      "finished_at": "2026-10-14T05:08:09.857726+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__spike_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.9,
+      "finished_at": "2026-10-14T06:26:31.963768+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__vicious_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.1,
+      "finished_at": "2026-10-14T06:26:43.129769+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__kraken_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.1,
+      "finished_at": "2026-10-14T06:26:53.281719+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__leviathan_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.7,
+      "finished_at": "2026-10-14T06:27:03.038986+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__megalodon_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.0,
+      "finished_at": "2026-10-14T06:27:13.082467+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.0,
+      "finished_at": "2026-10-14T06:27:23.136143+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.9,
+      "finished_at": "2026-10-14T06:27:34.126976+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.7,
+      "finished_at": "2026-10-14T06:27:43.894489+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.1,
+      "finished_at": "2026-10-14T06:27:57.015418+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.5,
+      "finished_at": "2026-10-14T06:28:06.538917+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.0,
+      "finished_at": "2026-10-14T06:28:18.602259+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.0,
+      "finished_at": "2026-10-14T06:28:26.679798+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.1,
+      "finished_at": "2026-10-14T06:28:40.858332+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.0,
+      "finished_at": "2026-10-14T06:28:53.858477+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.3,
+      "finished_at": "2026-10-14T06:29:07.180853+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.3,
+      "finished_at": "2026-10-14T06:29:13.562214+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.7,
+      "finished_at": "2026-10-14T06:29:20.269849+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__vicious_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.8,
+      "finished_at": "2026-10-14T06:29:37.118998+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__kraken_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.6,
+      "finished_at": "2026-10-14T06:29:52.718786+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__leviathan_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.2,
+      "finished_at": "2026-10-14T06:30:07.991047+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__megalodon_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.4,
+      "finished_at": "2026-10-14T06:30:23.432811+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.7,
+      "finished_at": "2026-10-14T06:30:39.222135+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.8,
+      "finished_at": "2026-10-14T06:30:56.100467+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.2,
+      "finished_at": "2026-10-14T06:31:11.334847+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.5,
+      "finished_at": "2026-10-14T06:31:28.876160+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.1,
+      "finished_at": "2026-10-14T06:31:44.023601+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.8,
+      "finished_at": "2026-10-14T06:32:01.849897+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.3,
+      "finished_at": "2026-10-14T06:32:13.228967+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 20.5,
+      "finished_at": "2026-10-14T06:32:33.795325+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.9,
+      "finished_at": "2026-10-14T06:32:53.775322+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 21.0,
+      "finished_at": "2026-10-14T06:33:14.851233+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.9,
+      "finished_at": "2026-10-14T06:33:23.829388+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.8,
+      "finished_at": "2026-10-14T06:33:35.659108+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__kraken_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.5,
+      "finished_at": "2026-10-14T06:33:47.202725+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__leviathan_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.1,
+      "finished_at": "2026-10-14T06:33:59.368061+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__megalodon_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.6,
+      "finished_at": "2026-10-14T06:34:11.039399+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.9,
+      "finished_at": "2026-10-14T06:34:22.984051+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.9,
+      "finished_at": "2026-10-14T06:34:35.897306+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.8,
+      "finished_at": "2026-10-14T06:34:47.778255+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.2,
+      "finished_at": "2026-10-14T06:35:01.056920+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.5,
+      "finished_at": "2026-10-14T06:35:11.582839+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.3,
+      "finished_at": "2026-10-14T06:35:25.912201+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.2,
+      "finished_at": "2026-10-14T06:35:33.117472+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.8,
+      "finished_at": "2026-10-14T06:35:49.927846+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.9,
+      "finished_at": "2026-10-14T06:36:05.872566+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.9,
+      "finished_at": "2026-10-14T06:36:22.769650+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.8,
+      "finished_at": "2026-10-14T06:36:28.589755+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.2,
+      "finished_at": "2026-10-14T06:36:37.816525+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__spike_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.3,
+      "finished_at": "2026-10-14T06:36:51.191971+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__vicious_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.9,
+      "finished_at": "2026-10-14T06:37:02.112841+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__kraken_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.8,
+      "finished_at": "2026-10-14T06:37:11.938888+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__leviathan_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.6,
+      "finished_at": "2026-10-14T06:37:21.567113+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__megalodon_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.5,
+      "finished_at": "2026-10-14T06:37:31.132764+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.6,
+      "finished_at": "2026-10-14T06:37:40.816000+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.0,
+      "finished_at": "2026-10-14T06:37:51.854792+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.1,
+      "finished_at": "2026-10-14T06:38:00.984272+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.2,
+      "finished_at": "2026-10-14T06:38:13.207371+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.0,
+      "finished_at": "2026-10-14T06:38:22.300073+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.4,
+      "finished_at": "2026-10-14T06:38:33.782014+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.4,
+      "finished_at": "2026-10-14T06:38:41.254402+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.8,
+      "finished_at": "2026-10-14T06:38:55.103743+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.6,
+      "finished_at": "2026-10-14T06:39:07.712951+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.3,
+      "finished_at": "2026-10-14T06:39:21.046632+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.4,
+      "finished_at": "2026-10-14T06:39:27.446588+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "faye_gpt__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.7,
+      "finished_at": "2026-10-14T06:39:34.144516+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__vicious_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.6,
+      "finished_at": "2026-10-14T06:39:50.767930+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__kraken_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.3,
+      "finished_at": "2026-10-14T06:40:06.122163+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__leviathan_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.2,
+      "finished_at": "2026-10-14T06:40:21.410641+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__megalodon_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.4,
+      "finished_at": "2026-10-14T06:40:36.838825+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.8,
+      "finished_at": "2026-10-14T06:40:52.675441+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.6,
+      "finished_at": "2026-10-14T06:41:09.304580+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.3,
+      "finished_at": "2026-10-14T06:41:24.684621+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.5,
+      "finished_at": "2026-10-14T06:41:42.220982+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.2,
+      "finished_at": "2026-10-14T06:41:57.472240+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.5,
+      "finished_at": "2026-10-14T06:42:15.011216+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.1,
+      "finished_at": "2026-10-14T06:42:26.173059+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 20.1,
+      "finished_at": "2026-10-14T06:42:46.315665+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.4,
+      "finished_at": "2026-10-14T06:43:05.716957+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 20.3,
+      "finished_at": "2026-10-14T06:43:26.018548+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.8,
+      "finished_at": "2026-10-14T06:43:34.908685+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "spike_claude__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.0,
+      "finished_at": "2026-10-14T06:43:46.973390+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__kraken_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.5,
+      "finished_at": "2026-10-14T06:43:58.565092+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__leviathan_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.8,
+      "finished_at": "2026-10-14T06:44:10.397303+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__megalodon_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.4,
+      "finished_at": "2026-10-14T06:44:21.882005+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.6,
+      "finished_at": "2026-10-14T06:44:33.540902+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.7,
+      "finished_at": "2026-10-14T06:44:46.326844+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.5,
+      "finished_at": "2026-10-14T06:44:57.855053+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.2,
+      "finished_at": "2026-10-14T06:45:11.148379+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 10.6,
+      "finished_at": "2026-10-14T06:45:21.783065+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.8,
+      "finished_at": "2026-10-14T06:45:35.653162+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 6.9,
+      "finished_at": "2026-10-14T06:45:42.638250+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.2,
+      "finished_at": "2026-10-14T06:45:58.912676+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.8,
+      "finished_at": "2026-10-14T06:46:14.762502+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.4,
+      "finished_at": "2026-10-14T06:46:31.164296+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 5.4,
+      "finished_at": "2026-10-14T06:46:36.627521+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "vicious_glm__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.9,
+      "finished_at": "2026-10-14T06:46:45.589202+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__joshua_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 34.1,
+      "finished_at": "2026-10-14T09:16:23.174146+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__scherezard_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.3,
+      "finished_at": "2026-10-14T09:16:42.502799+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__faye_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.1,
+      "finished_at": "2026-10-14T09:16:54.640720+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__spike_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.4,
+      "finished_at": "2026-10-14T09:17:11.072363+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__vicious_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.5,
+      "finished_at": "2026-10-14T09:17:26.648174+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__kraken_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.5,
+      "finished_at": "2026-10-14T09:17:40.214995+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__leviathan_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.3,
+      "finished_at": "2026-10-14T09:17:54.514139+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__megalodon_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.8,
+      "finished_at": "2026-10-14T09:18:08.316745+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.5,
+      "finished_at": "2026-10-14T09:18:22.830768+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.1,
+      "finished_at": "2026-10-14T09:18:37.973342+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.5,
+      "finished_at": "2026-10-14T09:18:51.539595+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.7,
+      "finished_at": "2026-10-14T09:19:08.308011+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.5,
+      "finished_at": "2026-10-14T09:19:20.844848+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.5,
+      "finished_at": "2026-10-14T09:19:38.392142+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.2,
+      "finished_at": "2026-10-14T09:19:47.627754+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 18.9,
+      "finished_at": "2026-10-14T09:20:06.599517+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.2,
+      "finished_at": "2026-10-14T09:20:25.872113+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 20.2,
+      "finished_at": "2026-10-14T09:20:46.084335+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.4,
+      "finished_at": "2026-10-14T09:20:53.577432+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.0,
+      "finished_at": "2026-10-14T09:21:05.575892+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__scherezard_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 37.8,
+      "finished_at": "2026-10-14T09:21:43.374585+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__faye_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 28.2,
+      "finished_at": "2026-10-14T09:22:11.643964+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__spike_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 35.4,
+      "finished_at": "2026-10-14T09:22:47.089910+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__vicious_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 33.6,
+      "finished_at": "2026-10-14T09:23:20.690425+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__kraken_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 31.9,
+      "finished_at": "2026-10-14T09:23:52.667442+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__leviathan_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 31.4,
+      "finished_at": "2026-10-14T09:24:24.082727+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__megalodon_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 31.9,
+      "finished_at": "2026-10-14T09:24:56.058181+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 30.9,
+      "finished_at": "2026-10-14T09:25:26.980069+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 29.2,
+      "finished_at": "2026-10-14T09:25:56.267498+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 30.9,
+      "finished_at": "2026-10-14T09:26:27.252603+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 36.0,
+      "finished_at": "2026-10-14T09:27:03.270823+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 29.7,
+      "finished_at": "2026-10-14T09:27:33.003573+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 33.6,
+      "finished_at": "2026-10-14T09:28:06.661278+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 24.2,
+      "finished_at": "2026-10-14T09:28:30.936682+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 39.8,
+      "finished_at": "2026-10-14T09:29:10.778777+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 39.5,
+      "finished_at": "2026-10-14T09:29:50.315531+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 41.4,
+      "finished_at": "2026-10-14T09:30:31.785876+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.2,
+      "finished_at": "2026-10-14T09:30:49.020631+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 29.0,
+      "finished_at": "2026-10-14T09:31:18.035393+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__faye_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.4,
+      "finished_at": "2026-10-14T09:31:32.503731+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__spike_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 20.3,
+      "finished_at": "2026-10-14T09:31:52.839171+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__vicious_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.0,
+      "finished_at": "2026-10-14T09:32:08.924706+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__kraken_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.5,
+      "finished_at": "2026-10-14T09:32:23.455616+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__leviathan_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.3,
+      "finished_at": "2026-10-14T09:32:38.822807+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__megalodon_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.3,
+      "finished_at": "2026-10-14T09:32:53.191049+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__invoker_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.2,
+      "finished_at": "2026-10-14T09:33:08.392950+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__meepo_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.0,
+      "finished_at": "2026-10-14T09:33:24.425882+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__windrunner_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.8,
+      "finished_at": "2026-10-14T09:33:39.283782+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__bassander_lin_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.4,
+      "finished_at": "2026-10-14T09:33:56.705201+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__hadrian_marlowe_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.6,
+      "finished_at": "2026-10-14T09:34:10.339931+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__valka_onderra_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.7,
+      "finished_at": "2026-10-14T09:34:27.048790+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__aggressor/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.5,
+      "finished_at": "2026-10-14T09:34:38.568589+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__alan_wake_claude/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 18.9,
+      "finished_at": "2026-10-14T09:34:57.521836+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__jack_joyce_gemini/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.5,
+      "finished_at": "2026-10-14T09:35:17.047480+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__jesse_faden_glm/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.0,
+      "finished_at": "2026-10-14T09:35:36.127304+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__max_payne_gpt/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 8.8,
+      "finished_at": "2026-10-14T09:35:45.015733+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__random/seed=0": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.7,
+      "finished_at": "2026-10-14T09:35:57.728716+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__joshua_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 33.4,
+      "finished_at": "2026-10-14T09:36:31.147284+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__scherezard_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.6,
+      "finished_at": "2026-10-14T09:36:50.825101+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__faye_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.0,
+      "finished_at": "2026-10-14T09:37:02.904560+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__spike_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.2,
+      "finished_at": "2026-10-14T09:37:19.202912+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__vicious_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.8,
+      "finished_at": "2026-10-14T09:37:35.031412+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__kraken_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.7,
+      "finished_at": "2026-10-14T09:37:48.797921+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__leviathan_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.0,
+      "finished_at": "2026-10-14T09:38:02.860112+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__megalodon_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.6,
+      "finished_at": "2026-10-14T09:38:16.483873+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.0,
+      "finished_at": "2026-10-14T09:38:30.551900+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.3,
+      "finished_at": "2026-10-14T09:38:45.891749+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.4,
+      "finished_at": "2026-10-14T09:38:59.376206+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.2,
+      "finished_at": "2026-10-14T09:39:16.585488+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.6,
+      "finished_at": "2026-10-14T09:39:29.247414+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.7,
+      "finished_at": "2026-10-14T09:39:46.957113+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.2,
+      "finished_at": "2026-10-14T09:39:56.251382+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 18.8,
+      "finished_at": "2026-10-14T09:40:15.048537+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.1,
+      "finished_at": "2026-10-14T09:40:34.217263+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.9,
+      "finished_at": "2026-10-14T09:40:54.124348+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 7.2,
+      "finished_at": "2026-10-14T09:41:01.399621+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "estelle_claude__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.1,
+      "finished_at": "2026-10-14T09:41:13.578913+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__scherezard_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 38.8,
+      "finished_at": "2026-10-14T09:41:52.437960+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__faye_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 28.2,
+      "finished_at": "2026-10-14T09:42:20.708826+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__spike_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 36.5,
+      "finished_at": "2026-10-14T09:42:57.214575+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__vicious_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 32.9,
+      "finished_at": "2026-10-14T09:43:30.208516+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__kraken_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 30.7,
+      "finished_at": "2026-10-14T09:44:01.001389+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__leviathan_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 31.3,
+      "finished_at": "2026-10-14T09:44:32.364913+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__megalodon_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 32.0,
+      "finished_at": "2026-10-14T09:45:04.387044+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 31.1,
+      "finished_at": "2026-10-14T09:45:35.506666+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 30.5,
+      "finished_at": "2026-10-14T09:46:06.007029+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 31.8,
+      "finished_at": "2026-10-14T09:46:37.903118+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 34.4,
+      "finished_at": "2026-10-14T09:47:12.384123+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 28.9,
+      "finished_at": "2026-10-14T09:47:41.351112+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 33.6,
+      "finished_at": "2026-10-14T09:48:14.953236+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 23.6,
+      "finished_at": "2026-10-14T09:48:38.591158+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 40.6,
+      "finished_at": "2026-10-14T09:49:19.237462+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 40.2,
+      "finished_at": "2026-10-14T09:49:59.460008+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 41.1,
+      "finished_at": "2026-10-14T09:50:40.565714+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 16.8,
+      "finished_at": "2026-10-14T09:50:57.379084+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "joshua_gpt__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 28.7,
+      "finished_at": "2026-10-14T09:51:26.149512+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__faye_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.5,
+      "finished_at": "2026-10-14T09:51:39.746775+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__spike_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.9,
+      "finished_at": "2026-10-14T09:51:59.723977+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__vicious_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.6,
+      "finished_at": "2026-10-14T09:52:15.430299+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__kraken_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.2,
+      "finished_at": "2026-10-14T09:52:29.709075+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__leviathan_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.7,
+      "finished_at": "2026-10-14T09:52:44.436714+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__megalodon_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.1,
+      "finished_at": "2026-10-14T09:52:58.534579+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__invoker_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.0,
+      "finished_at": "2026-10-14T09:53:13.563188+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__meepo_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 15.7,
+      "finished_at": "2026-10-14T09:53:29.351448+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__windrunner_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 14.9,
+      "finished_at": "2026-10-14T09:53:44.300180+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__bassander_lin_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.6,
+      "finished_at": "2026-10-14T09:54:01.905827+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__hadrian_marlowe_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 13.4,
+      "finished_at": "2026-10-14T09:54:15.320857+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__valka_onderra_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 17.0,
+      "finished_at": "2026-10-14T09:54:32.372713+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__aggressor/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 11.3,
+      "finished_at": "2026-10-14T09:54:43.748745+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__alan_wake_claude/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 18.7,
+      "finished_at": "2026-10-14T09:55:02.458527+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__jack_joyce_gemini/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.2,
+      "finished_at": "2026-10-14T09:55:21.683660+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__jesse_faden_glm/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 19.1,
+      "finished_at": "2026-10-14T09:55:40.853418+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__max_payne_gpt/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 9.1,
+      "finished_at": "2026-10-14T09:55:50.010547+00:00",
+      "engine_sha256": "295477eff7637056"
+    },
+    "scherezard_glm__random/seed=1": {
+      "tables": 64,
+      "hands": 250,
+      "seconds": 12.9,
+      "finished_at": "2026-10-14T09:56:02.930839+00:00",
+      "engine_sha256": "295477eff7637056"
+    }
+  },
+  "format_version": 2,
+  "updated_at": "2026-10-14T09:56:02.931792+00:00",
+  "format": {
+    "max_players": 2,
+    "small_blind": 1,
+    "big_blind": 2,
+    "starting_stack_bb": 100,
+    "rebuy": true,
+    "seating": "A in even seats on even tables, odd seats on odd tables"
+  },
+  "engine": {
+    "git_head": "b8289a361645b307632dfb0e2ae84b6b13e0e670",
+    "git_dirty": false,
+    "files_sha256": {
+      "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hand_eval.py": "28e243dc342fb8f1d04427dac201946141eeffdf1ea9e670882b1349670d1552",
+      "poker_game.py": "8f15737fa55648fac2df546f5441bd1ceaa65339438fc3b7df2d7f2fc923afe6",
+      "simulate.py": "b820752610fc56cec3430dce0bc442a1d98f3fe02119848f864d99f7be139448"
+    },
+    "jax_version": "0.11.2",
+    "backend": "cpu"
+  },
+  "bots": {
+    "estelle_claude": {
+      "registry_name": "phase_6_trails/estelle_claude",
+      "metadata": {
+        "bot_name": "estelle_claude",
+        "version": 5,
+        "parent": 1,
+        "lineage": "phase_6_trails/estelle_claude",
+        "model": "claude-opus-5-5",
+        "prompt_version": "botgen-v6",
+        "phase": "phase_6_trails",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "preflop_raise_keep_share": 0.6,
+          "postflop_bet_keep_share": 0.5,
+          "call_drop_share": 0.3,
+          "slowplay_discount": 0.5,
+          "slowplay_percentile": 0.8,
+          "range_softness": 0.08,
+          "open_equity": 0.38,
+          "value_bet_equity": 0.48,
+          "value_raise_equity": 0.56,
+          "call_margin": 0.0,
+          "bluff_frequency": 0.45,
+          "bluff_max_equity": 0.35,
+          "bet_pot_fraction": 0.66,
+          "preflop_raise_multiple": 3.0,
+          "use_range": true
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop"
+          }
+        ]
+      },
+      "source": "bots/phase_6_trails/estelle_claude_final.py",
+      "source_sha256": "0485f55a009a5b4705c8fb7432ac0eec0834b8e4a96d9fbcaf31cf900cdd5ac7"
+    },
+    "joshua_gpt": {
+      "registry_name": "phase_6_trails/joshua_gpt",
+      "metadata": {
+        "bot_name": "joshua_gpt",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_6_trails/joshua_gpt",
+        "model": "GPT-6 (Codex)",
+        "prompt_version": "botgen-v6",
+        "phase": "phase_6_trails",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "samples": 128,
+          "range_power": 1.0,
+          "likelihood_floor": 0.12,
+          "likelihood_width": 0.12,
+          "open_percentile": 0.38,
+          "reraise_percentile": 0.82,
+          "call_percentile": 0.45,
+          "bet_percentile": 0.64,
+          "check_discount": 0.65,
+          "pair_bonus_ranks": 13.0,
+          "suited_bonus_ranks": 3.0,
+          "call_margin_equity": 0.04,
+          "open_equity": 0.49,
+          "enter_equity": 0.44,
+          "value_equity": 0.64,
+          "raise_equity": 0.8,
+          "bet_pot_fraction": 0.65,
+          "open_size_bb": 2.5,
+          "bluff_frequency": 0.25,
+          "draw_bonus_percentile": 0.18
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_6_trails/joshua_gpt_final.py",
+      "source_sha256": "b6b34fecf1c097c54b941a3ae9663efec50c63fea32ed916be6edd6b2bdee466"
+    },
+    "scherezard_glm": {
+      "registry_name": "phase_6_trails/scherezard_glm",
+      "metadata": {
+        "bot_name": "scherezard_glm",
+        "version": 5,
+        "parent": 1,
+        "lineage": "phase_6_trails/scherezard_glm",
+        "model": "GLM-5.3",
+        "prompt_version": "botgen-v6",
+        "phase": "phase_6_trails",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "open_min_quality": 0.26,
+          "threebet_min_quality": 0.48,
+          "defend_min_quality": 0.3,
+          "value_bet_equity": 0.72,
+          "bluff_frequency": 0.45,
+          "bluff_equity_ceiling": 0.4,
+          "raise_equity": 0.8,
+          "call_margin": 0.02,
+          "villain_samples": 80,
+          "uniform_range": false
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_6_trails/scherezard_glm_final.py",
+      "source_sha256": "aac137b3f64073a25a492a56db576565d76e63a3a4203bcf64bd95f237685ddb"
+    },
+    "faye_gpt": {
+      "registry_name": "phase_5_cowboy_bebop/faye_gpt",
+      "metadata": {
+        "bot_name": "faye_gpt",
+        "version": 10,
+        "parent": 7,
+        "lineage": "phase_5_cowboy_bebop/faye_gpt",
+        "model": "GPT-6 (Codex)",
+        "prompt_version": "botgen-v5",
+        "phase": "phase_5_cowboy_bebop",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "semibluff_draw_probability": 0.15,
+          "semibluff_equity": 0.4,
+          "pressure_odds_cap": 0.5,
+          "prior_actions": 12.0,
+          "prior_fold_rate": 0.45,
+          "prior_raise_rate": 0.3,
+          "exploit_bluff_frequency": 0.8,
+          "fold_profit_margin": 0.04,
+          "samples": 64,
+          "open_equity": 0.48,
+          "value_equity": 0.7,
+          "reraise_equity": 0.84,
+          "call_margin": 0.08,
+          "pressure_penalty": 0.16,
+          "open_size_bb": 2.5,
+          "bet_pot_fraction": 0.4,
+          "texture_weight": 0.06,
+          "draw_weight": 0.12,
+          "bluff_frequency": 0.12,
+          "features_enabled": true,
+          "bet_range_fraction": 0.5,
+          "quiet_range_fraction": 0.8,
+          "reraise_range_fraction": 0.25
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_5_cowboy_bebop/faye_gpt_final.py",
+      "source_sha256": "efded01552a94f3038494423c950af1c23dd6660a8518ffc1ec86645acf8cd8e"
+    },
+    "spike_claude": {
+      "registry_name": "phase_5_cowboy_bebop/spike_claude",
+      "metadata": {
+        "bot_name": "spike_claude",
+        "version": 6,
+        "parent": 5,
+        "lineage": "phase_5_cowboy_bebop/spike_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v5",
+        "phase": "phase_5_cowboy_bebop",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "open_equity": 0.47,
+          "preflop_reraise_equity": 0.63,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "bet_equity": 0.62,
+          "raise_equity": 0.8,
+          "call_margin": 0.04,
+          "tightness_per_raise": 0.8,
+          "tightness_per_preflop_raise": 0.5,
+          "tightness_per_call": 0.5,
+          "scary_board_penalty": 0.07,
+          "dry_bet_fraction": 0.5,
+          "wet_bet_fraction": 0.8,
+          "semi_bluff_outs": 8,
+          "stab_frequency": 0.3,
+          "equity_samples": 192,
+          "typical_aggression": 0.35,
+          "prior_actions": 20.0
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop"
+          }
+        ]
+      },
+      "source": "bots/phase_5_cowboy_bebop/spike_claude_final.py",
+      "source_sha256": "6f1e0f3412e0a015cee99c08fac4c9ac6b59fd4ae3fd6e026fca58c990d66f37"
+    },
+    "vicious_glm": {
+      "registry_name": "phase_5_cowboy_bebop/vicious_glm",
+      "metadata": {
+        "bot_name": "vicious_glm",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_5_cowboy_bebop/vicious_glm",
+        "model": "GLM-5.3",
+        "prompt_version": "botgen-v5",
+        "phase": "phase_5_cowboy_bebop",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "open_equity": 0.33,
+          "limp_raise_equity": 0.5,
+          "three_bet_equity": 0.6,
+          "defend_equity": 0.42,
+          "preflop_stack_risk_extra": 0.2,
+          "open_size_bb": 2.5,
+          "three_bet_multiplier": 2.5,
+          "value_bet_equity": 0.56,
+          "monster_equity": 0.78,
+          "base_bet_fraction": 0.55,
+          "wet_bet_extra": 0.3,
+          "raise_face_base": 0.65,
+          "wet_raise_extra": 0.15,
+          "call_margin": 0.03,
+          "stack_risk_extra": 0.25,
+          "late_street_extra": 0.04,
+          "wet_call_extra": 0.1,
+          "paired_call_relief": 0.02,
+          "bet_discount": 0.22,
+          "semi_bluff_outs": 6,
+          "semi_bluff_freq": 0.75,
+          "semi_bluff_min_equity": 0.35,
+          "air_bluff_fold_scale": 1.0,
+          "air_bluff_max_equity": 0.4,
+          "draw_raise_outs": 8,
+          "draw_call_credit": 0.05,
+          "texture_effect_scale": 1.0,
+          "draw_effect_scale": 1.0,
+          "prior_hands": 8.0,
+          "prior_fold_rate": 0.45,
+          "equity_samples": 128
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_5_cowboy_bebop/vicious_glm_final.py",
+      "source_sha256": "74898bf59635f0b253d810ca0cb7a13cf2749e6679b95ba70471d3e164cc6b48"
+    },
+    "kraken_gpt": {
+      "registry_name": "phase_4_sea_monsters/kraken_gpt",
+      "metadata": {
+        "bot_name": "kraken_gpt",
+        "version": 6,
+        "parent": 3,
+        "lineage": "phase_4_sea_monsters/kraken_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v4",
+        "phase": "phase_4_sea_monsters",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "threebet_equity": 0.63,
+          "light_threebet_frequency": 0.15,
+          "isolate_equity": 0.55,
+          "value_equity": 0.62,
+          "raise_equity": 0.85,
+          "bluff_frequency": 0.35,
+          "semibluff_frequency": 0.5,
+          "bluff_split_equity": 0.45,
+          "bluff_street_decay": 1.0,
+          "bet_pot_fraction": 0.65,
+          "range_retention": 0.58,
+          "prior_street_weight": 0.5,
+          "realization_fraction": 0.9,
+          "call_margin_equity": 0.02,
+          "prior_events": 20.0,
+          "prior_bet_rate": 0.4,
+          "prior_fold_rate": 0.5,
+          "betting_adjustment": 0.65,
+          "bluff_adjustment": 1.25,
+          "prior_raise_rate": 0.15,
+          "reraise_range_retention": 0.4
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_4_sea_monsters/kraken_gpt_final.py",
+      "source_sha256": "647d6dbb8b2cac6eab133e9d55097f5b397c44d307aabb5679870cd00a172b30"
+    },
+    "leviathan_claude": {
+      "registry_name": "phase_4_sea_monsters/leviathan_claude",
+      "metadata": {
+        "bot_name": "leviathan_claude",
+        "version": 4,
+        "parent": 3,
+        "lineage": "phase_4_sea_monsters/leviathan_claude",
+        "model": "claude-opus-5-5 (Claude Opus 5.5)",
+        "prompt_version": "botgen-v4",
+        "phase": "phase_4_sea_monsters",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "three_bet_equity": 0.63,
+          "light_three_bet_rate": 0.15,
+          "limp_raise_equity": 0.55,
+          "value_bet_equity": 0.62,
+          "air_bluff_rate": 0.33,
+          "semi_bluff_rate": 0.5,
+          "air_equity_limit": 0.45,
+          "bluff_street_decay": 0.55,
+          "bet_pot_fraction": 0.65,
+          "value_raise_equity": 0.8,
+          "call_margin": 0.02,
+          "pressure_discount": 0.58,
+          "earlier_street_weight": 0.5,
+          "realization_factor": 0.9,
+          "typical_fold_rate": 0.5,
+          "fold_prior_hands": 10.0,
+          "min_bluff_scale": 0.3,
+          "max_bluff_scale": 1.6,
+          "thin_value_shift": 0.08,
+          "typical_bet_loss_rate": 0.35,
+          "showdown_prior_count": 6.0,
+          "min_pressure_scale": 0.4,
+          "max_pressure_scale": 1.25
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop"
+          }
+        ]
+      },
+      "source": "bots/phase_4_sea_monsters/leviathan_claude_final.py",
+      "source_sha256": "aa0558f1c7ab8b2c1d92b111e489eaad959f2a9c47fe766dbf4e17b6c1e86756"
+    },
+    "megalodon_glm": {
+      "registry_name": "phase_4_sea_monsters/megalodon_glm",
+      "metadata": {
+        "bot_name": "megalodon_glm",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_4_sea_monsters/megalodon_glm",
+        "model": "GLM-5.3 (account:zai-individual-coding-plan/GLM-5.3)",
+        "prompt_version": "botgen-v4",
+        "phase": "phase_4_sea_monsters",
+        "engine": "decafb9 sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_size_bb": 2.5,
+          "preflop_reraise_multiple": 3.0,
+          "three_bet_equity": 0.63,
+          "light_three_bet_freq": 0.15,
+          "limp_raise_equity": 0.55,
+          "value_bet_equity": 0.62,
+          "bluff_frequency": 0.33,
+          "semi_bluff_frequency": 0.5,
+          "bluff_street_decay": 0.55,
+          "bluff_equity_split": 0.45,
+          "bet_pot_fraction": 0.65,
+          "reraise_equity": 0.8,
+          "call_margin": 0.02,
+          "aggression_discount": 0.58,
+          "prior_street_weight": 0.5,
+          "realization_factor": 0.9,
+          "tracking_prior_hands": 10.0,
+          "prior_fold_rate": 0.55,
+          "prior_flop_bet_rate": 0.5,
+          "thin_value_slope": 0.2,
+          "discount_relief_slope": 0.4
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_4_sea_monsters/megalodon_glm_final.py",
+      "source_sha256": "5c5bf697baa01743c4b3913ace9d38b65296dda2d1651f38cf40ceb3969903da"
+    },
+    "invoker_gpt": {
+      "registry_name": "phase_3_dota/invoker_gpt",
+      "metadata": {
+        "bot_name": "invoker_gpt",
+        "version": 9,
+        "parent": 6,
+        "lineage": "phase_3_dota/invoker_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v3",
+        "phase": "phase_3_dota",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_equity": 0.38,
+          "isolation_equity": 0.56,
+          "preflop_raise_equity": 0.6,
+          "value_equity": 0.7,
+          "raise_equity": 0.86,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "bet_pot_fraction": 0.67,
+          "premium_equity": 0.92,
+          "premium_pot_fraction": 1.15,
+          "raise_exclusion_fraction": 0.28,
+          "prior_raise_weight": 0.4,
+          "opening_raise_weight": 0.4,
+          "realization_fraction": 0.92,
+          "call_margin_equity": 0.025,
+          "bluff_frequency": 0.35,
+          "bluff_ceiling_equity": 0.5,
+          "threebet_bluff_frequency": 0.2,
+          "threebet_bluff_ceiling_equity": 0.58,
+          "trap_frequency": 0.35
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_3_dota/invoker_gpt_final.py",
+      "source_sha256": "feb0dd697604819c72e4708f29ea4af675d5e883749b35b2a5846aaca0c818fc"
+    },
+    "meepo_claude": {
+      "registry_name": "phase_3_dota/meepo_claude",
+      "metadata": {
+        "bot_name": "meepo_claude",
+        "version": 5,
+        "parent": 2,
+        "lineage": "phase_3_dota/meepo_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v3",
+        "phase": "phase_3_dota",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 192,
+          "open_equity": 0.42,
+          "preflop_raise_equity": 0.62,
+          "limp_raise_equity": 0.55,
+          "value_bet_equity": 0.64,
+          "value_raise_equity": 0.78,
+          "street_raise_discount": 0.25,
+          "earlier_raise_discount": 0.12,
+          "preflop_raise_discount": 0.1,
+          "call_margin": 0.02,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "bet_pot_fraction": 0.66,
+          "bluff_max_equity": 0.35,
+          "bluff_frequency": 0.35
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop (Code)"
+          }
+        ]
+      },
+      "source": "bots/phase_3_dota/meepo_claude_final.py",
+      "source_sha256": "99602ed1b8ec471eff7954bd01067169d3f417c93ff1c7b2990f48e0fa391185"
+    },
+    "windrunner_glm": {
+      "registry_name": "phase_3_dota/windrunner_glm",
+      "metadata": {
+        "bot_name": "windrunner_glm",
+        "version": 6,
+        "parent": 5,
+        "lineage": "phase_3_dota/windrunner_glm",
+        "model": "GLM-5.3 (account:zai-individual-coding-plan/GLM-5.3)",
+        "prompt_version": "botgen-v3",
+        "phase": "phase_3_dota",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_size_bb": 2.5,
+          "preflop_reraise_multiple": 3.0,
+          "three_bet_equity": 0.63,
+          "light_three_bet_freq": 0.15,
+          "limp_raise_equity": 0.55,
+          "value_bet_equity": 0.62,
+          "bluff_frequency": 0.33,
+          "semi_bluff_frequency": 0.5,
+          "bluff_street_decay": 0.55,
+          "bluff_equity_split": 0.45,
+          "bet_pot_fraction": 0.65,
+          "reraise_equity": 0.8,
+          "call_margin": 0.02,
+          "aggression_discount": 0.58,
+          "prior_street_weight": 0.5,
+          "realization_factor": 0.9
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_3_dota/windrunner_glm_final.py",
+      "source_sha256": "eca46637f5ffac470e1f57781af366b93e992caffad32b6fe71e73af69887305"
+    },
+    "bassander_lin_glm": {
+      "registry_name": "phase_2_suneater/bassander_lin_glm",
+      "metadata": {
+        "bot_name": "bassander_lin_glm",
+        "version": 8,
+        "parent": 7,
+        "lineage": "phase_2_suneater/bassander_lin_glm",
+        "model": "GLM-5.3",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 96,
+          "button_open_bb": 2.5,
+          "limp_raise_equity": 0.55,
+          "limp_raise_bb": 3.5,
+          "three_bet_equity": 0.6,
+          "value_bet_equity": 0.64,
+          "reraise_equity": 0.8,
+          "bet_pot_fraction": 0.9,
+          "call_margin": 0.02,
+          "per_raise_factor": 0.75,
+          "preflop_reraise_multiple": 3.0
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/bassander_lin_glm_final.py",
+      "source_sha256": "ac693a566e3a38ce480f4956a4b0620356e2c951ba4f9aeaeb2228a33d97f119"
+    },
+    "hadrian_marlowe_gpt": {
+      "registry_name": "phase_2_suneater/hadrian_marlowe_gpt",
+      "metadata": {
+        "bot_name": "hadrian_marlowe_gpt",
+        "version": 6,
+        "parent": 4,
+        "lineage": "phase_2_suneater/hadrian_marlowe_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "button_open_equity": 0.43,
+          "isolation_equity": 0.6,
+          "preflop_value_equity": 0.69,
+          "postflop_value_equity": 0.68,
+          "reraise_margin_equity": 0.12,
+          "range_exclusion_fraction": 0.3,
+          "prior_raise_weight": 0.5,
+          "call_margin_equity": 0.03,
+          "realization_fraction": 0.9,
+          "opening_size_bb": 2.5,
+          "premium_equity": 0.9,
+          "premium_pot_fraction": 1.25,
+          "bet_pot_fraction": 0.66,
+          "preflop_reraise_multiple": 3.0
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/hadrian_marlowe_gpt_final.py",
+      "source_sha256": "2f73440f2ef9346d4f554167c4c4f58fbfda3d91fd5306ecd8ea2dbd4f2eb68e"
+    },
+    "valka_onderra_claude": {
+      "registry_name": "phase_2_suneater/valka_onderra_claude",
+      "metadata": {
+        "bot_name": "valka_onderra_claude",
+        "version": 5,
+        "parent": 4,
+        "lineage": "phase_2_suneater/valka_onderra_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v2",
+        "phase": "phase_2_suneater",
+        "engine": "02abc49+wt sha256:295477eff7637056",
+        "params": {
+          "num_samples": 128,
+          "open_equity": 0.4,
+          "preflop_raise_equity": 0.55,
+          "postflop_bet_equity": 0.66,
+          "reraise_equity_step": 0.08,
+          "call_margin": 0.02,
+          "raise_discount": 0.12,
+          "missed_board_weight": 0.35,
+          "open_size_bb": 2.5,
+          "reraise_multiple": 3.0,
+          "min_bet_pot_fraction": 0.5,
+          "max_bet_pot_fraction": 1.0,
+          "shove_commit_fraction": 0.45
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop (Code)"
+          }
+        ]
+      },
+      "source": "bots/phase_2_suneater/valka_onderra_claude_final.py",
+      "source_sha256": "c960de99ef862fbef3b04ea1afd5142c6e837df1b7c69585a11a9ab32bfd403d"
+    },
+    "aggressor": {
+      "registry_name": "probes/aggressor",
+      "metadata": {
+        "bot_name": "aggressor",
+        "kind": "bot",
+        "role": "probe",
+        "description": "opens every button, bets whenever checked to, continues on pot odds above defend_equity",
+        "params": {
+          "open_size_bb": 2.5,
+          "bet_pot_fraction": 0.67,
+          "defend_equity": 0.65,
+          "num_samples": 64
+        }
+      },
+      "source": "bots/probes/aggressor_final.py",
+      "source_sha256": "4bd968dc704e26240eac740bdca0340e326c516bb9b30c6eeb439419ba306d09"
+    },
+    "alan_wake_claude": {
+      "registry_name": "phase_1_remedy/alan_wake_claude",
+      "metadata": {
+        "bot_name": "alan_wake_claude",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_1_remedy/alan_wake_claude",
+        "model": "Claude Opus 5.5 (claude-opus-5-5)",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "num_samples": 128,
+          "raise_strength": 1.5,
+          "raise_discount": 0.15,
+          "call_margin": 0.03,
+          "preflop_raise_multiple": 3.0,
+          "bet_pot_fraction": 0.66,
+          "shove_commit_fraction": 0.4
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Claude desktop (Code)"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/alan_wake_claude_final.py",
+      "source_sha256": "5dc1c1ff6598b0a0c2eb47f21163b4abffdb92b5a2fa22ae6b424f2fb3f9f2dc"
+    },
+    "jack_joyce_gemini": {
+      "registry_name": "phase_1_remedy/jack_joyce_gemini",
+      "metadata": {
+        "bot_name": "jack_joyce_gemini",
+        "version": 3,
+        "parent": 2,
+        "lineage": "phase_1_remedy/jack_joyce_gemini",
+        "model": "Gemini-2.5-Pro",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "raise_eq": 0.6,
+          "massive_eq": 0.8,
+          "bluff_prob": 0.1
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "Gemini"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/jack_joyce_gemini_final.py",
+      "source_sha256": "bcb1284384b56e9192bf628fc5a9488dd05267bd89b9f948713827c716dd05d8"
+    },
+    "jesse_faden_glm": {
+      "registry_name": "phase_1_remedy/jesse_faden_glm",
+      "metadata": {
+        "bot_name": "jesse_faden_glm",
+        "version": 1,
+        "parent": null,
+        "lineage": "phase_1_remedy/jesse_faden_glm",
+        "model": "GLM-5.3",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "call_margin": 0.03,
+          "raise_equity": 0.62,
+          "bet_fraction": 0.75,
+          "num_samples": 128
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GLM"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/jesse_faden_glm_final.py",
+      "source_sha256": "314f32014377e317b589514ac283594dab9a106c41e9047aae23a98ecb55915c"
+    },
+    "max_payne_gpt": {
+      "registry_name": "phase_1_remedy/max_payne_gpt",
+      "metadata": {
+        "bot_name": "max_payne_gpt",
+        "version": 1,
+        "parent": null,
+        "lineage": "phase_1_remedy/max_payne_gpt",
+        "model": "GPT-6 (Codex; exact serving variant unavailable)",
+        "prompt_version": "botgen-v1",
+        "engine_commit": "02abc49",
+        "params": {
+          "num_samples": 64,
+          "realization_fraction": 0.85,
+          "call_margin_equity": 0.04,
+          "preflop_entry_multiplier": 1.15,
+          "preflop_raise_multiplier": 1.8,
+          "value_raise_equity": 0.62,
+          "bet_pot_fraction": 0.75,
+          "opening_size_bb": 2.5
+        },
+        "contributions": [
+          {
+            "role": "requester",
+            "who": "a"
+          },
+          {
+            "role": "generator",
+            "interface": "GPT (Codex)"
+          }
+        ]
+      },
+      "source": "bots/phase_1_remedy/max_payne_gpt_final.py",
+      "source_sha256": "f44830c7b5911408687e8310c622bf769cbe802cd930bddcac23ced9ed8af7f7"
+    },
+    "random": {
+      "registry_name": "builtin/random",
+      "metadata": {
+        "bot_type": "random_bot"
+      },
+      "source": "src/poker_bots/poker_game.py",
+      "source_sha256": "8f15737fa55648fac2df546f5441bd1ceaa65339438fc3b7df2d7f2fc923afe6"
+    }
+  }
+}

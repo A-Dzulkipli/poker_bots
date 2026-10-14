@@ -1,0 +1,10 @@
+Initial sandbox attempt:
+error: Failed to initialize cache at `/Users/alik/.cache/uv`
+  Caused by: failed to open file `/Users/alik/.cache/uv/sdists-v9/.git`: Operation not permitted (os error 1)
+
+Successful retry with existing environment and sandbox escalation:
+python      /Users/alik/Documents/Projects/poker_bots/poker_bots/.venv/bin/python3 (3.13.12)
+jax         0.11.2 (cpu)
+poker_bots  /Users/alik/Documents/Projects/poker_bots/poker_bots/src/poker_bots
+engine      sha256 295477eff7637056 (matches the contract)
+smoke test  random vs aggressor, 40 hands in 2s: OK

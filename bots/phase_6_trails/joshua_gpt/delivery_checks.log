@@ -1,0 +1,4 @@
+PASS: eight smoke tests, eight development fields, three one-time held-out fields.
+PASS: deployed version versus every earlier version and matching uniform-hand control.
+PASS: deployment export, measured range table, complete version sections and provenance.
+Unique 250-hand benchmark rows: 213

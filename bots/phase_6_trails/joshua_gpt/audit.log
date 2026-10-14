@@ -1,0 +1,9 @@
+Frozen versions and shared helpers match saved hashes.
+v1.py: 71 decision lines, 128 samples, stateless, JSON metadata, unchanged state return.
+v2.py: 83 decision lines, 128 samples, stateless, JSON metadata, unchanged state return.
+v3.py: 83 decision lines, 128 samples, stateless, JSON metadata, unchanged state return.
+v4.py: 83 decision lines, 128 samples, stateless, JSON metadata, unchanged state return.
+v5.py: 83 decision lines, 128 samples, stateless, JSON metadata, unchanged state return.
+v6.py: 83 decision lines, 128 samples, stateless, JSON metadata, unchanged state return.
+v7.py: 94 decision lines, 128 samples, stateless, JSON metadata, unchanged state return.
+v8.py: 83 decision lines, 128 samples, stateless, JSON metadata, unchanged state return.

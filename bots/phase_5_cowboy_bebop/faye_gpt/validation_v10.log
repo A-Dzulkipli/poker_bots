@@ -1,0 +1,3 @@
+v10:Bot metadata, sample cap, single class: PASS
+JIT/vmap shapes, int32 actions, legal raise totals, no free folds: PASS
+Features enabled versus disabled: 13 action-type changes; 133 total action changes / 768 probes

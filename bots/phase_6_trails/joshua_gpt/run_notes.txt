@@ -1,0 +1,5 @@
+Start: 2026-10-14 07:28:02 UTC
+Iteration cutoff: 08:18:02 UTC
+Deadline: 08:28:02 UTC
+Initial inspection accidentally listed filenames across repository; no outside source contents opened other than the user request attachment.
+All strategy candidates frozen before held-out evaluation. No strategy changes after the 50-minute cutoff. Final choice: v3, held-out weighted score +25.07.

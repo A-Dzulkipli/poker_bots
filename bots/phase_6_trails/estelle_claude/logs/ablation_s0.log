@@ -1,0 +1,3 @@
+ablation:V1NoRange vs            aggressor:   -91.78 bb/100  (SE 15.22; first 50 hands -112.5, rest -86.6; 64x250, seed 0, 62s)
+ablation:V1NoRange vs             faye_gpt:  -102.61 bb/100  (SE 10.50; first 50 hands -78.2, rest -108.7; 64x250, seed 0, 67s)
+ablation:V1NoRange vs           kraken_gpt:  -274.16 bb/100  (SE 14.57; first 50 hands -311.1, rest -264.9; 64x250, seed 0, 76s)

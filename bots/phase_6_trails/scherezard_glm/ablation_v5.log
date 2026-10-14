@@ -1,0 +1,5 @@
+v5 ablation, 32 tables x 250 hands, seed 0 (printed labels said "v4" before a label-only sed; the import and run were v5):
+v5(range) vs v5(uniform) head-to-head: +41.45 bb/100 (SE 34.17)
+v5(uniform) vs          aggressor:   +40.44 bb/100 (SE 19.70)
+v5(uniform) vs     windrunner_glm:  -117.58 bb/100 (SE 20.22)
+v5(uniform) vs    jesse_faden_glm:  +139.09 bb/100 (SE 39.45)

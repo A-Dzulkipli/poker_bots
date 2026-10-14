@@ -1,0 +1,4 @@
+v4(range) vs v4(uniform) head-to-head: +86.33 bb/100 (SE 31.88)
+v4(uniform) vs          aggressor:    +0.69 bb/100 (SE 22.53)
+v4(uniform) vs     windrunner_glm:  -133.77 bb/100 (SE 20.70)
+v4(uniform) vs    jesse_faden_glm:   +59.23 bb/100 (SE 44.38)

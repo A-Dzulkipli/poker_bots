@@ -1,0 +1,18 @@
+# One file per bot. Run from bots/phase_5_cowboy_bebop: python fill_prompt.py faye_gpt/prompt.toml
+output = "./PROMPT.md"                 # relative to this file
+template = "../botgen_v5_prompt.md"    # relative to this file
+
+[slots]
+BOT_NAME = "faye_gpt"             # snake_case; must match the bot's directory name
+LINEAGE = "phase_5_cowboy_bebop/faye_gpt"
+BENCHMARK_SET = "The fifteen-bot field (`field`), which `bench.py` loads from `../field/` and you must not read, scored by the weighted score, which is your primary score; and every earlier version of your own bot (`vK:Bot`)."
+CONSTRAINTS = "None beyond the restrictions below."
+ROOT_DIR = "/Users/alik/Documents/Projects/poker_bots/poker_bots/bots/phase_5_cowboy_bebop"
+
+[[slots.METADATA_BLOCKS]]
+role = "requester"
+who = "a"
+
+[[slots.METADATA_BLOCKS]]
+role = "generator"
+interface = "GPT (Codex)"

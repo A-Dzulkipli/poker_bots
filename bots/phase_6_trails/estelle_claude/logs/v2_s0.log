@@ -1,0 +1,4 @@
+v2:Bot vs            aggressor:   -47.08 bb/100  (SE 11.28; first 50 hands -53.7, rest -45.4; 64x250, seed 0, 77s)
+v2:Bot vs             faye_gpt:   -47.88 bb/100  (SE 7.98; first 50 hands -71.7, rest -41.9; 64x250, seed 0, 87s)
+v2:Bot vs           kraken_gpt:  -111.65 bb/100  (SE 10.59; first 50 hands -101.6, rest -114.2; 64x250, seed 0, 103s)
+v2:Bot vs         spike_claude:   -86.40 bb/100  (SE 16.71; first 50 hands -112.0, rest -80.0; 64x250, seed 0, 114s)

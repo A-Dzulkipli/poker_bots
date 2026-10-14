@@ -1,0 +1,6 @@
+ablation:V5NoRange vs        max_payne_gpt:   -85.38 bb/100  (SE 22.49; first 50 hands +1.6, rest -107.1; 64x250, seed 0, 45s)
+ablation:V5NoRange vs valka_onderra_claude:  -387.37 bb/100  (SE 32.17; first 50 hands -278.1, rest -414.7; 64x250, seed 0, 103s)
+v5:Bot vs   ablation:V5NoRange:  +492.58 bb/100  (SE 42.74; first 50 hands +527.8, rest +483.8; 64x250, seed 2, 107s)
+v5:Bot vs               v1:Bot:   -33.25 bb/100  (SE 20.75; first 50 hands -2.5, rest -40.9; 64x250, seed 2, 111s)
+v5:Bot vs               v1:Bot:    -3.04 bb/100  (SE 18.29; first 50 hands +40.5, rest -13.9; 64x250, seed 3, 82s)
+v5:Bot vs               v1:Bot:   -26.42 bb/100  (SE 19.38; first 50 hands -0.8, rest -32.8; 64x250, seed 4, 83s)

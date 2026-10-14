@@ -1,0 +1,8 @@
+v1:Bot vs           kraken_gpt:   -66.03 bb/100  (SE 10.38; first 50 hands -63.9, rest -66.6; 64x250, seed 0, 30s)
+v1:Bot vs     leviathan_claude:   -17.23 bb/100  (SE 12.56; first 50 hands -58.3, rest -7.0; 64x250, seed 0, 29s)
+v1:Bot vs        megalodon_glm:   -19.08 bb/100  (SE 13.80; first 50 hands -65.0, rest -7.6; 64x250, seed 0, 29s)
+v1:Bot vs             faye_gpt:   -69.09 bb/100  (SE 6.74; first 50 hands -56.6, rest -72.2; 64x250, seed 0, 84s)
+v1:Bot vs       windrunner_glm:   -23.96 bb/100  (SE 14.24; first 50 hands -35.4, rest -21.1; 64x250, seed 0, 105s)
+v1:Bot vs          invoker_gpt:   -16.40 bb/100  (SE 13.04; first 50 hands -37.8, rest -11.0; 64x250, seed 0, 105s)
+v1:Bot vs         spike_claude:   -23.65 bb/100  (SE 10.15; first 50 hands +7.1, rest -31.3; 64x250, seed 0, 116s)
+v1:Bot vs            aggressor:   -52.89 bb/100  (SE 7.63; first 50 hands -55.4, rest -52.3; 64x250, seed 0, 33s)

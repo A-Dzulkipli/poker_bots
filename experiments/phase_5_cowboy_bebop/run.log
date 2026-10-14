@@ -1,0 +1,352 @@
+faye_gpt vs spike_claude seed 0: 16000 hands in 15s
+faye_gpt vs vicious_glm seed 0: 16000 hands in 11s
+faye_gpt vs kraken_gpt seed 0: 16000 hands in 10s
+faye_gpt vs leviathan_claude seed 0: 16000 hands in 10s
+faye_gpt vs megalodon_glm seed 0: 16000 hands in 10s
+faye_gpt vs invoker_gpt seed 0: 16000 hands in 10s
+faye_gpt vs meepo_claude seed 0: 16000 hands in 11s
+faye_gpt vs windrunner_glm seed 0: 16000 hands in 10s
+faye_gpt vs bassander_lin_glm seed 0: 16000 hands in 13s
+faye_gpt vs hadrian_marlowe_gpt seed 0: 16000 hands in 9s
+faye_gpt vs valka_onderra_claude seed 0: 16000 hands in 12s
+faye_gpt vs aggressor seed 0: 16000 hands in 8s
+faye_gpt vs alan_wake_claude seed 0: 16000 hands in 14s
+faye_gpt vs jack_joyce_gemini seed 0: 16000 hands in 13s
+faye_gpt vs jesse_faden_glm seed 0: 16000 hands in 13s
+faye_gpt vs max_payne_gpt seed 0: 16000 hands in 6s
+faye_gpt vs random seed 0: 16000 hands in 7s
+spike_claude vs vicious_glm seed 0: 16000 hands in 17s
+spike_claude vs kraken_gpt seed 0: 16000 hands in 16s
+spike_claude vs leviathan_claude seed 0: 16000 hands in 15s
+spike_claude vs megalodon_glm seed 0: 16000 hands in 15s
+spike_claude vs invoker_gpt seed 0: 16000 hands in 16s
+spike_claude vs meepo_claude seed 0: 16000 hands in 17s
+spike_claude vs windrunner_glm seed 0: 16000 hands in 15s
+spike_claude vs bassander_lin_glm seed 0: 16000 hands in 17s
+spike_claude vs hadrian_marlowe_gpt seed 0: 16000 hands in 15s
+spike_claude vs valka_onderra_claude seed 0: 16000 hands in 18s
+spike_claude vs aggressor seed 0: 16000 hands in 11s
+spike_claude vs alan_wake_claude seed 0: 16000 hands in 21s
+spike_claude vs jack_joyce_gemini seed 0: 16000 hands in 20s
+spike_claude vs jesse_faden_glm seed 0: 16000 hands in 21s
+spike_claude vs max_payne_gpt seed 0: 16000 hands in 9s
+spike_claude vs random seed 0: 16000 hands in 12s
+vicious_glm vs kraken_gpt seed 0: 16000 hands in 11s
+vicious_glm vs leviathan_claude seed 0: 16000 hands in 12s
+vicious_glm vs megalodon_glm seed 0: 16000 hands in 12s
+vicious_glm vs invoker_gpt seed 0: 16000 hands in 12s
+vicious_glm vs meepo_claude seed 0: 16000 hands in 13s
+vicious_glm vs windrunner_glm seed 0: 16000 hands in 12s
+vicious_glm vs bassander_lin_glm seed 0: 16000 hands in 13s
+vicious_glm vs hadrian_marlowe_gpt seed 0: 16000 hands in 10s
+vicious_glm vs valka_onderra_claude seed 0: 16000 hands in 14s
+vicious_glm vs aggressor seed 0: 16000 hands in 7s
+vicious_glm vs alan_wake_claude seed 0: 16000 hands in 17s
+vicious_glm vs jack_joyce_gemini seed 0: 16000 hands in 16s
+vicious_glm vs jesse_faden_glm seed 0: 16000 hands in 17s
+vicious_glm vs max_payne_gpt seed 0: 16000 hands in 6s
+vicious_glm vs random seed 0: 16000 hands in 9s
+faye_gpt vs spike_claude seed 1: 16000 hands in 13s
+faye_gpt vs vicious_glm seed 1: 16000 hands in 11s
+faye_gpt vs kraken_gpt seed 1: 16000 hands in 10s
+faye_gpt vs leviathan_claude seed 1: 16000 hands in 10s
+faye_gpt vs megalodon_glm seed 1: 16000 hands in 10s
+faye_gpt vs invoker_gpt seed 1: 16000 hands in 10s
+faye_gpt vs meepo_claude seed 1: 16000 hands in 11s
+faye_gpt vs windrunner_glm seed 1: 16000 hands in 9s
+faye_gpt vs bassander_lin_glm seed 1: 16000 hands in 12s
+faye_gpt vs hadrian_marlowe_gpt seed 1: 16000 hands in 9s
+faye_gpt vs valka_onderra_claude seed 1: 16000 hands in 11s
+faye_gpt vs aggressor seed 1: 16000 hands in 7s
+faye_gpt vs alan_wake_claude seed 1: 16000 hands in 14s
+faye_gpt vs jack_joyce_gemini seed 1: 16000 hands in 13s
+faye_gpt vs jesse_faden_glm seed 1: 16000 hands in 13s
+faye_gpt vs max_payne_gpt seed 1: 16000 hands in 6s
+faye_gpt vs random seed 1: 16000 hands in 7s
+spike_claude vs vicious_glm seed 1: 16000 hands in 17s
+spike_claude vs kraken_gpt seed 1: 16000 hands in 15s
+spike_claude vs leviathan_claude seed 1: 16000 hands in 15s
+spike_claude vs megalodon_glm seed 1: 16000 hands in 15s
+spike_claude vs invoker_gpt seed 1: 16000 hands in 16s
+spike_claude vs meepo_claude seed 1: 16000 hands in 17s
+spike_claude vs windrunner_glm seed 1: 16000 hands in 15s
+spike_claude vs bassander_lin_glm seed 1: 16000 hands in 17s
+spike_claude vs hadrian_marlowe_gpt seed 1: 16000 hands in 15s
+spike_claude vs valka_onderra_claude seed 1: 16000 hands in 17s
+spike_claude vs aggressor seed 1: 16000 hands in 11s
+spike_claude vs alan_wake_claude seed 1: 16000 hands in 20s
+spike_claude vs jack_joyce_gemini seed 1: 16000 hands in 19s
+spike_claude vs jesse_faden_glm seed 1: 16000 hands in 20s
+spike_claude vs max_payne_gpt seed 1: 16000 hands in 9s
+spike_claude vs random seed 1: 16000 hands in 12s
+vicious_glm vs kraken_gpt seed 1: 16000 hands in 12s
+vicious_glm vs leviathan_claude seed 1: 16000 hands in 12s
+vicious_glm vs megalodon_glm seed 1: 16000 hands in 11s
+vicious_glm vs invoker_gpt seed 1: 16000 hands in 12s
+vicious_glm vs meepo_claude seed 1: 16000 hands in 13s
+vicious_glm vs windrunner_glm seed 1: 16000 hands in 11s
+vicious_glm vs bassander_lin_glm seed 1: 16000 hands in 13s
+vicious_glm vs hadrian_marlowe_gpt seed 1: 16000 hands in 11s
+vicious_glm vs valka_onderra_claude seed 1: 16000 hands in 14s
+vicious_glm vs aggressor seed 1: 16000 hands in 7s
+vicious_glm vs alan_wake_claude seed 1: 16000 hands in 16s
+vicious_glm vs jack_joyce_gemini seed 1: 16000 hands in 16s
+vicious_glm vs jesse_faden_glm seed 1: 16000 hands in 16s
+vicious_glm vs max_payne_gpt seed 1: 16000 hands in 5s
+vicious_glm vs random seed 1: 16000 hands in 9s
+┌──────────────────────┬──────────────────────┬────────────┬──────┬───────┬───────┬────────┐
+│ bot                  ┆ opponent             ┆ bb_per_100 ┆ se   ┆ z     ┆ hands ┆ tables │
+│ ---                  ┆ ---                  ┆ ---        ┆ ---  ┆ ---   ┆ ---   ┆ ---    │
+│ str                  ┆ str                  ┆ f64        ┆ f64  ┆ f64   ┆ u32   ┆ u32    │
+╞══════════════════════╪══════════════════════╪════════════╪══════╪═══════╪═══════╪════════╡
+│ aggressor            ┆ alan_wake_claude     ┆ -147.8     ┆ 11.7 ┆ -12.7 ┆ 32000 ┆ 128    │
+│ aggressor            ┆ bassander_lin_glm    ┆ 18.7       ┆ 7.4  ┆ 2.5   ┆ 32000 ┆ 128    │
+│ aggressor            ┆ faye_gpt             ┆ -20.9      ┆ 3.5  ┆ -5.9  ┆ 32000 ┆ 128    │
+│ aggressor            ┆ hadrian_marlowe_gpt  ┆ 21.6       ┆ 3.5  ┆ 6.2   ┆ 32000 ┆ 128    │
+│ aggressor            ┆ invoker_gpt          ┆ -9.2       ┆ 4.7  ┆ -2.0  ┆ 32000 ┆ 128    │
+│ aggressor            ┆ jack_joyce_gemini    ┆ 137.7      ┆ 13.6 ┆ 10.1  ┆ 32000 ┆ 128    │
+│ aggressor            ┆ jesse_faden_glm      ┆ 150.3      ┆ 13.5 ┆ 11.2  ┆ 32000 ┆ 128    │
+│ aggressor            ┆ kraken_gpt           ┆ -50.3      ┆ 4.5  ┆ -11.3 ┆ 32000 ┆ 128    │
+│ aggressor            ┆ leviathan_claude     ┆ -51.0      ┆ 3.9  ┆ -13.1 ┆ 32000 ┆ 128    │
+│ aggressor            ┆ max_payne_gpt        ┆ 48.1       ┆ 2.8  ┆ 17.4  ┆ 32000 ┆ 128    │
+│ aggressor            ┆ meepo_claude         ┆ 23.7       ┆ 4.0  ┆ 5.9   ┆ 32000 ┆ 128    │
+│ aggressor            ┆ megalodon_glm        ┆ -49.5      ┆ 3.6  ┆ -13.7 ┆ 32000 ┆ 128    │
+│ aggressor            ┆ random               ┆ 85.8       ┆ 11.6 ┆ 7.4   ┆ 32000 ┆ 128    │
+│ aggressor            ┆ spike_claude         ┆ 41.1       ┆ 5.0  ┆ 8.2   ┆ 32000 ┆ 128    │
+│ aggressor            ┆ valka_onderra_claude ┆ -17.9      ┆ 6.0  ┆ -3.0  ┆ 32000 ┆ 128    │
+│ aggressor            ┆ vicious_glm          ┆ 2.5        ┆ 5.3  ┆ 0.5   ┆ 32000 ┆ 128    │
+│ aggressor            ┆ windrunner_glm       ┆ -37.2      ┆ 3.7  ┆ -10.1 ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ aggressor            ┆ 147.8      ┆ 11.7 ┆ 12.7  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ bassander_lin_glm    ┆ -55.3      ┆ 12.8 ┆ -4.3  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ faye_gpt             ┆ -69.4      ┆ 3.9  ┆ -17.8 ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ hadrian_marlowe_gpt  ┆ -118.7     ┆ 6.8  ┆ -17.5 ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ invoker_gpt          ┆ -71.3      ┆ 7.6  ┆ -9.4  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ jack_joyce_gemini    ┆ 180.5      ┆ 13.8 ┆ 13.0  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ jesse_faden_glm      ┆ 162.8      ┆ 13.5 ┆ 12.0  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ kraken_gpt           ┆ -156.2     ┆ 5.5  ┆ -28.5 ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ leviathan_claude     ┆ -111.0     ┆ 9.0  ┆ -12.4 ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ max_payne_gpt        ┆ 74.9       ┆ 9.6  ┆ 7.8   ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ meepo_claude         ┆ -58.6      ┆ 9.3  ┆ -6.3  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ megalodon_glm        ┆ -108.2     ┆ 8.6  ┆ -12.6 ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ random               ┆ 326.6      ┆ 10.0 ┆ 32.5  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ spike_claude         ┆ -111.0     ┆ 6.2  ┆ -18.0 ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ valka_onderra_claude ┆ -84.1      ┆ 9.6  ┆ -8.7  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ vicious_glm          ┆ -67.4      ┆ 11.1 ┆ -6.1  ┆ 32000 ┆ 128    │
+│ alan_wake_claude     ┆ windrunner_glm       ┆ -96.2      ┆ 8.4  ┆ -11.5 ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ aggressor            ┆ -18.7      ┆ 7.4  ┆ -2.5  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ alan_wake_claude     ┆ 55.3       ┆ 12.8 ┆ 4.3   ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ faye_gpt             ┆ -97.4      ┆ 7.6  ┆ -12.8 ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ hadrian_marlowe_gpt  ┆ -59.2      ┆ 9.2  ┆ -6.5  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ invoker_gpt          ┆ -120.0     ┆ 12.7 ┆ -9.5  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ jack_joyce_gemini    ┆ 332.6      ┆ 22.8 ┆ 14.6  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ jesse_faden_glm      ┆ 243.3      ┆ 23.1 ┆ 10.5  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ kraken_gpt           ┆ -148.3     ┆ 9.1  ┆ -16.4 ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ leviathan_claude     ┆ -167.7     ┆ 12.1 ┆ -13.8 ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ max_payne_gpt        ┆ 47.6       ┆ 10.5 ┆ 4.5   ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ meepo_claude         ┆ -123.3     ┆ 13.9 ┆ -8.8  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ megalodon_glm        ┆ -165.0     ┆ 11.8 ┆ -13.9 ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ random               ┆ 692.0      ┆ 13.8 ┆ 50.2  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ spike_claude         ┆ -151.6     ┆ 10.7 ┆ -14.2 ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ valka_onderra_claude ┆ -62.5      ┆ 15.9 ┆ -3.9  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ vicious_glm          ┆ -116.5     ┆ 17.9 ┆ -6.5  ┆ 32000 ┆ 128    │
+│ bassander_lin_glm    ┆ windrunner_glm       ┆ -153.6     ┆ 10.7 ┆ -14.4 ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ aggressor            ┆ 20.9       ┆ 3.5  ┆ 5.9   ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ alan_wake_claude     ┆ 69.4       ┆ 3.9  ┆ 17.8  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ bassander_lin_glm    ┆ 97.4       ┆ 7.6  ┆ 12.8  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ hadrian_marlowe_gpt  ┆ 50.7       ┆ 3.1  ┆ 16.4  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ invoker_gpt          ┆ 38.0       ┆ 4.1  ┆ 9.2   ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ jack_joyce_gemini    ┆ 120.9      ┆ 8.5  ┆ 14.3  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ jesse_faden_glm      ┆ 132.0      ┆ 7.4  ┆ 17.7  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ kraken_gpt           ┆ 4.8        ┆ 5.7  ┆ 0.8   ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ leviathan_claude     ┆ 59.5       ┆ 5.6  ┆ 10.6  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ max_payne_gpt        ┆ 47.1       ┆ 3.9  ┆ 12.1  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ meepo_claude         ┆ 47.5       ┆ 4.8  ┆ 9.9   ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ megalodon_glm        ┆ 58.3       ┆ 6.6  ┆ 8.9   ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ random               ┆ 105.8      ┆ 5.5  ┆ 19.4  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ spike_claude         ┆ 43.7       ┆ 4.5  ┆ 9.8   ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ valka_onderra_claude ┆ 59.2       ┆ 5.1  ┆ 11.5  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ vicious_glm          ┆ 91.6       ┆ 6.8  ┆ 13.5  ┆ 32000 ┆ 128    │
+│ faye_gpt             ┆ windrunner_glm       ┆ 62.5       ┆ 5.1  ┆ 12.3  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ aggressor            ┆ -21.6      ┆ 3.5  ┆ -6.2  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ alan_wake_claude     ┆ 118.7      ┆ 6.8  ┆ 17.5  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ bassander_lin_glm    ┆ 59.2       ┆ 9.2  ┆ 6.5   ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ faye_gpt             ┆ -50.7      ┆ 3.1  ┆ -16.4 ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ invoker_gpt          ┆ -20.1      ┆ 5.3  ┆ -3.8  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ jack_joyce_gemini    ┆ 298.2      ┆ 12.7 ┆ 23.5  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ jesse_faden_glm      ┆ 279.5      ┆ 12.4 ┆ 22.5  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ kraken_gpt           ┆ -66.1      ┆ 3.8  ┆ -17.5 ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ leviathan_claude     ┆ -56.6      ┆ 5.0  ┆ -11.4 ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ max_payne_gpt        ┆ 67.2       ┆ 4.6  ┆ 14.6  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ meepo_claude         ┆ -0.8       ┆ 6.5  ┆ -0.1  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ megalodon_glm        ┆ -47.8      ┆ 4.9  ┆ -9.7  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ random               ┆ 334.0      ┆ 9.2  ┆ 36.2  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ spike_claude         ┆ -30.7      ┆ 4.5  ┆ -6.8  ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ valka_onderra_claude ┆ 42.6       ┆ 7.6  ┆ 5.6   ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ vicious_glm          ┆ 27.7       ┆ 7.6  ┆ 3.6   ┆ 32000 ┆ 128    │
+│ hadrian_marlowe_gpt  ┆ windrunner_glm       ┆ -61.3      ┆ 4.7  ┆ -13.1 ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ aggressor            ┆ 9.2        ┆ 4.7  ┆ 2.0   ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ alan_wake_claude     ┆ 71.3       ┆ 7.6  ┆ 9.4   ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ bassander_lin_glm    ┆ 120.0      ┆ 12.7 ┆ 9.5   ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ faye_gpt             ┆ -38.0      ┆ 4.1  ┆ -9.2  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ hadrian_marlowe_gpt  ┆ 20.1       ┆ 5.3  ┆ 3.8   ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ jack_joyce_gemini    ┆ 244.6      ┆ 13.7 ┆ 17.9  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ jesse_faden_glm      ┆ 244.2      ┆ 12.6 ┆ 19.4  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ kraken_gpt           ┆ -32.8      ┆ 6.3  ┆ -5.2  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ leviathan_claude     ┆ -18.8      ┆ 7.4  ┆ -2.5  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ max_payne_gpt        ┆ 65.1       ┆ 5.8  ┆ 11.1  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ meepo_claude         ┆ 35.2       ┆ 7.8  ┆ 4.5   ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ megalodon_glm        ┆ -12.5      ┆ 7.2  ┆ -1.7  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ random               ┆ 367.1      ┆ 9.2  ┆ 40.1  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ spike_claude         ┆ -5.1       ┆ 6.8  ┆ -0.7  ┆ 32000 ┆ 128    │
+│ invoker_gpt          ┆ valka_onderra_claude ┆ 26.0       ┆ 9.2  ┆ 2.8   ┆ 32000 ┆ 128    │
+│ …                    ┆ …                    ┆ …          ┆ …    ┆ …     ┆ …     ┆ …      │
+│ megalodon_glm        ┆ bassander_lin_glm    ┆ 165.0      ┆ 11.8 ┆ 13.9  ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ faye_gpt             ┆ -58.3      ┆ 6.6  ┆ -8.9  ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ hadrian_marlowe_gpt  ┆ 47.8       ┆ 4.9  ┆ 9.7   ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ invoker_gpt          ┆ 12.5       ┆ 7.2  ┆ 1.7   ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ jack_joyce_gemini    ┆ 301.6      ┆ 14.6 ┆ 20.7  ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ jesse_faden_glm      ┆ 212.6      ┆ 14.4 ┆ 14.7  ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ kraken_gpt           ┆ -38.8      ┆ 5.2  ┆ -7.5  ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ leviathan_claude     ┆ 8.3        ┆ 5.5  ┆ 1.5   ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ max_payne_gpt        ┆ 55.4       ┆ 3.4  ┆ 16.3  ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ meepo_claude         ┆ 21.7       ┆ 8.9  ┆ 2.4   ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ random               ┆ 405.7      ┆ 10.5 ┆ 38.5  ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ spike_claude         ┆ 11.0       ┆ 7.8  ┆ 1.4   ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ valka_onderra_claude ┆ 101.4      ┆ 9.2  ┆ 11.0  ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ vicious_glm          ┆ 68.4       ┆ 8.7  ┆ 7.8   ┆ 32000 ┆ 128    │
+│ megalodon_glm        ┆ windrunner_glm       ┆ 1.9        ┆ 4.3  ┆ 0.4   ┆ 32000 ┆ 128    │
+│ random               ┆ aggressor            ┆ -85.8      ┆ 11.6 ┆ -7.4  ┆ 32000 ┆ 128    │
+│ random               ┆ alan_wake_claude     ┆ -326.6     ┆ 10.0 ┆ -32.5 ┆ 32000 ┆ 128    │
+│ random               ┆ bassander_lin_glm    ┆ -692.0     ┆ 13.8 ┆ -50.2 ┆ 32000 ┆ 128    │
+│ random               ┆ faye_gpt             ┆ -105.8     ┆ 5.5  ┆ -19.4 ┆ 32000 ┆ 128    │
+│ random               ┆ hadrian_marlowe_gpt  ┆ -334.0     ┆ 9.2  ┆ -36.2 ┆ 32000 ┆ 128    │
+│ random               ┆ invoker_gpt          ┆ -367.1     ┆ 9.2  ┆ -40.1 ┆ 32000 ┆ 128    │
+│ random               ┆ jack_joyce_gemini    ┆ -718.2     ┆ 16.9 ┆ -42.5 ┆ 32000 ┆ 128    │
+│ random               ┆ jesse_faden_glm      ┆ -697.5     ┆ 16.1 ┆ -43.2 ┆ 32000 ┆ 128    │
+│ random               ┆ kraken_gpt           ┆ -204.8     ┆ 9.5  ┆ -21.6 ┆ 32000 ┆ 128    │
+│ random               ┆ leviathan_claude     ┆ -531.2     ┆ 13.3 ┆ -40.0 ┆ 32000 ┆ 128    │
+│ random               ┆ max_payne_gpt        ┆ -285.0     ┆ 10.7 ┆ -26.7 ┆ 32000 ┆ 128    │
+│ random               ┆ meepo_claude         ┆ -456.8     ┆ 12.6 ┆ -36.3 ┆ 32000 ┆ 128    │
+│ random               ┆ megalodon_glm        ┆ -405.7     ┆ 10.5 ┆ -38.5 ┆ 32000 ┆ 128    │
+│ random               ┆ spike_claude         ┆ -368.9     ┆ 10.3 ┆ -35.8 ┆ 32000 ┆ 128    │
+│ random               ┆ valka_onderra_claude ┆ -478.7     ┆ 11.2 ┆ -42.7 ┆ 32000 ┆ 128    │
+│ random               ┆ vicious_glm          ┆ -649.6     ┆ 13.5 ┆ -48.1 ┆ 32000 ┆ 128    │
+│ random               ┆ windrunner_glm       ┆ -399.2     ┆ 10.1 ┆ -39.4 ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ aggressor            ┆ -41.1      ┆ 5.0  ┆ -8.2  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ alan_wake_claude     ┆ 111.0      ┆ 6.2  ┆ 18.0  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ bassander_lin_glm    ┆ 151.6      ┆ 10.7 ┆ 14.2  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ faye_gpt             ┆ -43.7      ┆ 4.5  ┆ -9.8  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ hadrian_marlowe_gpt  ┆ 30.7       ┆ 4.5  ┆ 6.8   ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ invoker_gpt          ┆ 5.1        ┆ 6.8  ┆ 0.7   ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ jack_joyce_gemini    ┆ 317.2      ┆ 13.4 ┆ 23.6  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ jesse_faden_glm      ┆ 276.6      ┆ 12.5 ┆ 22.2  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ kraken_gpt           ┆ -51.7      ┆ 5.8  ┆ -8.9  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ leviathan_claude     ┆ -10.0      ┆ 8.1  ┆ -1.2  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ max_payne_gpt        ┆ 96.6       ┆ 6.6  ┆ 14.6  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ meepo_claude         ┆ 34.9       ┆ 7.5  ┆ 4.6   ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ megalodon_glm        ┆ -11.0      ┆ 7.8  ┆ -1.4  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ random               ┆ 368.9      ┆ 10.3 ┆ 35.8  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ valka_onderra_claude ┆ 99.3       ┆ 8.6  ┆ 11.5  ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ vicious_glm          ┆ 87.4       ┆ 12.0 ┆ 7.3   ┆ 32000 ┆ 128    │
+│ spike_claude         ┆ windrunner_glm       ┆ -2.8       ┆ 7.5  ┆ -0.4  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ aggressor            ┆ 17.9       ┆ 6.0  ┆ 3.0   ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ alan_wake_claude     ┆ 84.1       ┆ 9.6  ┆ 8.7   ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ bassander_lin_glm    ┆ 62.5       ┆ 15.9 ┆ 3.9   ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ faye_gpt             ┆ -59.2      ┆ 5.1  ┆ -11.5 ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ hadrian_marlowe_gpt  ┆ -42.6      ┆ 7.6  ┆ -5.6  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ invoker_gpt          ┆ -26.0      ┆ 9.2  ┆ -2.8  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ jack_joyce_gemini    ┆ 311.6      ┆ 18.7 ┆ 16.7  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ jesse_faden_glm      ┆ 269.8      ┆ 17.8 ┆ 15.2  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ kraken_gpt           ┆ -96.1      ┆ 7.0  ┆ -13.8 ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ leviathan_claude     ┆ -84.2      ┆ 8.8  ┆ -9.5  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ max_payne_gpt        ┆ 45.5       ┆ 7.1  ┆ 6.4   ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ meepo_claude         ┆ -45.8      ┆ 10.7 ┆ -4.3  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ megalodon_glm        ┆ -101.4     ┆ 9.2  ┆ -11.0 ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ random               ┆ 478.7      ┆ 11.2 ┆ 42.7  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ spike_claude         ┆ -99.3      ┆ 8.6  ┆ -11.5 ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ vicious_glm          ┆ -2.1       ┆ 14.1 ┆ -0.1  ┆ 32000 ┆ 128    │
+│ valka_onderra_claude ┆ windrunner_glm       ┆ -85.9      ┆ 10.2 ┆ -8.4  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ aggressor            ┆ -2.5       ┆ 5.3  ┆ -0.5  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ alan_wake_claude     ┆ 67.4       ┆ 11.1 ┆ 6.1   ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ bassander_lin_glm    ┆ 116.5      ┆ 17.9 ┆ 6.5   ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ faye_gpt             ┆ -91.6      ┆ 6.8  ┆ -13.5 ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ hadrian_marlowe_gpt  ┆ -27.7      ┆ 7.6  ┆ -3.6  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ invoker_gpt          ┆ -43.7      ┆ 10.7 ┆ -4.1  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ jack_joyce_gemini    ┆ 388.9      ┆ 23.1 ┆ 16.9  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ jesse_faden_glm      ┆ 315.2      ┆ 20.8 ┆ 15.1  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ kraken_gpt           ┆ -75.4      ┆ 6.4  ┆ -11.7 ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ leviathan_claude     ┆ -61.2      ┆ 10.4 ┆ -5.9  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ max_payne_gpt        ┆ 70.1       ┆ 8.8  ┆ 8.0   ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ meepo_claude         ┆ -57.0      ┆ 11.6 ┆ -4.9  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ megalodon_glm        ┆ -68.4      ┆ 8.7  ┆ -7.8  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ random               ┆ 649.6      ┆ 13.5 ┆ 48.1  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ spike_claude         ┆ -87.4      ┆ 12.0 ┆ -7.3  ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ valka_onderra_claude ┆ 2.1        ┆ 14.1 ┆ 0.1   ┆ 32000 ┆ 128    │
+│ vicious_glm          ┆ windrunner_glm       ┆ -77.3      ┆ 8.9  ┆ -8.7  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ aggressor            ┆ 37.2       ┆ 3.7  ┆ 10.1  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ alan_wake_claude     ┆ 96.2       ┆ 8.4  ┆ 11.5  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ bassander_lin_glm    ┆ 153.6      ┆ 10.7 ┆ 14.4  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ faye_gpt             ┆ -62.5      ┆ 5.1  ┆ -12.3 ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ hadrian_marlowe_gpt  ┆ 61.3       ┆ 4.7  ┆ 13.1  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ invoker_gpt          ┆ 9.6        ┆ 6.5  ┆ 1.5   ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ jack_joyce_gemini    ┆ 281.0      ┆ 14.2 ┆ 19.7  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ jesse_faden_glm      ┆ 203.0      ┆ 13.7 ┆ 14.8  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ kraken_gpt           ┆ -52.6      ┆ 3.8  ┆ -14.0 ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ leviathan_claude     ┆ -13.2      ┆ 5.2  ┆ -2.6  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ max_payne_gpt        ┆ 50.3       ┆ 3.7  ┆ 13.6  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ meepo_claude         ┆ 21.7       ┆ 7.9  ┆ 2.7   ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ megalodon_glm        ┆ -1.9       ┆ 4.3  ┆ -0.4  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ random               ┆ 399.2      ┆ 10.1 ┆ 39.4  ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ spike_claude         ┆ 2.8        ┆ 7.5  ┆ 0.4   ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ valka_onderra_claude ┆ 85.9       ┆ 10.2 ┆ 8.4   ┆ 32000 ┆ 128    │
+│ windrunner_glm       ┆ vicious_glm          ┆ 77.3       ┆ 8.9  ┆ 8.7   ┆ 32000 ┆ 128    │
+└──────────────────────┴──────────────────────┴────────────┴──────┴───────┴───────┴────────┘
+┌──────────────────────┬─────────────────┬─────┬────────────────────┬────────────┬──────────────┐
+│ bot                  ┆ mean_bb_per_100 ┆ se  ┆ mean_vs_non_random ┆ clear_wins ┆ clear_losses │
+│ ---                  ┆ ---             ┆ --- ┆ ---                ┆ ---        ┆ ---          │
+│ str                  ┆ f64             ┆ f64 ┆ f64                ┆ u32        ┆ u32          │
+╞══════════════════════╪═════════════════╪═════╪════════════════════╪════════════╪══════════════╡
+│ kraken_gpt           ┆ 88.5            ┆ 1.6 ┆ 81.2               ┆ 16         ┆ 0            │
+│ leviathan_claude     ┆ 99.0            ┆ 2.4 ┆ 72.0               ┆ 13         ┆ 2            │
+│ megalodon_glm        ┆ 86.7            ┆ 2.1 ┆ 66.8               ┆ 11         ┆ 2            │
+│ spike_claude         ┆ 83.5            ┆ 2.1 ┆ 65.6               ┆ 10         ┆ 3            │
+│ faye_gpt             ┆ 65.3            ┆ 1.4 ┆ 62.7               ┆ 16         ┆ 0            │
+│ windrunner_glm       ┆ 79.3            ┆ 2.0 ┆ 59.4               ┆ 11         ┆ 3            │
+│ invoker_gpt          ┆ 66.5            ┆ 2.1 ┆ 47.7               ┆ 10         ┆ 3            │
+│ meepo_claude         ┆ 68.4            ┆ 2.5 ┆ 44.2               ┆ 8          ┆ 8            │
+│ hadrian_marlowe_gpt  ┆ 51.3            ┆ 1.7 ┆ 33.6               ┆ 8          ┆ 8            │
+│ vicious_glm          ┆ 59.9            ┆ 3.1 ┆ 23.0               ┆ 6          ┆ 9            │
+│ valka_onderra_claude ┆ 36.9            ┆ 2.7 ┆ 9.3                ┆ 7          ┆ 9            │
+│ aggressor            ┆ 8.6             ┆ 1.8 ┆ 3.7                ┆ 8          ┆ 7            │
+│ alan_wake_claude     ┆ -12.6           ┆ 2.3 ┆ -33.8              ┆ 5          ┆ 12           │
+│ max_payne_gpt        ┆ -23.8           ┆ 2.2 ┆ -43.2              ┆ 2          ┆ 14           │
+│ bassander_lin_glm    ┆ -0.8            ┆ 3.3 ┆ -44.1              ┆ 5          ┆ 12           │
+│ jesse_faden_glm      ┆ -143.7          ┆ 4.0 ┆ -196.3             ┆ 2          ┆ 14           │
+│ jack_joyce_gemini    ┆ -194.7          ┆ 4.1 ┆ -251.8             ┆ 1          ┆ 16           │
+│ random               ┆ -418.1          ┆ 2.8 ┆ -418.1             ┆ 0          ┆ 17           │
+└──────────────────────┴─────────────────┴─────┴────────────────────┴────────────┴──────────────┘
+shape: (18, 3)
+┌──────────────────────┬────────────────┬─────────────────┐
+│ bot                  ┆ weighted_score ┆ field_opponents │
+│ ---                  ┆ ---            ┆ ---             │
+│ str                  ┆ f64            ┆ u32             │
+╞══════════════════════╪════════════════╪═════════════════╡
+│ kraken_gpt           ┆ 65.656808      ┆ 14              │
+│ faye_gpt             ┆ 51.81806       ┆ 15              │
+│ leviathan_claude     ┆ 51.470592      ┆ 14              │
+│ megalodon_glm        ┆ 48.074065      ┆ 14              │
+│ windrunner_glm       ┆ 43.333468      ┆ 14              │
+│ spike_claude         ┆ 38.616432      ┆ 15              │
+│ invoker_gpt          ┆ 31.570438      ┆ 14              │
+│ meepo_claude         ┆ 26.025279      ┆ 14              │
+│ hadrian_marlowe_gpt  ┆ 22.492578      ┆ 14              │
+│ vicious_glm          ┆ 18.067279      ┆ 15              │
+│ valka_onderra_claude ┆ 12.682924      ┆ 14              │
+│ aggressor            ┆ -5.245647      ┆ 14              │
+│ alan_wake_claude     ┆ -12.48464      ┆ 14              │
+│ bassander_lin_glm    ┆ -12.551925     ┆ 14              │
+│ max_payne_gpt        ┆ -28.363867     ┆ 14              │
+│ jesse_faden_glm      ┆ -125.03757     ┆ 14              │
+│ jack_joyce_gemini    ┆ -175.613658    ┆ 14              │
+│ random               ┆ -437.66416     ┆ 14              │
+└──────────────────────┴────────────────┴─────────────────┘

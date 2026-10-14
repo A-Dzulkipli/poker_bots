@@ -1,0 +1,63 @@
+{
+  "v1.py": {
+    "sha256": "a02e726a1784c2beaa512b4f48a44f62feda1da60e1b97a8c5ae51e916d5f68c",
+    "decision_lines": 62
+  },
+  "v2.py": {
+    "sha256": "83c36c906b648445fe8fa491e4370cbbbea21603b75233df54d761e3bf7da7ff",
+    "decision_lines": 65
+  },
+  "v3.py": {
+    "sha256": "968c6a69cfa87aefd6d0329a183705853a60f4d42989894845c3b740ba2e457b",
+    "decision_lines": 84
+  },
+  "v4.py": {
+    "sha256": "3409a4c659c734861a123686a967aaf4c46d2d426cd3a68509759878f1c119ca",
+    "decision_lines": 89
+  },
+  "v5.py": {
+    "sha256": "47de528d44212d9259276bb839b91e6b274f171dd4849aaded0f44a1210c85b3",
+    "decision_lines": 89
+  },
+  "v6.py": {
+    "sha256": "a479c29f41d54c48de4f4ee8ac00202a84eadc9a623841e3c34a736c49d47157",
+    "decision_lines": 89
+  },
+  "v7.py": {
+    "sha256": "7d8d1ff0cd3d0bf373f2ded8093f7881d5a15898e046c5d9a85544a4a32bb828",
+    "decision_lines": 90
+  },
+  "bench.py": {
+    "sha256": "a3cc47b72e41ac8b37821d801ac181fc879109f427d5828441a494a06d73ae29"
+  },
+  "equity.py": {
+    "sha256": "b040cb274e3b4bdd5ba9dc1d817fa1d5a097e4b1f6c2b50dfea476863e5b1417"
+  },
+  "v10.py": {
+    "sha256": "71f0834fb9f0f3c9a0234f86ed4d55df12bfb9d79c011c12908590275a4174c2",
+    "decision_lines": 92
+  },
+  "v11.py": {
+    "sha256": "5955588b12a0b09da75a36120f85f80e5cbb0c2da92ad4cb972c753fd8ddf817",
+    "decision_lines": 109
+  },
+  "v8.py": {
+    "sha256": "592a7e40288d4b44431ed21c7079eab955fed49268feb61c8a7c01084ecddece",
+    "decision_lines": 90
+  },
+  "v9.py": {
+    "sha256": "4e2057c4ccc785abc062ed95d3d1a821c9078e44d34fec60a16bef4cd99ada1e",
+    "decision_lines": 91
+  },
+  "ablation_v7.py": {
+    "sha256": "a05556405fed847b33cf457a5da0b13fdafb38ed757ca1abefcda13632eebf2d",
+    "decision_lines": 90
+  },
+  "ablation_v10.py": {
+    "sha256": "02ec7d7edcc7f7aa8f5ef281e99e0859638388cd11f222c0b563c2076a186e1e",
+    "decision_lines": 92
+  },
+  "__init__.py": {
+    "sha256": "696c70dda44b964c08361645ab4de42b222d767a140f698dddf2a35b9dd2c9d8"
+  }
+}

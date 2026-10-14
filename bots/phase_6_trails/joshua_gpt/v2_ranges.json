@@ -1,0 +1,66 @@
+[
+  {
+    "line": "Button opens",
+    "weighted_starting_share": 0.6620076715946197,
+    "legal_holding_mean_weight": 0.6620076715946197,
+    "pair_posterior_share": 0.08331728025681057,
+    "suited_posterior_share": 0.26143123594011825,
+    "two_broadway_posterior_share": 0.22336819477369302
+  },
+  {
+    "line": "Button limps",
+    "weighted_starting_share": 0.6476950347423553,
+    "legal_holding_mean_weight": 0.6476950347423553,
+    "pair_posterior_share": 0.040868054624114004,
+    "suited_posterior_share": 0.21639982102825103,
+    "two_broadway_posterior_share": 0.10125684620084656
+  },
+  {
+    "line": "Big blind calls an open",
+    "weighted_starting_share": 0.6026917040348053,
+    "legal_holding_mean_weight": 0.6026917040348053,
+    "pair_posterior_share": 0.08915785791200344,
+    "suited_posterior_share": 0.265230739164437,
+    "two_broadway_posterior_share": 0.24267315741206025
+  },
+  {
+    "line": "Big blind 3-bets",
+    "weighted_starting_share": 0.29918470084667204,
+    "legal_holding_mean_weight": 0.29918470084667204,
+    "pair_posterior_share": 0.12545925578122152,
+    "suited_posterior_share": 0.2706702138456856,
+    "two_broadway_posterior_share": 0.34477762600151307
+  },
+  {
+    "line": "Button c-bets flop after opening",
+    "weighted_starting_share": 0.30757066022217,
+    "legal_holding_mean_weight": 0.3468016117811203,
+    "pair_posterior_share": 0.11995793002383634,
+    "suited_posterior_share": 0.2398488126532373,
+    "two_broadway_posterior_share": 0.3120086146873326
+  },
+  {
+    "line": "Big blind check-raises flop",
+    "weighted_starting_share": 0.11721318776790912,
+    "legal_holding_mean_weight": 0.13216384947299958,
+    "pair_posterior_share": 0.11360515659699141,
+    "suited_posterior_share": 0.24879438110445282,
+    "two_broadway_posterior_share": 0.3063946832590894
+  },
+  {
+    "line": "Opponent bets turn after flop bet/call",
+    "weighted_starting_share": 0.19176748875039734,
+    "legal_holding_mean_weight": 0.22542880326509476,
+    "pair_posterior_share": 0.13633661489694768,
+    "suited_posterior_share": 0.2300261368600955,
+    "two_broadway_posterior_share": 0.34535784753828014
+  },
+  {
+    "line": "Opponent bets all three streets",
+    "weighted_starting_share": 0.1359866380039743,
+    "legal_holding_mean_weight": 0.1668069213628769,
+    "pair_posterior_share": 0.14781365296635596,
+    "suited_posterior_share": 0.21824994463662195,
+    "two_broadway_posterior_share": 0.33675073294501995
+  }
+]

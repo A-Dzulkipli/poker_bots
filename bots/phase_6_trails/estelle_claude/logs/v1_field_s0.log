@@ -1,0 +1,3 @@
+v1:Bot vs           kraken_gpt:   -66.03 bb/100  (SE 10.38; first 50 hands -63.9, rest -66.6; 64x250, seed 0, 30s)
+v1:Bot vs     leviathan_claude:   -17.23 bb/100  (SE 12.56; first 50 hands -58.3, rest -7.0; 64x250, seed 0, 29s)
+v1:Bot vs        megalodon_glm:   -19.08 bb/100  (SE 13.80; first 50 hands -65.0, rest -7.6; 64x250, seed 0, 29s)

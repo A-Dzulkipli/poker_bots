@@ -1,0 +1,17 @@
+all hands 16000 net bb/100 of all hands -40.83125305175781
+preflop ended hands 5092 net bb/100 of all hands -30.234375
+flop ended hands 5990 net bb/100 of all hands -18.887500762939453
+turn ended hands 2129 net bb/100 of all hands -0.10625000298023224
+river ended hands 2789 net bb/100 of all hands 8.396875381469727
+showdown hands 1704 net bb/100 of all hands 8.793750762939453
+no showdown hands 14296 net bb/100 of all hands -49.625003814697266
+hero street 0 actions 17813 fold/call/raise fractions [0.2621680796146393, 0.487060010433197, 0.2507719099521637]
+hero street 1 actions 13203 fold/call/raise fractions [0.2856169044971466, 0.47875481843948364, 0.23562826216220856]
+hero street 2 actions 5873 fold/call/raise fractions [0.21590328216552734, 0.5416312217712402, 0.2424655258655548]
+hero street 3 actions 3255 fold/call/raise fractions [0.20184332132339478, 0.5407066345214844, 0.25745007395744324]
+hero folds facing bet 0.47977209091186523
+opponent street 0 actions 14896 fold/call/raise fractions [0.028329752385616302, 0.3128356635570526, 0.6588345766067505]
+opponent street 1 actions 11774 fold/call/raise fractions [0.1884661167860031, 0.3335314989089966, 0.4780023694038391]
+opponent street 2 actions 5210 fold/call/raise fractions [0.16525912284851074, 0.36660268902778625, 0.468138188123703]
+opponent street 3 actions 2899 fold/call/raise fractions [0.14763711392879486, 0.3611590266227722, 0.4912038743495941]
+opponent folds facing bet 0.39939025044441223
